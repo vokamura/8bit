@@ -1,0 +1,10 @@
+h1 {
+    color: dodgerblue;
+}
+
+#game-canvas {
+    width: 500px;
+    height: 400px;
+    border: 1px solid #000000;
+    background-color: dodgerblue;
+}

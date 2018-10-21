@@ -23,12 +23,14 @@ class Hero {
 
 let hero1 = new Hero(getName(),getGender());
 
+//set name in local storage
 function getName(){
     localStorage.setItem("name", "Vikki");
     let name = localStorage.getItem("name");
     return name;
 }
 
+//set gender in local storage
 function getGender(){
     localStorage.setItem("gender", "female");
     let gender = localStorage.getItem("gender");
@@ -41,7 +43,7 @@ for (var i = 0; i < localStorage.length; i++){
     console.log(localStorage.getItem(localStorage.key(i)));
 }
 
-//basic movement
+//key events-basic movement
 document.onkeydown = function(event) {
     switch (event.keyCode) {
         case 32:
@@ -61,3 +63,13 @@ document.onkeydown = function(event) {
     //       break;
     }
 };
+
+window.onload = function(){
+    let gameContainer = document.getElementById("gameContainer");
+    let gameCanvas = gameContainer.getContext("2d");
+    let initialSprite = new Image();
+    initialSprite.src = "style/images/spritesheet.png";
+    gameCanvas.drawImage(initialSprite, 10, 10);
+}
+
+

@@ -1,6 +1,8 @@
+//create a hero
 class Hero {
-    constructor(name){
+    constructor(name, gender){
         this.name = name;
+        this.gender = gender;
     }
     moveForward(){
         console.log("Moved forward");
@@ -15,6 +17,7 @@ class Hero {
 
 let hero1 = new Hero("Vikki");
 
+//basic movement
 document.onkeydown = function(event) {
     switch (event.keyCode) {
         case 32:

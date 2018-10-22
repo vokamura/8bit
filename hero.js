@@ -3,8 +3,7 @@ class Hero {
     constructor(name, gender){
         this.name = name;
         this.gender = gender;
-        this.position = 0;
-        this.x = 10;
+        this.xPosition = 0;
         this.y = 10;
     }
     sayName(){
@@ -15,11 +14,15 @@ class Hero {
     }
     moveForward(){
         console.log("Moved forward");
-        this.position = this.position + 1;
-        console.log(this.position);
+        this.xPosition = this.xPosition + 1;
+        console.log(this.xPosition);
     }
     moveBack(){
         console.log("Moved back");
+        if (this.xPosition > 0){
+            this.xPosition = this.xPosition -1;
+        }
+        console.log(this.xPosition);
     }
     interact(){
         console.log("interaction");

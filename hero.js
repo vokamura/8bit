@@ -4,7 +4,7 @@ class Hero {
         this.name = name;
         this.gender = gender;
         this.xPosition = 0;
-        this.y = 10;
+        this.yPosition = 10;
     }
     sayName(){
         console.log(name);
@@ -77,7 +77,7 @@ window.onload = function(){
     let gameCanvas = gameContainer.getContext("2d");
     let initialSprite = new Image();
     initialSprite.src = "style/images/spritesheet.png";
-    gameCanvas.drawImage(initialSprite, 10, 10);
+    gameCanvas.drawImage(initialSprite, 0, 10);
 }
 
 

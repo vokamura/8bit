@@ -14,13 +14,21 @@ class Hero {
     }
     moveForward(){
         console.log("Moved forward");
-        this.xPosition = this.xPosition + 1;
+        this.xPosition = this.xPosition + 10;
         console.log(this.xPosition);
+        gameCanvas.clearRect(80,60, 160,160);
+        let rightSprite = new Image();
+        rightSprite.src = "style/images/spritesheet.png";
+        gameCanvas.webkitImageSmoothingEnabled = false;
+        gameCanvas.mozImageSmoothingEnabled = false;
+        gameCanvas.msImageSmoothingEnabled = false;
+        gameCanvas.imageSmoothingEnabled = false;
+        gameCanvas.drawImage(rightSprite, -5, -175, 160, 160, 0, 10, 80, 60);
     }
     moveBack(){
         console.log("Moved back");
         if (this.xPosition > 0){
-            this.xPosition = this.xPosition -1;
+            this.xPosition = this.xPosition - 10;
         }
         console.log(this.xPosition);
     }
@@ -28,8 +36,6 @@ class Hero {
         console.log("interaction");
     }
 }
-
-let hero1 = new Hero(getName(),getGender());
 
 //set name in local storage
 function getName(){
@@ -45,8 +51,6 @@ function getGender(){
     return gender;
 }
 
-console.log(hero1);
-
 for (var i = 0; i < localStorage.length; i++){
     console.log(localStorage.getItem(localStorage.key(i)));
 }
@@ -55,16 +59,16 @@ for (var i = 0; i < localStorage.length; i++){
 document.onkeydown = function(event) {
     switch (event.keyCode) {
         case 32:
-            hero1.interact();
+            chosenHero.interact();
             break;
         case 37:
-            hero1.moveBack();
+            chosenHero.moveBack();
           break;
     //    case 38:
     //         alert('Up key pressed');
     //       break;
        case 39:
-            hero1.moveForward();
+            chosenHero.moveForward();
             break;
     //    case 40:
     //         alert('Down key pressed');
@@ -72,12 +76,20 @@ document.onkeydown = function(event) {
     }
 };
 
+// let gameContainer = document.getElementById("gameContainer");
+// let gameCanvas = gameContainer.getContext("2d");
+let chosenHero = new Hero(getName(),getGender());
+
+
 window.onload = function(){
-    let gameContainer = document.getElementById("gameContainer");
-    let gameCanvas = gameContainer.getContext("2d");
+
     let initialSprite = new Image();
     initialSprite.src = "style/images/spritesheet.png";
-    gameCanvas.drawImage(initialSprite, 0, 10);
+    gameCanvas.webkitImageSmoothingEnabled = false;
+    gameCanvas.mozImageSmoothingEnabled = false;
+    gameCanvas.msImageSmoothingEnabled = false;
+    gameCanvas.imageSmoothingEnabled = false;
+    gameCanvas.drawImage(initialSprite, -5, -5, 160, 160, 0, 10, 80, 60);
 }
 
 

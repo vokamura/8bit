@@ -1,60 +1,47 @@
-/* https://spritegen.website-performance.org/ */
 .sprite {
     background-image: url(images/spritesheet.png);
     background-repeat: no-repeat;
     display: block;
 }
 
-.sprite-cat_die {
-    width: 64px;
-    height: 64px;
+.sprite-sprite_0 {
+    width: 160px;
+    height: 160px;
     background-position: -5px -5px;
 }
 
-.sprite-cat_getgun {
-    width: 64px;
-    height: 64px;
-    background-position: -79px -5px;
+.sprite-sprite_1 {
+    width: 160px;
+    height: 160px;
+    background-position: -175px -5px;
 }
 
-.sprite-cat_idle {
-    width: 64px;
-    height: 64px;
-    background-position: -153px -5px;
+.sprite-sprite_2 {
+    width: 160px;
+    height: 160px;
+    background-position: -5px -175px;
 }
 
-.sprite-cat_jump {
-    width: 64px;
-    height: 64px;
-    background-position: -5px -79px;
+.sprite-sprite_3 {
+    width: 160px;
+    height: 160px;
+    background-position: -175px -175px;
 }
 
-.sprite-cat_jump_shot {
-    width: 64px;
-    height: 64px;
-    background-position: -79px -79px;
+.sprite-sprite_4 {
+    width: 160px;
+    height: 160px;
+    background-position: -345px -5px;
 }
 
-.sprite-cat_spin {
-    width: 64px;
-    height: 64px;
-    background-position: -153px -79px;
+.sprite-sprite_5 {
+    width: 160px;
+    height: 160px;
+    background-position: -345px -175px;
 }
 
-.sprite-cat_stand_shot {
-    width: 64px;
-    height: 64px;
-    background-position: -5px -153px;
-}
-
-.sprite-cat_walk {
-    width: 64px;
-    height: 64px;
-    background-position: -79px -153px;
-}
-
-.sprite-cat_walk_shot {
-    width: 64px;
-    height: 64px;
-    background-position: -153px -153px;
+.sprite-sprite_6 {
+    width: 160px;
+    height: 160px;
+    background-position: -5px -345px;
 }

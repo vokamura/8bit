@@ -16,14 +16,11 @@ class Hero {
         console.log("Moved forward");
         this.xPosition = this.xPosition + 10;
         console.log(this.xPosition);
-        gameCanvas.clearRect(80,60, 160,160);
-        let rightSprite = new Image();
-        rightSprite.src = "style/images/spritesheet.png";
-        gameCanvas.webkitImageSmoothingEnabled = false;
-        gameCanvas.mozImageSmoothingEnabled = false;
-        gameCanvas.msImageSmoothingEnabled = false;
-        gameCanvas.imageSmoothingEnabled = false;
-        gameCanvas.drawImage(rightSprite, -5, -175, 160, 160, 0, 10, 80, 60);
+        // ctx.clearRect(80,60, 160,160);
+        // let rightSprite = new Image();
+        // rightSprite.src = "style/images/spritesheet.png";
+
+        // ctx.drawImage(rightSprite, -5, -5, 160, 160, 0, 10, 80, 60);
     }
     moveBack(){
         console.log("Moved back");
@@ -39,14 +36,14 @@ class Hero {
 
 //set name in local storage
 function getName(){
-    localStorage.setItem("name", "Vikki");
+    localStorage.setItem("name", "John");
     let name = localStorage.getItem("name");
     return name;
 }
 
 //set gender in local storage
 function getGender(){
-    localStorage.setItem("gender", "female");
+    localStorage.setItem("gender", "male");
     let gender = localStorage.getItem("gender");
     return gender;
 }
@@ -77,19 +74,14 @@ document.onkeydown = function(event) {
 };
 
 // let gameContainer = document.getElementById("gameContainer");
-// let gameCanvas = gameContainer.getContext("2d");
+// let ctx = gameContainer.getContext("2d");
 let chosenHero = new Hero(getName(),getGender());
 
 
 window.onload = function(){
-
     let initialSprite = new Image();
-    initialSprite.src = "style/images/spritesheet.png";
-    gameCanvas.webkitImageSmoothingEnabled = false;
-    gameCanvas.mozImageSmoothingEnabled = false;
-    gameCanvas.msImageSmoothingEnabled = false;
-    gameCanvas.imageSmoothingEnabled = false;
-    gameCanvas.drawImage(initialSprite, -5, -5, 160, 160, 0, 10, 80, 60);
+    initialSprite.src = "style/images//boy_sprite/sprite_front_forward.png";
+    ctx.drawImage(initialSprite, 0, 0, 160, 160, 0, 80, 80, 60);
 }
 
 

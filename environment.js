@@ -1,7 +1,9 @@
 let gameContainer = document.getElementById("gameContainer");
 
 //creates drawing object
-let gameCanvas = gameContainer.getContext("2d");
+let ctx = gameContainer.getContext("2d");
 
-// gameCanvas.fillstyle = "dodgerblue";
-
+ctx.webkitImageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.msImageSmoothingEnabled = false;
+ctx.imageSmoothingEnabled = false;

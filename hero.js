@@ -4,7 +4,12 @@ class Hero {
         this.name = name;
         this.gender = gender;
         this.xPosition = 0;
-        this.yPosition = 10;
+        this.yPosition = 350;
+        this.heroReady = false;
+        this.heroImage = new Image();
+        this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+        // this.heroSpeed = {speed: 250};
+        // this.heroFace = front;
     }
     sayName(){
         console.log(name);
@@ -13,26 +18,73 @@ class Hero {
         console.log(gender);
     }
     moveForward(){
-        console.log("Moved forward");
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         this.xPosition = this.xPosition + 10;
-        console.log(this.xPosition);
-        // ctx.clearRect(80,60, 160,160);
-        // let rightSprite = new Image();
-        // rightSprite.src = "style/images/spritesheet.png";
+        // this.heroFace = right;
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+        }
+        this.drawHero();
 
-        // ctx.drawImage(rightSprite, -5, -5, 160, 160, 0, 10, 80, 60);
     }
     moveBack(){
-        console.log("Moved back");
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         if (this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
-        console.log(this.xPosition);
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
+        }
+        this.drawHero();
+    }
+    moveUp(){
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        if (this.yPosition > 0){
+            this.yPosition = this.yPosition - 10;
+        }
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_back_rightfoot.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_back_leftfoot.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
+        }
+        this.drawHero();
+    }
+    moveDown(){
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        this.yPosition = this.yPosition + 10;
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
+        }
+        this.drawHero();
+
+    }
+    drawHero(){
+        ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }
     interact(){
         console.log("interaction");
     }
 }
+
+//create hero
+// let heroReady = false;
+// let heroImage = new Image();
+// let chosenHero = new Hero(getName(),getGender());
+
+// chosenHero.onload = function() {
+//     console.log("Hero ready?");
+//     chosenHero.heroReady = true;
+// }
+
+// Hero.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+
+// let heroSpeed = {speed: 250}
 
 //set name in local storage
 function getName(){
@@ -48,6 +100,7 @@ function getGender(){
     return gender;
 }
 
+//show items in local storage
 for (var i = 0; i < localStorage.length; i++){
     console.log(localStorage.getItem(localStorage.key(i)));
 }
@@ -61,27 +114,16 @@ document.onkeydown = function(event) {
         case 37:
             chosenHero.moveBack();
           break;
-    //    case 38:
-    //         alert('Up key pressed');
-    //       break;
+       case 38:
+            chosenHero.moveUp();
+          break;
        case 39:
             chosenHero.moveForward();
             break;
-    //    case 40:
-    //         alert('Down key pressed');
-    //       break;
+       case 40:
+            chosenHero.moveDown();
+          break;
     }
 };
-
-// let gameContainer = document.getElementById("gameContainer");
-// let ctx = gameContainer.getContext("2d");
-let chosenHero = new Hero(getName(),getGender());
-
-
-window.onload = function(){
-    let initialSprite = new Image();
-    initialSprite.src = "style/images//boy_sprite/sprite_front_forward.png";
-    ctx.drawImage(initialSprite, 0, 0, 160, 160, 0, 80, 80, 60);
-}
 
 

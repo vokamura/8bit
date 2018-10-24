@@ -20,6 +20,7 @@ class Hero {
         console.log("Moved forward");
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         this.xPosition = this.xPosition + 10;
+        this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
         console.log(this.xPosition);
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }

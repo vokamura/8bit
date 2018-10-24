@@ -16,11 +16,6 @@ class Hero {
         console.log("Moved forward");
         this.xPosition = this.xPosition + 10;
         console.log(this.xPosition);
-        // ctx.clearRect(80,60, 160,160);
-        // let rightSprite = new Image();
-        // rightSprite.src = "style/images/spritesheet.png";
-
-        // ctx.drawImage(rightSprite, -5, -5, 160, 160, 0, 10, 80, 60);
     }
     moveBack(){
         console.log("Moved back");
@@ -77,11 +72,12 @@ document.onkeydown = function(event) {
 // let ctx = gameContainer.getContext("2d");
 let chosenHero = new Hero(getName(),getGender());
 
-
-window.onload = function(){
-    let initialSprite = new Image();
-    initialSprite.src = "style/images//boy_sprite/sprite_front_forward.png";
-    ctx.drawImage(initialSprite, 0, 0, 160, 160, 0, 80, 80, 60);
+//create hero
+let heroReady = false;
+let heroImage = new Image();
+heroImage.onload = function() {
+    heroReady = true;
 }
+heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
 
-
+let heroSpeed = {speed: 250}

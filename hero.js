@@ -19,6 +19,7 @@ class Hero {
     }
     moveForward(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        loadBackground();
         this.xPosition = this.xPosition + 10;
         // this.heroFace = right;
         if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
@@ -31,6 +32,7 @@ class Hero {
     }
     moveBack(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        loadBackground();
         if (this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
@@ -43,6 +45,7 @@ class Hero {
     }
     moveUp(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        loadBackground();
         if (this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
@@ -55,6 +58,7 @@ class Hero {
     }
     moveDown(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        loadBackground();
         this.yPosition = this.yPosition + 10;
         if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
             this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";

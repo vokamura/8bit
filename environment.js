@@ -5,6 +5,13 @@ let ctx = gameCanvas.getContext("2d");
 gameCanvas.width = 700;
 gameCanvas.height = 500;
 
+function loadBackground(){
+    ctx.beginPath();
+    ctx.rect(0, 0, 700, 500);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+}
+
 gameCanvas.style.border = "1px solid #000000";
 document.body.appendChild(gameCanvas);
 
@@ -17,13 +24,10 @@ document.body.appendChild(gameCanvas);
 let chosenHero = new Hero(getName(),getGender());
 
 function runGame() {
-    console.log("Main game running");
+    loadBackground();
     chosenHero.heroReady = true;
-    console.log(chosenHero.heroImage);
-    
     //load hero when ready
     if(chosenHero.heroReady){
-        console.log("Hero is ready");
         chosenHero.heroImage.onload = function(){
             ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
         }

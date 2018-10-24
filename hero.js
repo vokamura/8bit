@@ -8,7 +8,8 @@ class Hero {
         this.heroReady = false;
         this.heroImage = new Image();
         this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
-        this.heroSpeed = {speend: 250};
+        // this.heroSpeed = {speed: 250};
+        // this.heroFace = front;
     }
     sayName(){
         console.log(name);
@@ -20,7 +21,12 @@ class Hero {
         console.log("Moved forward");
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         this.xPosition = this.xPosition + 10;
-        this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+        // this.heroFace = right;
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+        }
         console.log(this.xPosition);
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }

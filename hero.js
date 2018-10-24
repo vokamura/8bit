@@ -4,7 +4,11 @@ class Hero {
         this.name = name;
         this.gender = gender;
         this.xPosition = 0;
-        this.yPosition = 10;
+        this.yPosition = 350;
+        this.heroReady = false;
+        this.heroImage = new Image();
+        this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+        this.heroSpeed = {speend: 250};
     }
     sayName(){
         console.log(name);
@@ -14,8 +18,10 @@ class Hero {
     }
     moveForward(){
         console.log("Moved forward");
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         this.xPosition = this.xPosition + 10;
         console.log(this.xPosition);
+        ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }
     moveBack(){
         console.log("Moved back");
@@ -28,6 +34,20 @@ class Hero {
         console.log("interaction");
     }
 }
+
+//create hero
+// let heroReady = false;
+// let heroImage = new Image();
+// let chosenHero = new Hero(getName(),getGender());
+
+// chosenHero.onload = function() {
+//     console.log("Hero ready?");
+//     chosenHero.heroReady = true;
+// }
+
+// Hero.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+
+// let heroSpeed = {speed: 250}
 
 //set name in local storage
 function getName(){
@@ -43,6 +63,7 @@ function getGender(){
     return gender;
 }
 
+//show items in local storage
 for (var i = 0; i < localStorage.length; i++){
     console.log(localStorage.getItem(localStorage.key(i)));
 }
@@ -68,16 +89,4 @@ document.onkeydown = function(event) {
     }
 };
 
-// let gameContainer = document.getElementById("gameContainer");
-// let ctx = gameContainer.getContext("2d");
-let chosenHero = new Hero(getName(),getGender());
 
-//create hero
-let heroReady = false;
-let heroImage = new Image();
-heroImage.onload = function() {
-    heroReady = true;
-}
-heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
-
-let heroSpeed = {speed: 250}

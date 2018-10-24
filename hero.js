@@ -18,7 +18,6 @@ class Hero {
         console.log(gender);
     }
     moveForward(){
-        console.log("Moved forward");
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         this.xPosition = this.xPosition + 10;
         // this.heroFace = right;
@@ -27,21 +26,45 @@ class Hero {
         } else {
             this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
         }
-        console.log(this.xPosition);
-        ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+        this.drawHero();
+
     }
     moveBack(){
-        console.log("Moved back");
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         if (this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
-        console.log(this.xPosition);
         if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
             this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
         } else {
             this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
         }
+        this.drawHero();
+    }
+    moveUp(){
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        if (this.yPosition > 0){
+            this.yPosition = this.yPosition - 10;
+        }
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_back_rightfoot.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_back_leftfoot.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
+        }
+        this.drawHero();
+    }
+    moveDown(){
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+        this.yPosition = this.yPosition + 10;
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
+        }
+        this.drawHero();
+
+    }
+    drawHero(){
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }
     interact(){
@@ -91,15 +114,15 @@ document.onkeydown = function(event) {
         case 37:
             chosenHero.moveBack();
           break;
-    //    case 38:
-    //         alert('Up key pressed');
-    //       break;
+       case 38:
+            chosenHero.moveUp();
+          break;
        case 39:
             chosenHero.moveForward();
             break;
-    //    case 40:
-    //         alert('Down key pressed');
-    //       break;
+       case 40:
+            chosenHero.moveDown();
+          break;
     }
 };
 

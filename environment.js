@@ -1,7 +1,12 @@
-let gameContainer = document.getElementById("gameContainer");
+let gameCanvas = document.createElement("canvas");
 
-//creates drawing object
-let ctx = gameContainer.getContext("2d");
+let ctx = gameCanvas.getContext("2d");
+
+gameCanvas.width = 700;
+gameCanvas.height = 500;
+
+gameCanvas.style.border = "1px solid #000000";
+document.body.appendChild(gameCanvas);
 
 ctx.webkitImageSmoothingEnabled = false;
 ctx.mozImageSmoothingEnabled = false;

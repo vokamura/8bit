@@ -32,10 +32,17 @@ class Hero {
     }
     moveBack(){
         console.log("Moved back");
+        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
         if (this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
         console.log(this.xPosition);
+        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
+            this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
+        } else {
+            this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
+        }
+        ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
     }
     interact(){
         console.log("interaction");

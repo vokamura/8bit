@@ -19,16 +19,14 @@ function loadBackground(){
 function loadDoor(){
     let doorReady = false;
     let doorImage = new Image();
+
     doorImage.onload = function(){
         doorReady = true;
+        ctx.drawImage(doorImage, (Math.random() * (gameCanvas.width)), (Math.random() * (gameCanvas.height)));
+
     }
     doorImage.src = "style/images/environment/door.png";
-    if(doorReady){
-        console.log("door is ready");
-        doorImage.onload = function(){
-            ctx.drawImage(doorImage, (Math.random() * (canvas.width - 64)), (Math.random() * (canvas.height - 64)));
-        }
-    };
+
 
 }
 

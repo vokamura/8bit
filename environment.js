@@ -1,6 +1,4 @@
-let gameCanvas = document.createElement("canvas");
-let ctx = gameCanvas.getContext("2d");
-let chosenHero = new Hero(getName(),getGender());
+
 
 function loadCanvas(){
     gameCanvas.width = 700;
@@ -17,17 +15,30 @@ function loadBackground(){
 }
 
 function loadDoor(){
-    let doorReady = false;
-    let doorImage = new Image();
+    // let doorImage = new Image();
 
-    doorImage.onload = function(){
-        doorReady = true;
-        ctx.drawImage(doorImage, (Math.random() * (gameCanvas.width)), (Math.random() * (gameCanvas.height)));
+    // doorImage.onload = function(){
+    //     doorReady = true;
+    //     ctx.drawImage(doorImage, (Math.random() * (gameCanvas.width)), (Math.random() * (gameCanvas.height)));
 
+    // }
+    // doorImage.src = "style/images/environment/door.png";
+    firstDoor.doorReady = true;
+    if(firstDoor.doorReady){
+        firstDoor.doorImage.onload = function(){
+            ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
+        }
     }
-    doorImage.src = "style/images/environment/door.png";
+}
 
-
+class Door {
+    constructor(){
+        this.xPosition = Math.random() * (gameCanvas.width);
+        this.yPosition = Math.random() * (gameCanvas.width);
+        this.doorReady = false;
+        this.doorImage = new Image();
+        this.doorImage.src = "style/images/environment/door.png";
+    }
 }
 
 function loadHero(){
@@ -44,6 +55,11 @@ function runGame() {
     loadDoor();
     loadHero();
 }
+
+let gameCanvas = document.createElement("canvas");
+let ctx = gameCanvas.getContext("2d");
+let chosenHero = new Hero(getName(),getGender());
+let firstDoor = new Door();
 
 loadCanvas();
 runGame();

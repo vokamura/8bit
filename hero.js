@@ -1,4 +1,3 @@
-//create a hero with ES6 class
 class Hero {
     constructor(name, gender){
         this.name = name;

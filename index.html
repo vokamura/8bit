@@ -6,11 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style/sprites.css">
     <link rel="stylesheet" type="text/css" href="style/stylesheet.css">
+
     <title>8Bit Game</title>
 </head>
-<body>
+<body onload="askName()">
     <h1>8Bit Game</h1>
     <div id="container"></div>
+    <div class="askNameShadow">
+        <div class="askNameBody"></div>
+    </div>
+    <script src="modal.js"></script>
     <script src="hero.js"></script>
     <script src="environment.js"></script>
 </body>

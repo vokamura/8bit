@@ -5,6 +5,7 @@ function loadCanvas(){
     gameCanvas.height = 500;
     gameCanvas.style.border = "1px solid #000000";
     document.getElementById("container").appendChild(gameCanvas);
+    gameCanvas.classList.add("canvasPosition");
 }
 
 function loadBackground(){
@@ -48,6 +49,7 @@ function loadHero(){
 }
 
 function runGame() {
+    loadCanvas();
     loadBackground();
     loadDoor();
     loadHero();
@@ -58,5 +60,10 @@ let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero(getName(),getGender());
 let firstDoor = new Door();
 
-loadCanvas();
+function askQuestions(){
+    console.log("This works");
+    console.log(document.getElementsByClassName("askNameShadow")[0]);
+    document.getElementsByClassName("askNameShadow")[0].style.visibility = "visible";
+}
+
 runGame();

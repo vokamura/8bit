@@ -2,6 +2,17 @@ h1 {
     color: dodgerblue;
 }
 
+.canvasPosition{
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 #askNameShadow {
     position: fixed;
     left: 0;
@@ -16,14 +27,13 @@ h1 {
     position: fixed;
     left: 50%;
     top: 50%;
-    min-width: 70%;
-    min-height: 70%;
     color: white;
     background-color: rgba(0,0,0, .9);
     transform: translate(-50%, -50%);
     padding: 5%;
     overflow-y:auto;
-    width: 94%;
+    width: 700px;
+    height: 500px;
     border: 3px solid #fd6963;
     box-sizing: border-box;
 }

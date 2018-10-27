@@ -66,4 +66,8 @@ function askQuestions(){
     document.getElementsByClassName("askNameShadow")[0].style.visibility = "visible";
 }
 
+function cloaseQuestions(){
+    document.getElementsByClassName("askNameShadow")[0].style.visibility = "hidden";
+}
+
 runGame();

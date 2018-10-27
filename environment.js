@@ -62,8 +62,13 @@ let firstDoor = new Door();
 
 function askQuestions(){
     console.log("This works");
-    console.log(document.getElementsByClassName("askNameShadow")[0]);
-    document.getElementsByClassName("askNameShadow")[0].style.visibility = "visible";
+    let shadow = document.getElementsByClassName("askNameShadow")[0]
+    shadow.style.visibility = "visible";
+    let introTitle = document.createElement("h2");
+    introTitle.classList.add("introTitle");
+    introTitle.textContent = "Welcome player!";
+    shadow.append(introTitle);
+
 }
 
 function cloaseQuestions(){

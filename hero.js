@@ -8,6 +8,10 @@ class Hero {
         this.heroReady = false;
         this.heroImage = new Image();
         this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+        this.requestAnimationFrame = window.requestAnimationFrame || 
+                window.mozRequestAnimationFrame || 
+                window.webkitRequestAnimationFrame || 
+                window.msRequestAnimationFrame;
     }
     sayName(){
         console.log(name);
@@ -84,7 +88,31 @@ class Hero {
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
         ){
             console.log("Enter door");
-        }
+            // ctx.clearRect(0, 0, 160, 160);
+
+            let angle = 0;
+
+            
+
+            // color in the background
+            ctx.fillStyle = "#EEEEEE";
+            // ctx.fillRect(0, 0, 160, 160);
+            
+            // draw the circle
+            ctx.beginPath();
+            var radius = 25 + 150 * Math.abs(Math.cos(angle));
+            // var radius = 175;
+            ctx.arc(225, 225, radius, 0, Math.PI * 2, false);
+            ctx.closePath();
+            
+            // color in the circle
+            ctx.fillStyle = "#006699";
+            ctx.fill();
+
+            // requestAnimationFrame(this.checkForDoor);
+                }
+
+            
     }
     interact(){
         console.log("interaction");

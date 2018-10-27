@@ -26,6 +26,7 @@ class Hero {
             this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
         }
         this.drawHero();
+        this.checkForDoor();
 
     }
     moveBack(){
@@ -41,6 +42,7 @@ class Hero {
             this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
         }
         this.drawHero();
+        this.checkForDoor();
     }
     moveUp(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
@@ -55,6 +57,7 @@ class Hero {
             this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
         }
         this.drawHero();
+        this.checkForDoor();
     }
     moveDown(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
@@ -67,10 +70,21 @@ class Hero {
             this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
         }
         this.drawHero();
+        this.checkForDoor();
 
     }
     drawHero(){
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+    }
+    checkForDoor(){
+        if(
+            chosenHero.xPosition <= (firstDoor.xPosition + 32)
+            && firstDoor.xPosition <= (chosenHero.xPosition + 32)
+            && chosenHero.yPosition <= (firstDoor.yPosition + 32)
+            && firstDoor.yPosition <= (chosenHero.yPosition + 32)
+        ){
+            console.log("Enter door");
+        }
     }
     interact(){
         console.log("interaction");

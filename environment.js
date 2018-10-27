@@ -16,8 +16,8 @@ function loadBackground(){
 
 function loadDoor(){
     firstDoor.doorReady = true;
-    firstDoor.xPosition, firstDoor.yPosition = Math.random() * (gameCanvas.width - 100);
-    // firstDoor.yPosition = Math.random() * (gameCanvas.width - 100);
+    firstDoor.xPosition = Math.random() * (gameCanvas.width - 150);
+    firstDoor.yPosition = Math.random() * (gameCanvas.width - 275);
     if(firstDoor.doorReady){
         firstDoor.doorImage.onload = function(){
             ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
@@ -35,7 +35,8 @@ class Door {
     }
     drawDoor(){
         ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
-        console.log("this works",  "x = ", this.xPosition);
+        console.log("x = ", this.xPosition);
+        console.log("y = ", this.yPosition);
     }
 }
 

@@ -15,15 +15,9 @@ function loadBackground(){
 }
 
 function loadDoor(){
-    // let doorImage = new Image();
-
-    // doorImage.onload = function(){
-    //     doorReady = true;
-    //     ctx.drawImage(doorImage, (Math.random() * (gameCanvas.width)), (Math.random() * (gameCanvas.height)));
-
-    // }
-    // doorImage.src = "style/images/environment/door.png";
     firstDoor.doorReady = true;
+    firstDoor.xPosition, firstDoor.yPosition = Math.random() * (gameCanvas.width - 100);
+    // firstDoor.yPosition = Math.random() * (gameCanvas.width - 100);
     if(firstDoor.doorReady){
         firstDoor.doorImage.onload = function(){
             ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
@@ -33,11 +27,15 @@ function loadDoor(){
 
 class Door {
     constructor(){
-        this.xPosition = Math.random() * (gameCanvas.width);
-        this.yPosition = Math.random() * (gameCanvas.width);
+        this.xPosition = 0;
+        this.yPosition = 0;
         this.doorReady = false;
         this.doorImage = new Image();
         this.doorImage.src = "style/images/environment/door.png";
+    }
+    drawDoor(){
+        ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
+        console.log("this works",  "x = ", this.xPosition);
     }
 }
 

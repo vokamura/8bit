@@ -61,13 +61,57 @@ let chosenHero = new Hero(getName(),getGender());
 let firstDoor = new Door();
 
 function askQuestions(){
-    console.log("This works");
-    let shadow = document.getElementsByClassName("askNameShadow")[0]
+    let shadow = document.getElementsByClassName("askQuestionShadow")[0];
     shadow.style.visibility = "visible";
-    let introTitle = document.createElement("h2");
-    introTitle.classList.add("introTitle");
-    introTitle.textContent = "Welcome player!";
-    shadow.append(introTitle);
+
+    let askBody = document.getElementsByClassName("askQuestionBody")[0];
+
+    //Create Question form
+    let askQuestion = document.createElement("form");
+
+    //Create question for name
+    let nameLabel = document.createElement("label");
+    let askName = document.createElement("input");
+    nameLabel.for = askName;
+    nameLabel.textContent = "What is your name?";
+    askQuestion.append(nameLabel);
+    askQuestion.append(askName);
+
+    //Create question for gender selection dropdown
+    let genderLabel = document.createElement("label");
+    let askGender = document.createElement("select");
+    genderLabel.for = askGender;
+    genderLabel.textContent = "What is your gender?";
+    askQuestion.append(genderLabel);
+
+    let male = document.createElement("option");
+    male.value = "male";
+    male.textContent = "Male";
+    askGender.append(male);
+
+    let female = document.createElement("option");
+    female.value = "female";
+    female.textContent = "Female";
+    askGender.append(female);
+
+    let other = document.createElement("option");
+    other.value = "other";
+    other.textContent = "Other";
+    askGender.append(other);
+
+    //Append questions to body
+    askQuestion.append(askGender);
+    askBody.append(askQuestion);
+
+    // let introTitle = document.createElement("h2");
+    // introTitle.classList.add("intro");
+    // introTitle.textContent = "Good morning!";
+    // askBody.append(introTitle);
+
+    // let introBody = document.createElement("div");
+    // introBody.classList.add("intro");
+    // introBody.textContent = "It is Saturday morning and it is your SO's birthday!";
+    // askBody.append(introBody);
 
 }
 

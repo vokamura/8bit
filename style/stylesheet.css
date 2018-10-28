@@ -13,7 +13,7 @@ h1 {
     right: 0;
 }
 
-.askNameShadow {
+.askQuestionShadow {
     position: fixed;
     left: 0;
     top: 0;
@@ -23,7 +23,7 @@ h1 {
     cursor: pointer;
 }
 
-.askNameBody {
+.askQuestionBody {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -38,7 +38,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.introTitle {
+.intro {
     text-align: center;
     position: relative;
     /* color: white; */

@@ -119,15 +119,15 @@ class Hero {
 }
 
 //set name in local storage
-function getName(){
-    localStorage.setItem("name", "John");
+function getName(saveName){
+    localStorage.setItem("name", saveName);
     let name = localStorage.getItem("name");
     return name;
 }
 
 //set gender in local storage
-function getGender(){
-    localStorage.setItem("gender", "male");
+function getGender(saveGender){
+    localStorage.setItem("gender", saveGender);
     let gender = localStorage.getItem("gender");
     return gender;
 }

@@ -60,8 +60,9 @@ h1 {
 
 form {
     text-align: center;
-    /* display: flex;
-    align-items: center; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 input[type=text]{
     padding: 5px;

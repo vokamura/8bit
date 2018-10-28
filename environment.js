@@ -61,64 +61,62 @@ let chosenHero = new Hero(getName(),getGender());
 let firstDoor = new Door();
 
 function askQuestions(){
-    let shadow = document.getElementsByClassName("askQuestionShadow")[0];
-    shadow.style.visibility = "visible";
-    let askBody = document.getElementsByClassName("askQuestionBody")[0];
-    askBody.style.textAlign = "center";
+    // debugger;
+    // if(localStorage.getItem("name") === undefined){
+        let shadow = document.getElementsByClassName("askQuestionShadow")[0];
+        shadow.style.visibility = "visible";
+        let askBody = document.getElementsByClassName("askQuestionBody")[0];
+        askBody.style.textAlign = "center";
 
-    let questionTitle = document.createElement("div");
-    questionTitle.textContent = "Before we start, what is your name and gender?";
-    questionTitle.classList.add("question");
-    // questionTitle.style.lineHeight = 1.6;
-    // questionTitle.style.marginBottom = 25;
-    askBody.append(questionTitle);
+        let questionTitle = document.createElement("div");
+        questionTitle.textContent = "Before we start, what is your name and gender?";
+        questionTitle.classList.add("question");
+        askBody.append(questionTitle);
 
-    //Create Question form
-    let askQuestion = document.createElement("form");
+        //Create Question form
+        let askQuestion = document.createElement("form");
 
-    //Create question for name
-    let nameLabel = document.createElement("label");
-    let askName = document.createElement("input");
-    nameLabel.for = askName;
-    askName.type = "text";
-    nameLabel.textContent = "What is your name?";
-    nameLabel.style.display = "block";
-    askName.align = "middle";
-    askQuestion.append(nameLabel);
-    askQuestion.append(askName);
+        //Create question for name
+        let nameLabel = document.createElement("label");
+        let askName = document.createElement("input");
+        nameLabel.for = askName;
+        askName.type = "text";
+        nameLabel.textContent = "What is your name?";
+        askQuestion.append(nameLabel);
+        askQuestion.append(askName);
 
-    //Create question for gender selection dropdown
-    let genderLabel = document.createElement("label");
-    let askGender = document.createElement("select");
-    genderLabel.for = askGender;
-    genderLabel.textContent = "What is your gender?";
-    genderLabel.style.display = "block";
-    askGender.align = "middle";
-    askQuestion.append(genderLabel);
+        //Create question for gender selection dropdown
+        let genderLabel = document.createElement("label");
+        let askGender = document.createElement("select");
+        genderLabel.for = askGender;
+        genderLabel.textContent = "What is your gender?";
+        askQuestion.append(genderLabel);
 
-    let male = document.createElement("option");
-    male.value = "male";
-    male.textContent = "Male";
-    askGender.append(male);
+        let male = document.createElement("option");
+        male.value = "male";
+        male.textContent = "Male";
+        askGender.append(male);
 
-    let female = document.createElement("option");
-    female.value = "female";
-    female.textContent = "Female";
-    askGender.append(female);
+        let female = document.createElement("option");
+        female.value = "female";
+        female.textContent = "Female";
+        askGender.append(female);
 
-    let other = document.createElement("option");
-    other.value = "other";
-    other.textContent = "Other";
-    askGender.append(other);
+        let other = document.createElement("option");
+        other.value = "other";
+        other.textContent = "Other";
+        askGender.append(other);
 
-    askQuestion.append(askGender);
+        askQuestion.append(askGender);
 
-    let submitBtn = document.createElement("input");
-    submitBtn.value = "Submit";
-    submitBtn.type = "submit";
-    askQuestion.append(submitBtn);
+        let submitBtn = document.createElement("button");
+        submitBtn.type = "button";
+        submitBtn.textContent = "Submit";
+        submitBtn.addEventListener("click", getData);
+        askQuestion.append(submitBtn);
 
-    askBody.append(askQuestion);
+        askBody.append(askQuestion);
+    // }
 
     // let introTitle = document.createElement("h2");
     // introTitle.classList.add("intro");
@@ -132,8 +130,16 @@ function askQuestions(){
 
 }
 
-function cloaseQuestions(){
-    document.getElementsByClassName("askNameShadow")[0].style.visibility = "hidden";
+function getData(){
+    let saveName = document.querySelector("input").value;
+    let saveGender = document.querySelector("select").value
+    getName(saveName);
+    getGender(saveGender);
+    closeQuestions();
+}
+
+function closeQuestions(){
+    document.getElementsByClassName("askQuestionShadow")[0].style.visibility = "hidden";
 }
 
 runGame();

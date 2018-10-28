@@ -1,3 +1,69 @@
+@font-face {
+    font-family: "8bitwonder";
+    src: url(8bitwonder.ttf);
+}
+
 h1 {
     color: dodgerblue;
+    font-family: "8bitwonder";
+    text-align: center;
+}
+
+.canvasPosition{
+    padding: 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.askQuestionShadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.askQuestionBody {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    color: white;
+    font-family: "8bitwonder";
+    background-color: rgba(0,0,0, .9);
+    transform: translate(-50%, -50%);
+    padding: 5%;
+    overflow-y:auto;
+    width: 700px;
+    height: 500px;
+    border: 3px solid #fd6963;
+    box-sizing: border-box;
+}
+
+.intro {
+    text-align: center;
+    position: relative;
+    /* color: white; */
+}
+
+.question {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+form {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+input[type=text]{
+    padding: 5px;
 }

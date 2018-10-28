@@ -60,8 +60,22 @@ let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero(getName(),getGender());
 let firstDoor = new Door();
 
-function askQuestions(){
-    // debugger;
+function runIntro(){
+    getUserData();
+
+    // let introTitle = document.createElement("h2");
+    // introTitle.classList.add("intro");
+    // introTitle.textContent = "Good morning!";
+    // askBody.append(introTitle);
+
+    // let introBody = document.createElement("div");
+    // introBody.classList.add("intro");
+    // introBody.textContent = "It is Saturday morning and it is your SO's birthday!";
+    // askBody.append(introBody);
+
+}
+
+function getUserData(){
     // if(localStorage.getItem("name") === undefined){
         let shadow = document.getElementsByClassName("askQuestionShadow")[0];
         shadow.style.visibility = "visible";
@@ -111,35 +125,22 @@ function askQuestions(){
 
         let submitBtn = document.createElement("button");
         submitBtn.type = "button";
-        submitBtn.textContent = "Submit";
+        submitBtn.textContent = "Next";
         submitBtn.addEventListener("click", getData);
         askQuestion.append(submitBtn);
 
         askBody.append(askQuestion);
     // }
-
-    // let introTitle = document.createElement("h2");
-    // introTitle.classList.add("intro");
-    // introTitle.textContent = "Good morning!";
-    // askBody.append(introTitle);
-
-    // let introBody = document.createElement("div");
-    // introBody.classList.add("intro");
-    // introBody.textContent = "It is Saturday morning and it is your SO's birthday!";
-    // askBody.append(introBody);
-
 }
+
 
 function getData(){
     let saveName = document.querySelector("input").value;
     let saveGender = document.querySelector("select").value
     getName(saveName);
     getGender(saveGender);
-    closeQuestions();
-}
-
-function closeQuestions(){
     document.getElementsByClassName("askQuestionShadow")[0].style.visibility = "hidden";
 }
+
 
 runGame();

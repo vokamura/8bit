@@ -1,7 +1,9 @@
 class Hero {
-    constructor(name, gender){
+    constructor(name, gender, SOname, SOgender){
         this.name = name;
         this.gender = gender;
+        this.SOname = SOname;
+        this.SOgender = SOgender;
         this.xPosition = 0;
         this.yPosition = 350;
         this.heroReady = false;
@@ -116,25 +118,6 @@ class Hero {
     interact(){
         console.log("interaction");
     }
-}
-
-//set name in local storage
-function getName(saveName){
-    localStorage.setItem("name", saveName);
-    let name = localStorage.getItem("name");
-    return name;
-}
-
-//set gender in local storage
-function getGender(saveGender){
-    localStorage.setItem("gender", saveGender);
-    let gender = localStorage.getItem("gender");
-    return gender;
-}
-
-//show items in local storage
-for (var i = 0; i < localStorage.length; i++){
-    console.log(localStorage.getItem(localStorage.key(i)));
 }
 
 //key events-basic movement

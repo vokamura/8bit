@@ -99,8 +99,13 @@ function askQuestions(){
     other.textContent = "Other";
     askGender.append(other);
 
-    //Append questions to body
     askQuestion.append(askGender);
+
+    let submitBtn = document.createElement("input");
+    submitBtn.value = "Submit";
+    submitBtn.type = "submit";
+    askQuestion.append(submitBtn);
+
     askBody.append(askQuestion);
 
     // let introTitle = document.createElement("h2");

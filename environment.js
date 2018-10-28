@@ -63,8 +63,15 @@ let firstDoor = new Door();
 function askQuestions(){
     let shadow = document.getElementsByClassName("askQuestionShadow")[0];
     shadow.style.visibility = "visible";
-
     let askBody = document.getElementsByClassName("askQuestionBody")[0];
+    askBody.style.textAlign = "center";
+
+    let questionTitle = document.createElement("div");
+    questionTitle.textContent = "Before we start, what is your name and gender?";
+    questionTitle.classList.add("question");
+    // questionTitle.style.lineHeight = 1.6;
+    // questionTitle.style.marginBottom = 25;
+    askBody.append(questionTitle);
 
     //Create Question form
     let askQuestion = document.createElement("form");
@@ -73,7 +80,10 @@ function askQuestions(){
     let nameLabel = document.createElement("label");
     let askName = document.createElement("input");
     nameLabel.for = askName;
+    askName.type = "text";
     nameLabel.textContent = "What is your name?";
+    nameLabel.style.display = "block";
+    askName.align = "middle";
     askQuestion.append(nameLabel);
     askQuestion.append(askName);
 
@@ -82,6 +92,8 @@ function askQuestions(){
     let askGender = document.createElement("select");
     genderLabel.for = askGender;
     genderLabel.textContent = "What is your gender?";
+    genderLabel.style.display = "block";
+    askGender.align = "middle";
     askQuestion.append(genderLabel);
 
     let male = document.createElement("option");

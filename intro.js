@@ -1,22 +1,29 @@
 function runIntro(){
-    if (localStorage.getItem("name") === "undefined"){
+    if (localStorage.getItem("name") === "undefined" || localStorage.getItem("name") === null){
         getUserData();
     }
-    let shadow = document.getElementsByClassName("textShadow")[0];
-    shadow.style.visibility = "visible";
-    let askBody = document.getElementsByClassName("textBody")[0];
-    askBody.style.textAlign = "center";
+    if(localStorage.getItem("name") !== null){
+        let shadow = document.getElementsByClassName("textShadow")[0];
+        shadow.style.visibility = "visible";
+        let askBody = document.getElementsByClassName("textBody")[0];
+        askBody.style.textAlign = "center";
 
 
-    // let introTitle = document.createElement("h2");
-    // introTitle.classList.add("intro");
-    // introTitle.textContent = "Good morning!";
-    // askBody.append(introTitle);
+        let introTitle = document.createElement("h2");
+        introTitle.classList.add("intro");
+        introTitle.textContent = `Good morning, ${chosenHero.name}!`;
+        askBody.append(introTitle);
 
-    // let introBody = document.createElement("div");
-    // introBody.classList.add("intro");
-    // introBody.textContent = "It is Saturday morning and it is your SO's birthday!";
-    // askBody.append(introBody);
+        let introBody = document.createElement("div");
+        introBody.classList.add("intro");
+        introBody.textContent = `It's Saturday morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
+        askBody.append(introBody);
+
+        let instructions = document.createElement("div");
+        instructions.classList.add("intro");
+        instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood()}`;
+        askBody.append(instructions);
+    }
 
 }
 
@@ -140,14 +147,14 @@ function getData(){
     let saveGender = document.getElementById("heroGender").value;
     let saveSOName = document.getElementById("SOName").value;
     let saveSOGender = document.getElementById("SOGender").value;
-    getName(saveName);
-    getGender(saveGender);
-    getSOName(saveSOName);
-    getSOGender(saveSOGender);
-    // localStorage.setItem("name", saveName);
-    // localStorage.setItem("gender", saveGender);
-    // localStorage.setItem("SOname", saveSOName);
-    // localStorage.setItem("SOgender", saveSOGender);
+    // getName(saveName);
+    // getGender(saveGender);
+    // getSOName(saveSOName);
+    // getSOGender(saveSOGender);
+    localStorage.setItem("name", saveName);
+    localStorage.setItem("gender", saveGender);
+    localStorage.setItem("SOname", saveSOName);
+    localStorage.setItem("SOgender", saveSOGender);
 
     //show items in local storage
     for (var i = 0; i < localStorage.length; i++){
@@ -163,30 +170,30 @@ function getData(){
 
 }
 
-//set name in local storage
-function getName(saveName){
-    localStorage.setItem("name", saveName);
-    let name = localStorage.getItem("name");
-    return name;
-}
+// //set name in local storage
+// function getName(saveName){
+//     localStorage.setItem("name", saveName);
+//     let name = localStorage.getItem("name");
+//     return name;
+// }
 
-//set gender in local storage
-function getGender(saveGender){
-    localStorage.setItem("gender", saveGender);
-    let gender = localStorage.getItem("gender");
-    return gender;
-}
+// //set gender in local storage
+// function getGender(saveGender){
+//     localStorage.setItem("gender", saveGender);
+//     let gender = localStorage.getItem("gender");
+//     return gender;
+// }
 
-function getSOName(saveSOName){
-    localStorage.setItem("SOname", saveSOName);
-    let SOname = localStorage.getItem("SOname");
-    return SOname;
-}
+// function getSOName(saveSOName){
+//     localStorage.setItem("SOname", saveSOName);
+//     let SOname = localStorage.getItem("SOname");
+//     return SOname;
+// }
 
-//set gender in local storage
-function getSOGender(saveSOGender){
-    localStorage.setItem("SOgender", saveSOGender);
-    let SOgender = localStorage.getItem("SOgender");
-    return SOgender;
-}
+// //set gender in local storage
+// function getSOGender(saveSOGender){
+//     localStorage.setItem("SOgender", saveSOGender);
+//     let SOgender = localStorage.getItem("SOgender");
+//     return SOgender;
+// }
 

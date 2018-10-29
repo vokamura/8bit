@@ -2,7 +2,14 @@ function runIntro(){
     if (localStorage.getItem("name") === "undefined" || localStorage.getItem("name") === null){
         getUserData();
     }
-    if(localStorage.getItem("name") !== null){
+    else {
+        introPage();
+    }
+
+}
+
+function introPage(){
+    // if(localStorage.getItem("name") !== null){
         let shadow = document.getElementsByClassName("textShadow")[0];
         shadow.style.visibility = "visible";
         let askBody = document.getElementsByClassName("textBody")[0];
@@ -23,8 +30,7 @@ function runIntro(){
         instructions.classList.add("intro");
         instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood()}`;
         askBody.append(instructions);
-    }
-
+    // }
 }
 
 function getUserData(){
@@ -166,7 +172,9 @@ function getData(){
     while(askBody.firstChild){
         askBody.removeChild(askBody.firstChild);
     };
-    document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
+
+    introPage();
+    // document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
 
 }
 

@@ -78,6 +78,7 @@ input[type=text]{
 
 .intro {
     text-align: center;
-    position: relative;
+    padding: 15px 0;
+    /* position: relative; */
     /* color: white; */
 }

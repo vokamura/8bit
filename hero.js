@@ -1,9 +1,19 @@
 class Hero {
     constructor(name, gender, SOname, SOgender){
-        this.name = name;
-        this.gender = gender;
-        this.SOname = SOname;
-        this.SOgender = SOgender;
+        // this.name = name;
+        // this.gender = gender;
+        // this.SOname = SOname;
+        // this.SOgender = SOgender;
+        this.name = localStorage.getItem("name");
+        this.gender = localStorage.getItem("gender");
+        this.SOname = localStorage.getItem("SOname");
+        this.SOgender = localStorage.getItem("SOgender");
+        // this.food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck Stick"];
+        // this.favoriteFood = food[Math.floor(Math.random()*food.length)];
+        this.favoriteFood = function(){
+            let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck Stick"];
+            return food[Math.floor(Math.random()*food.length)];
+        }
         this.xPosition = 0;
         this.yPosition = 350;
         this.heroReady = false;

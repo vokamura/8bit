@@ -55,8 +55,8 @@ function runGame() {
 
 let gameCanvas = document.createElement("canvas");
 let ctx = gameCanvas.getContext("2d");
-let chosenHero = new Hero(getName(),getGender(), getSOName(), getSOGender());
-// let chosenHero = new Hero();
+// let chosenHero = new Hero(getName(),getGender(), getSOName(), getSOGender());
+let chosenHero = new Hero();
 let firstDoor = new Door();
 
 runGame();

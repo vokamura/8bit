@@ -20,7 +20,7 @@ h1 {
     right: 0;
 }
 
-.askQuestionShadow {
+.textShadow {
     position: fixed;
     left: 0;
     top: 0;
@@ -29,7 +29,7 @@ h1 {
     visibility: hidden;
 }
 
-.askQuestionBody {
+.textBody {
     position: fixed;
     left: 50%;
     top: 50%;

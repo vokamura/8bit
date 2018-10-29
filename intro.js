@@ -1,5 +1,12 @@
 function runIntro(){
-    getUserData();
+    if (localStorage.getItem("name") === "undefined"){
+        getUserData();
+    }
+    let shadow = document.getElementsByClassName("textShadow")[0];
+    shadow.style.visibility = "visible";
+    let askBody = document.getElementsByClassName("textBody")[0];
+    askBody.style.textAlign = "center";
+
 
     // let introTitle = document.createElement("h2");
     // introTitle.classList.add("intro");
@@ -14,10 +21,9 @@ function runIntro(){
 }
 
 function getUserData(){
-    // if(localStorage.getItem("name") === undefined){
-        let shadow = document.getElementsByClassName("askQuestionShadow")[0];
+        let shadow = document.getElementsByClassName("textShadow")[0];
         shadow.style.visibility = "visible";
-        let askBody = document.getElementsByClassName("askQuestionBody")[0];
+        let askBody = document.getElementsByClassName("textBody")[0];
         askBody.style.textAlign = "center";
 
         let introTitle = document.createElement("div");
@@ -38,6 +44,7 @@ function getUserData(){
         let askName = document.createElement("input");
         nameLabel.for = askName;
         askName.type = "text";
+        askName.setAttribute("id", "heroName");
         nameLabel.textContent = "What is your name?";
         askQuestion.append(nameLabel);
         askQuestion.append(askName);
@@ -45,6 +52,7 @@ function getUserData(){
         //Create question for gender selection dropdown
         let genderLabel = document.createElement("label");
         let askGender = document.createElement("select");
+        askGender.setAttribute("id", "heroGender");
         genderLabel.for = askGender;
         genderLabel.textContent = "What is your gender?";
         askQuestion.append(genderLabel);
@@ -84,6 +92,7 @@ function getUserData(){
         //Create question for SO name
         let nameSOLabel = document.createElement("label");
         let askSOName = document.createElement("input");
+        askSOName.setAttribute("id", "SOName");
         nameSOLabel.for = askSOName;
         askSOName.type = "text";
         nameSOLabel.textContent = "What is your name?";
@@ -93,6 +102,7 @@ function getUserData(){
         //Create question for SO gender selection dropdown
         let genderSOLabel = document.createElement("label");
         let askSOGender = document.createElement("select");
+        askSOGender.setAttribute("id", "SOGender");
         genderSOLabel.for = askSOGender;
         genderSOLabel.textContent = "What is your gender?";
         askSOQuestion.append(genderSOLabel);
@@ -122,16 +132,35 @@ function getUserData(){
         submitBtn.classList.add("submitData");
         submitBtn.addEventListener("click", getData);
         askBody.append(submitBtn);
-    // }
 }
 
 
 function getData(){
-    let saveName = document.querySelector("input").value;
-    let saveGender = document.querySelector("select").value
+    let saveName = document.getElementById("heroName").value;
+    let saveGender = document.getElementById("heroGender").value;
+    let saveSOName = document.getElementById("SOName").value;
+    let saveSOGender = document.getElementById("SOGender").value;
     getName(saveName);
     getGender(saveGender);
-    document.getElementsByClassName("askQuestionShadow")[0].style.visibility = "hidden";
+    getSOName(saveSOName);
+    getSOGender(saveSOGender);
+    // localStorage.setItem("name", saveName);
+    // localStorage.setItem("gender", saveGender);
+    // localStorage.setItem("SOname", saveSOName);
+    // localStorage.setItem("SOgender", saveSOGender);
+
+    //show items in local storage
+    for (var i = 0; i < localStorage.length; i++){
+        console.log(localStorage.getItem(localStorage.key(i)));
+    }
+
+    //delete anything in textBody
+    let askBody = document.getElementsByClassName("textBody")[0];
+    while(askBody.firstChild){
+        askBody.removeChild(askBody.firstChild);
+    };
+    document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
+
 }
 
 //set name in local storage
@@ -161,7 +190,3 @@ function getSOGender(saveSOGender){
     return SOgender;
 }
 
-//show items in local storage
-for (var i = 0; i < localStorage.length; i++){
-    console.log(localStorage.getItem(localStorage.key(i)));
-}

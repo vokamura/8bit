@@ -9,7 +9,7 @@ function runIntro(){
 }
 
 function introPage(){
-    // if(localStorage.getItem("name") !== null){
+    // if(localStorage.getItem("name") !== null || localStorage.getItem("name") !== undefined){
         let shadow = document.getElementsByClassName("textShadow")[0];
         shadow.style.visibility = "visible";
         let askBody = document.getElementsByClassName("textBody")[0];
@@ -54,10 +54,8 @@ function closeWindow(){
     while(askBody.firstChild){
         askBody.removeChild(askBody.firstChild);
     };
-
     document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
 }
-
 
 function getUserData(){
         let shadow = document.getElementsByClassName("textShadow")[0];
@@ -75,7 +73,6 @@ function getUserData(){
         questionTitle.classList.add("question");
         askBody.append(questionTitle);
 
-        //Create Question form
         let askQuestion = document.createElement("form");
 
         //Create question for name

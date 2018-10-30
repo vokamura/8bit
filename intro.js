@@ -15,7 +15,6 @@ function introPage(){
         let askBody = document.getElementsByClassName("textBody")[0];
         askBody.style.textAlign = "center";
 
-
         let introTitle = document.createElement("h2");
         introTitle.classList.add("intro");
         introTitle.textContent = `Good morning, ${chosenHero.name}!`;
@@ -38,7 +37,6 @@ function introPage(){
 
         let welcome = document.createElement("div");
         welcome.classList.add("intro");
-        // welcome.style.fontSize = 24;
         welcome.textContent = `Welcome to: The Hangry Games`;
         askBody.append(welcome);
 
@@ -46,19 +44,20 @@ function introPage(){
         submitBtn.type = "button";
         submitBtn.textContent = "Next";
         submitBtn.classList.add("submitData");
-        submitBtn.addEventListener("click", closeWindow());
+        submitBtn.addEventListener("click", closeWindow);
         askBody.append(submitBtn);
     // }
 }
 
-// function closeWindow(){
-//     let askBody = document.getElementsByClassName("textBody")[0];
-//     while(askBody.firstChild){
-//         askBody.removeChild(askBody.firstChild);
-//     };
+function closeWindow(){
+    let askBody = document.getElementsByClassName("textBody")[0];
+    while(askBody.firstChild){
+        askBody.removeChild(askBody.firstChild);
+    };
 
-//     document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
-// }
+    document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
+}
+
 
 function getUserData(){
         let shadow = document.getElementsByClassName("textShadow")[0];

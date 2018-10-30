@@ -11,9 +11,13 @@ class Hero {
         // this.food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck Stick"];
         // this.favoriteFood = food[Math.floor(Math.random()*food.length)];
         this.favoriteFood = function(){
-            let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck Stick"];
+            let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
             return food[Math.floor(Math.random()*food.length)];
-        }
+        };
+        this.favoriteShow = function(){
+            let show = ["Stranger Things", "Black Mirror", "The Good Place"];
+            return show[Math.floor(Math.random()*show.length)];
+        };
         this.xPosition = 0;
         this.yPosition = 350;
         this.heroReady = false;

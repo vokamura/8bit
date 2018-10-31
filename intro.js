@@ -12,53 +12,34 @@ function runIntro(){
 
 }
 
-function introPage(){
-    // if(localStorage.getItem("name") !== null || localStorage.getItem("name") !== undefined){
-        let shadow = document.getElementsByClassName("textShadow")[0];
-        shadow.style.visibility = "visible";
-        let askBody = document.getElementsByClassName("textBody")[0];
-        askBody.style.textAlign = "center";
+function getData(){
+    let saveName = document.getElementById("heroName").value;
+    let saveGender = document.getElementById("heroGender").value;
+    let saveSOName = document.getElementById("SOName").value;
+    let saveSOGender = document.getElementById("SOGender").value;
+    // getName(saveName);
+    // getGender(saveGender);
+    // getSOName(saveSOName);
+    // getSOGender(saveSOGender);
+    localStorage.setItem("name", saveName);
+    localStorage.setItem("gender", saveGender);
+    localStorage.setItem("SOname", saveSOName);
+    localStorage.setItem("SOgender", saveSOGender);
 
-        let introTitle = document.createElement("h2");
-        introTitle.classList.add("intro");
-        introTitle.textContent = `Good morning, ${chosenHero.name}!`;
-        askBody.append(introTitle);
+    //show items in local storage
+    for (var i = 0; i < localStorage.length; i++){
+        console.log(localStorage.getItem(localStorage.key(i)));
+    }
 
-        let introBody = document.createElement("div");
-        introBody.classList.add("intro");
-        introBody.textContent = `It's morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
-        askBody.append(introBody);
-
-        let instructions = document.createElement("div");
-        instructions.classList.add("intro");
-        instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood}, but doesn't want to go outside.  They just want to sit and watch ${chosenHero.favoriteShow} all day.`;
-        askBody.append(instructions);
-
-        let mission = document.createElement("div");
-        mission.classList.add("intro");
-        mission.textContent = `Your mission is to traverse the wonder that is Los Angeles from your suburb of Torrance, to retrieve the ${chosenHero.favoriteFood}`;
-        askBody.append(mission);
-
-        let welcome = document.createElement("div");
-        welcome.classList.add("intro");
-        welcome.textContent = `Welcome to: The Hangry Games`;
-        askBody.append(welcome);
-
-        let submitBtn = document.createElement("button");
-        submitBtn.type = "button";
-        submitBtn.textContent = "Next";
-        submitBtn.classList.add("submitData");
-        submitBtn.addEventListener("click", closeWindow);
-        askBody.append(submitBtn);
-    // }
-}
-
-function closeWindow(){
+    //delete anything in textBody
     let askBody = document.getElementsByClassName("textBody")[0];
     while(askBody.firstChild){
         askBody.removeChild(askBody.firstChild);
     };
-    document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
+
+    introPage();
+    // document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
+
 }
 
 function getUserData(){
@@ -170,39 +151,58 @@ function getUserData(){
         submitBtn.type = "button";
         submitBtn.textContent = "Next";
         submitBtn.classList.add("submitData");
+        submitBtn.style.float = "right";
         submitBtn.addEventListener("click", getData);
         askBody.append(submitBtn);
 }
 
+function introPage(){
+    // if(localStorage.getItem("name") !== null || localStorage.getItem("name") !== undefined){
+        let shadow = document.getElementsByClassName("textShadow")[0];
+        shadow.style.visibility = "visible";
+        let askBody = document.getElementsByClassName("textBody")[0];
+        askBody.style.textAlign = "center";
 
-function getData(){
-    let saveName = document.getElementById("heroName").value;
-    let saveGender = document.getElementById("heroGender").value;
-    let saveSOName = document.getElementById("SOName").value;
-    let saveSOGender = document.getElementById("SOGender").value;
-    // getName(saveName);
-    // getGender(saveGender);
-    // getSOName(saveSOName);
-    // getSOGender(saveSOGender);
-    localStorage.setItem("name", saveName);
-    localStorage.setItem("gender", saveGender);
-    localStorage.setItem("SOname", saveSOName);
-    localStorage.setItem("SOgender", saveSOGender);
+        let introTitle = document.createElement("h2");
+        introTitle.classList.add("intro");
+        introTitle.textContent = `Good morning, ${chosenHero.name}!`;
+        askBody.append(introTitle);
 
-    //show items in local storage
-    for (var i = 0; i < localStorage.length; i++){
-        console.log(localStorage.getItem(localStorage.key(i)));
-    }
+        let introBody = document.createElement("div");
+        introBody.classList.add("intro");
+        introBody.textContent = `It's morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
+        askBody.append(introBody);
 
-    //delete anything in textBody
+        let instructions = document.createElement("div");
+        instructions.classList.add("intro");
+        instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood}, but doesn't want to go outside.  They just want to sit and watch ${chosenHero.favoriteShow} all day.`;
+        askBody.append(instructions);
+
+        let mission = document.createElement("div");
+        mission.classList.add("intro");
+        mission.textContent = `Your mission is to traverse the wonder that is Los Angeles from your suburb of Torrance, to retrieve the ${chosenHero.favoriteFood}`;
+        askBody.append(mission);
+
+        let welcome = document.createElement("div");
+        welcome.classList.add("intro");
+        welcome.textContent = `Welcome to: The Hangry Games`;
+        askBody.append(welcome);
+
+        let submitBtn = document.createElement("button");
+        submitBtn.type = "button";
+        submitBtn.textContent = "Next";
+        submitBtn.classList.add("submitData");
+        submitBtn.addEventListener("click", closeWindow);
+        askBody.append(submitBtn);
+    // }
+}
+
+function closeWindow(){
     let askBody = document.getElementsByClassName("textBody")[0];
     while(askBody.firstChild){
         askBody.removeChild(askBody.firstChild);
     };
-
-    introPage();
-    // document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
-
+    document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
 }
 
 // //set name in local storage

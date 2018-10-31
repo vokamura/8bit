@@ -28,8 +28,8 @@ class Door {
 
 function loadScooter(){
     firstDoor.doorReady = true;
-    firstDoor.xPosition = Math.random() * (gameCanvas.width - 150);
-    firstDoor.yPosition = Math.random() * (gameCanvas.width - 275);
+    firstDoor.xPosition = Math.random() * (gameCanvas.width - 250);
+    firstDoor.yPosition = Math.random() * (gameCanvas.height - 250);
     if(firstDoor.doorReady){
         firstDoor.doorImage.onload = function(){
             ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);

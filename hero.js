@@ -4,14 +4,10 @@ class Hero {
         this.gender = localStorage.getItem("gender");
         this.SOname = localStorage.getItem("SOname");
         this.SOgender = localStorage.getItem("SOgender");
-        // this.favoriteFood = function(){
-        //     let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
-        //     return food[Math.floor(Math.random()*food.length)];
-        // };
         this.favoriteFood = '';
         this.favoriteShow = '';
         this.xPosition = 0;
-        this.yPosition = 350;
+        this.yPosition = 400;
         this.heroReady = false;
         this.heroImage = new Image();
         this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
@@ -42,7 +38,6 @@ class Hero {
         }
         this.drawHero();
         this.checkForDoor();
-
     }
     moveBack(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
@@ -86,7 +81,6 @@ class Hero {
         }
         this.drawHero();
         this.checkForDoor();
-
     }
     drawHero(){
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
@@ -97,6 +91,11 @@ class Hero {
             && firstDoor.xPosition <= (chosenHero.xPosition + 32)
             && chosenHero.yPosition <= (firstDoor.yPosition + 32)
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
+            && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
+            // chosenHero.xPosition == (firstDoor.xPosition + 32)
+            // && firstDoor.xPosition == (chosenHero.xPosition + 32)
+            // && chosenHero.yPosition == (firstDoor.yPosition + 32)
+            // && firstDoor.yPosition == (chosenHero.yPosition + 32)
         ){
             console.log("Enter door");
             let shadow = document.getElementsByClassName("textShadow")[0];
@@ -108,7 +107,27 @@ class Hero {
             introTitle.classList.add("intro");
             introTitle.textContent = `You've reached a scooter!`;
             askBody.append(introTitle);
+
+            let choiceTitle = document.createElement("h2");
+            choiceTitle.classList.add("intro");
+            choiceTitle.textContent = `Would you like to take the scooter or walk?`;
+            askBody.append(choiceTitle);
            
+            let scooterBtn = document.createElement("button");
+            scooterBtn.type = "button";
+            scooterBtn.textContent = "Scooter";
+            scooterBtn.classList.add("submitData");
+            scooterBtn.style.float = "left";
+            // scooterBtn.addEventListener("click", getData);
+            askBody.append(scooterBtn);
+
+            let walkBtn = document.createElement("button");
+            walkBtn.type = "button";
+            walkBtn.textContent = "Walk";
+            walkBtn.classList.add("submitData");
+            walkBtn.style.float = "right";
+            // submitBtn.addEventListener("click", getData);
+            askBody.append(walkBtn);
         }
         
             

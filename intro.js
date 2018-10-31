@@ -1,8 +1,12 @@
 function runIntro(){
     if (localStorage.getItem("name") === "undefined" || localStorage.getItem("name") === null){
+        chosenHero.pickFood();
+        chosenHero.pickShow();
         getUserData();
     }
     else {
+        chosenHero.pickFood();
+        chosenHero.pickFood();
         introPage();
     }
 
@@ -22,17 +26,17 @@ function introPage(){
 
         let introBody = document.createElement("div");
         introBody.classList.add("intro");
-        introBody.textContent = `It's Saturday morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
+        introBody.textContent = `It's morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
         askBody.append(introBody);
 
         let instructions = document.createElement("div");
         instructions.classList.add("intro");
-        instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood()}, but doesn't want to go outside.  They just want to sit and watch ${chosenHero.favoriteShow()} all day.`;
+        instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood}, but doesn't want to go outside.  They just want to sit and watch ${chosenHero.favoriteShow} all day.`;
         askBody.append(instructions);
 
         let mission = document.createElement("div");
         mission.classList.add("intro");
-        mission.textContent = `Your mission is to traverse the wonder that is Los Angeles from your suburb of Torrance, to retrieve the ${chosenHero.favoriteFood()}`;
+        mission.textContent = `Your mission is to traverse the wonder that is Los Angeles from your suburb of Torrance, to retrieve the ${chosenHero.favoriteFood}`;
         askBody.append(mission);
 
         let welcome = document.createElement("div");

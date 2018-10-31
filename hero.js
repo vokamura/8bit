@@ -4,14 +4,12 @@ class Hero {
         this.gender = localStorage.getItem("gender");
         this.SOname = localStorage.getItem("SOname");
         this.SOgender = localStorage.getItem("SOgender");
-        this.favoriteFood = function(){
-            let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
-            return food[Math.floor(Math.random()*food.length)];
-        };
-        this.favoriteShow = function(){
-            let show = ["Stranger Things", "Black Mirror", "The Good Place"];
-            return show[Math.floor(Math.random()*show.length)];
-        };
+        // this.favoriteFood = function(){
+        //     let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
+        //     return food[Math.floor(Math.random()*food.length)];
+        // };
+        this.favoriteFood = '';
+        this.favoriteShow = '';
         this.xPosition = 0;
         this.yPosition = 350;
         this.heroReady = false;
@@ -26,7 +24,11 @@ class Hero {
     }
     pickFood(){
         let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
-        return food[Math.floor(Math.random()*food.length)];
+        this.favoriteFood = food[Math.floor(Math.random()*food.length)];
+    }
+    pickShow(){
+        let show = ["Stranger Things", "Black Mirror", "The Good Place"];
+        this.favoriteShow = show[Math.floor(Math.random()*show.length)];
     }
     moveForward(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
@@ -108,7 +110,7 @@ class Hero {
             askBody.append(introTitle);
            
         }
-
+        
             
     }
     interact(){

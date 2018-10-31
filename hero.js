@@ -27,60 +27,68 @@ class Hero {
         this.favoriteShow = show[Math.floor(Math.random()*show.length)];
     }
     moveForward(){
-        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
-        loadBackground();
-        firstDoor.drawDoor();
-        this.xPosition = this.xPosition + 10;
-        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
-            this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
-        } else {
-            this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+        if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
+            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            loadBackground();
+            firstDoor.drawDoor();
+            this.xPosition = this.xPosition + 10;
+            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
+                this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
+            } else {
+                this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+            }
+            this.drawHero();
+            this.checkForDoor();
         }
-        this.drawHero();
-        this.checkForDoor();
     }
     moveBack(){
-        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
-        loadBackground();
-        firstDoor.drawDoor();
-        if (this.xPosition > 0){
-            this.xPosition = this.xPosition - 10;
+        if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
+            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            loadBackground();
+            firstDoor.drawDoor();
+            if (this.xPosition > 0){
+                this.xPosition = this.xPosition - 10;
+            }
+            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
+                this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
+            } else {
+                this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
+            }
+            this.drawHero();
+            this.checkForDoor();
         }
-        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
-            this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
-        } else {
-            this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
-        }
-        this.drawHero();
-        this.checkForDoor();
     }
     moveUp(){
-        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
-        loadBackground();
-        firstDoor.drawDoor();
-        if (this.yPosition > 0){
-            this.yPosition = this.yPosition - 10;
+        if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
+            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            loadBackground();
+            firstDoor.drawDoor();
+            if (this.yPosition > 0){
+                this.yPosition = this.yPosition - 10;
+            }
+            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_back_rightfoot.png"){
+                this.heroImage.src = "style/images/boy_sprite/sprite_back_leftfoot.png";
+            } else {
+                this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
+            }
+            this.drawHero();
+            this.checkForDoor();
         }
-        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_back_rightfoot.png"){
-            this.heroImage.src = "style/images/boy_sprite/sprite_back_leftfoot.png";
-        } else {
-            this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
-        }
-        this.drawHero();
-        this.checkForDoor();
     }
     moveDown(){
-        ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
-        loadBackground();
-        firstDoor.drawDoor();
-        this.yPosition = this.yPosition + 10;
-        if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
-            this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";
-        } else {
-            this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
+        if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
+            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            loadBackground();
+            firstDoor.drawDoor();
+            this.yPosition = this.yPosition + 10;
+            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
+                this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";
+            } else {
+                this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
+            }
+            this.drawHero();
+            this.checkForDoor();
         }
-        this.drawHero();
-        this.checkForDoor();
     }
     drawHero(){
         ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
@@ -92,45 +100,16 @@ class Hero {
             && chosenHero.yPosition <= (firstDoor.yPosition + 32)
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
-            // chosenHero.xPosition == (firstDoor.xPosition + 32)
-            // && firstDoor.xPosition == (chosenHero.xPosition + 32)
-            // && chosenHero.yPosition == (firstDoor.yPosition + 32)
-            // && firstDoor.yPosition == (chosenHero.yPosition + 32)
         ){
-            console.log("Enter door");
-            let shadow = document.getElementsByClassName("textShadow")[0];
-            shadow.style.visibility = "visible";
-            let askBody = document.getElementsByClassName("textBody")[0];
-            askBody.style.textAlign = "center";
-
-            let introTitle = document.createElement("h2");
-            introTitle.classList.add("intro");
-            introTitle.textContent = `You've reached a scooter!`;
-            askBody.append(introTitle);
-
-            let choiceTitle = document.createElement("h2");
-            choiceTitle.classList.add("intro");
-            choiceTitle.textContent = `Would you like to take the scooter or walk?`;
-            askBody.append(choiceTitle);
-           
-            let scooterBtn = document.createElement("button");
-            scooterBtn.type = "button";
-            scooterBtn.textContent = "Scooter";
-            scooterBtn.classList.add("submitData");
-            scooterBtn.style.float = "left";
-            // scooterBtn.addEventListener("click", getData);
-            askBody.append(scooterBtn);
-
-            let walkBtn = document.createElement("button");
-            walkBtn.type = "button";
-            walkBtn.textContent = "Walk";
-            walkBtn.classList.add("submitData");
-            walkBtn.style.float = "right";
-            // submitBtn.addEventListener("click", getData);
-            askBody.append(walkBtn);
-        }
-        
-            
+            scooterCheck();
+        }   
+    }
+    rideScooter(){
+        console.log("user is riding scooter");
+        clearWindow();
+    }
+    walk(){
+        console.log("user is walking");
     }
     interact(){
         console.log("interaction");

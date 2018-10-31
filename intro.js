@@ -31,11 +31,7 @@ function getData(){
         console.log(localStorage.getItem(localStorage.key(i)));
     }
 
-    //delete anything in textBody
-    let askBody = document.getElementsByClassName("textBody")[0];
-    while(askBody.firstChild){
-        askBody.removeChild(askBody.firstChild);
-    };
+    clearWindow();
 
     introPage();
     // document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
@@ -192,9 +188,18 @@ function introPage(){
         submitBtn.type = "button";
         submitBtn.textContent = "Next";
         submitBtn.classList.add("submitData");
+        submitBtn.style.float = "right";
         submitBtn.addEventListener("click", closeWindow);
         askBody.append(submitBtn);
     // }
+}
+
+function clearWindow(){
+    //delete anything in textBody
+    let askBody = document.getElementsByClassName("textBody")[0];
+    while(askBody.firstChild){
+        askBody.removeChild(askBody.firstChild);
+    };
 }
 
 function closeWindow(){

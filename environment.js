@@ -26,6 +26,15 @@ class Door {
     }
 }
 
+function loadHero(){
+    chosenHero.heroReady = true;
+    if(chosenHero.heroReady){
+        chosenHero.heroImage.onload = function(){
+            ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+        }
+    }
+}
+
 function loadScooter(){
     firstDoor.doorReady = true;
     firstDoor.xPosition = Math.random() * (gameCanvas.width - 250);
@@ -37,13 +46,50 @@ function loadScooter(){
     }
 }
 
-function loadHero(){
-    chosenHero.heroReady = true;
-    if(chosenHero.heroReady){
-        chosenHero.heroImage.onload = function(){
-            ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
-        }
-    }
+function scooterCheck(){
+    let shadow = document.getElementsByClassName("textShadow")[0];
+    shadow.style.visibility = "visible";
+    let askBody = document.getElementsByClassName("textBody")[0];
+    askBody.style.textAlign = "center";
+
+    let introTitle = document.createElement("h2");
+    introTitle.classList.add("intro");
+    introTitle.textContent = `You've reached a scooter!`;
+    askBody.append(introTitle);
+
+    let choiceTitle = document.createElement("div");
+    choiceTitle.classList.add("intro");
+    choiceTitle.textContent = `Would you like to take the scooter or walk?`;
+    askBody.append(choiceTitle);
+
+    let scooterChoice = document.createElement("div");
+    scooterChoice.classList.add("intro");
+    scooterChoice.textContent = `Choose the scooter to play a mini-game and get there faster!`;
+    askBody.append(scooterChoice);
+
+    let walkChoice = document.createElement("div");
+    walkChoice.classList.add("intro");
+    walkChoice.textContent = `Choose walk and get there a lot slower`;
+    askBody.append(walkChoice);
+   
+    let scooterBtn = document.createElement("button");
+    scooterBtn.type = "button";
+    scooterBtn.textContent = "Scooter";
+    scooterBtn.classList.add("submitData");
+    scooterBtn.style.float = "left";
+    scooterBtn.addEventListener("click", chosenHero.rideScooter);
+    askBody.append(scooterBtn);
+
+    let walkBtn = document.createElement("button");
+    walkBtn.type = "button";
+    walkBtn.textContent = "Walk";
+    walkBtn.classList.add("submitData");
+    walkBtn.style.float = "right";
+    walkBtn.addEventListener("click", chosenHero.walk);
+    askBody.append(walkBtn);
+
+    let mmGame = new MemoryMatch();
+    mmGame.layoutCards();
 }
 
 function runGame() {

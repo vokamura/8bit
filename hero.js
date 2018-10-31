@@ -1,38 +1,34 @@
 class Hero {
     constructor(name, gender, SOname, SOgender){
-        // this.name = name;
-        // this.gender = gender;
-        // this.SOname = SOname;
-        // this.SOgender = SOgender;
         this.name = localStorage.getItem("name");
         this.gender = localStorage.getItem("gender");
         this.SOname = localStorage.getItem("SOname");
         this.SOgender = localStorage.getItem("SOgender");
-        // this.food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck Stick"];
-        // this.favoriteFood = food[Math.floor(Math.random()*food.length)];
-        this.favoriteFood = function(){
-            let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
-            return food[Math.floor(Math.random()*food.length)];
-        };
-        this.favoriteShow = function(){
-            let show = ["Stranger Things", "Black Mirror", "The Good Place"];
-            return show[Math.floor(Math.random()*show.length)];
-        };
+        // this.favoriteFood = function(){
+        //     let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
+        //     return food[Math.floor(Math.random()*food.length)];
+        // };
+        this.favoriteFood = '';
+        this.favoriteShow = '';
         this.xPosition = 0;
         this.yPosition = 350;
         this.heroReady = false;
         this.heroImage = new Image();
         this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
-        this.requestAnimationFrame = window.requestAnimationFrame || 
-                window.mozRequestAnimationFrame || 
-                window.webkitRequestAnimationFrame || 
-                window.msRequestAnimationFrame;
     }
     sayName(){
         console.log(name);
     }
     returnGender(){
         console.log(gender);
+    }
+    pickFood(){
+        let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
+        this.favoriteFood = food[Math.floor(Math.random()*food.length)];
+    }
+    pickShow(){
+        let show = ["Stranger Things", "Black Mirror", "The Good Place"];
+        this.favoriteShow = show[Math.floor(Math.random()*show.length)];
     }
     moveForward(){
         ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
@@ -103,30 +99,18 @@ class Hero {
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
         ){
             console.log("Enter door");
-            // ctx.clearRect(0, 0, 160, 160);
+            let shadow = document.getElementsByClassName("textShadow")[0];
+            shadow.style.visibility = "visible";
+            let askBody = document.getElementsByClassName("textBody")[0];
+            askBody.style.textAlign = "center";
 
-            let angle = 0;
-
-            
-
-            // color in the background
-            ctx.fillStyle = "#EEEEEE";
-            // ctx.fillRect(0, 0, 160, 160);
-            
-            // draw the circle
-            ctx.beginPath();
-            var radius = 25 + 150 * Math.abs(Math.cos(angle));
-            // var radius = 175;
-            ctx.arc(225, 225, radius, 0, Math.PI * 2, false);
-            ctx.closePath();
-            
-            // color in the circle
-            ctx.fillStyle = "#006699";
-            ctx.fill();
-
-            // requestAnimationFrame(this.checkForDoor);
-                }
-
+            let introTitle = document.createElement("h2");
+            introTitle.classList.add("intro");
+            introTitle.textContent = `You've reached a scooter!`;
+            askBody.append(introTitle);
+           
+        }
+        
             
     }
     interact(){

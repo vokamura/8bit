@@ -19,14 +19,14 @@ class Door {
         this.yPosition = 0;
         this.doorReady = false;
         this.doorImage = new Image();
-        this.doorImage.src = "style/images/environment/door.png";
+        this.doorImage.src = "style/images/environment/scooter.png";
     }
     drawDoor(){
         ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
     }
 }
 
-function loadDoor(){
+function loadScooter(){
     firstDoor.doorReady = true;
     firstDoor.xPosition = Math.random() * (gameCanvas.width - 150);
     firstDoor.yPosition = Math.random() * (gameCanvas.width - 275);
@@ -49,7 +49,7 @@ function loadHero(){
 function runGame() {
     loadCanvas();
     loadBackground();
-    loadDoor();
+    loadScooter();
     loadHero();
 }
 

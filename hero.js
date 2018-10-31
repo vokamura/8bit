@@ -105,8 +105,9 @@ class Hero {
         }   
     }
     rideScooter(){
-        console.log("user is riding scooter");
         clearWindow();
+        let mmGame = new MemoryMatch();
+        mmGame.layoutCards();
     }
     walk(){
         console.log("user is walking");

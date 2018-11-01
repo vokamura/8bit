@@ -19,11 +19,16 @@ class MemoryMatch {
 
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
+            cardBack.addEventListener("click", this.cardClicked);
 
             let cardContainer = document.createElement("div");
             cardContainer.append(cardFront);
             cardContainer.append(cardBack);
             this.game.append(cardContainer);
         };
+    }
+    cardClicked(event){
+        console.log(event.target);
+
     }
 }

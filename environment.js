@@ -87,9 +87,6 @@ function scooterCheck(){
     walkBtn.style.float = "right";
     walkBtn.addEventListener("click", chosenHero.walk);
     askBody.append(walkBtn);
-
-    let mmGame = new MemoryMatch();
-    mmGame.layoutCards();
 }
 
 function runGame() {

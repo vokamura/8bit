@@ -2,9 +2,10 @@ class MemoryMatch {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
+        this.firstCard = '';
+        this.secondCard = '';
     }
     layoutCards(){
-        console.log("Cards laid out")
         let introTitle = document.createElement("h2");
         introTitle.classList.add("intro");
         introTitle.textContent = `Quick! Match the cards to hop onto the scooter!`;
@@ -19,7 +20,8 @@ class MemoryMatch {
 
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
-            cardBack.addEventListener("click", this.cardClicked);
+            cardBack.addEventListener("click", this.handleCardClicked);
+            cardBack.setAttribute("id", "card" + [number]);
 
             let cardContainer = document.createElement("div");
             cardContainer.append(cardFront);
@@ -27,8 +29,12 @@ class MemoryMatch {
             this.game.append(cardContainer);
         };
     }
-    cardClicked(event){
-        console.log(event.target);
-
+    handleCardClicked(event){
+        console.log(event.target.id);
+        debugger;
+        if (this.firstCard == ''){
+            this.firstCard = event.target.id;
+            console.log(this.firstCard);
+        }
     }
 }

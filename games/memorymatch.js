@@ -31,10 +31,14 @@ class MemoryMatch {
     }
     handleCardClicked(event){
         console.log(event.target.id);
-        debugger;
-        if (this.firstCard == ''){
-            this.firstCard = event.target.id;
-            console.log(this.firstCard);
+        let firstCard = null;
+        let secondCard = null;
+        let matCounter = 0;
+        let possibleMatches = 4;
+        if (firstCard === null){
+            firstCard = this;
+            console.log(firstCard);
+            firstCard.style.display = "none";
         }
     }
 }

@@ -30,15 +30,22 @@ class MemoryMatch {
         };
     }
     handleCardClicked(event){
-        console.log(event.target.id);
-        let firstCard = null;
-        let secondCard = null;
-        let matCounter = 0;
+        console.log("This: ", this);
+        // let firstCard = null;
+        console.log("Initial first card: ", firstCard);
+        let matchCounter = 0;
         let possibleMatches = 4;
-        if (firstCard === null){
+        // debugger;
+        // this.firstCard = this;
+        if (firstCard === null || firstCard === undefined){
             firstCard = this;
-            console.log(firstCard);
+            console.log("First Card: ", firstCard);
             firstCard.style.display = "none";
+            return;
+        } else {
+            this.secondCard == this;
+            console.log(this.secondCard);
         }
     }
 }
+let firstCard = null;

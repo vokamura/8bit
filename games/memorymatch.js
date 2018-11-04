@@ -2,8 +2,8 @@ class MemoryMatch {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-        this.firstCard = null;
-        this.secondCard = null;
+        // this.firstCard = null;
+        // this.secondCard = null;
     }
     layoutCards(){
         let introTitle = document.createElement("h2");
@@ -32,16 +32,24 @@ class MemoryMatch {
     handleCardClicked(event){
         let matchCounter = 0;
         let possibleMatches = 4;
-        if (mmGame.firstCard === null || mmGame.firstCard === undefined){
-            mmGame.firstCard= this;
-            mmGame.firstCard.style.display = "none";
+        let firstCard = null;
+        let secondCard = null;
+        // debugger;
+        if (firstCard === null){
+            firstCard = event.target;
+            firstCard.style.display = "none";
+            console.log(firstCard);
             return;
-        } else if (mmGame.secondCard === null || mmGame.secondCard === undefined){
-            mmGame.secondCard = this;
-            mmGame.secondCard.style.display = "none";
+        } else if (secondCard === null){
+            secondCard = this;
+            secondCard.style.display = "none";
         } else {
             return;
         }
     }
 }
-let firstCard = null;
+// let firstCard = null;
+
+//take this out
+let mmGame = new MemoryMatch();
+mmGame.layoutCards();

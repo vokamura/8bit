@@ -87,6 +87,9 @@ function scooterCheck(){
     walkBtn.style.float = "right";
     walkBtn.addEventListener("click", chosenHero.walk);
     askBody.append(walkBtn);
+
+    let mmGame = new MemoryMatch();
+    mmGame.layoutCards();
 }
 
 function runGame() {
@@ -98,7 +101,6 @@ function runGame() {
 
 let gameCanvas = document.createElement("canvas");
 let ctx = gameCanvas.getContext("2d");
-// let chosenHero = new Hero(getName(),getGender(), getSOName(), getSOGender());
 let chosenHero = new Hero();
 let firstDoor = new Door();
 

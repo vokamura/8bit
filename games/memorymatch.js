@@ -2,8 +2,8 @@ class MemoryMatch {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-        this.firstCard = '';
-        this.secondCard = '';
+        this.firstCard = null;
+        this.secondCard = null;
     }
     layoutCards(){
         let introTitle = document.createElement("h2");
@@ -30,21 +30,17 @@ class MemoryMatch {
         };
     }
     handleCardClicked(event){
-        console.log("This: ", this);
-        // let firstCard = null;
-        console.log("Initial first card: ", firstCard);
         let matchCounter = 0;
         let possibleMatches = 4;
-        // debugger;
-        // this.firstCard = this;
-        if (firstCard === null || firstCard === undefined){
-            firstCard = this;
-            console.log("First Card: ", firstCard);
-            firstCard.style.display = "none";
+        if (mmGame.firstCard === null || mmGame.firstCard === undefined){
+            mmGame.firstCard= this;
+            mmGame.firstCard.style.display = "none";
             return;
+        } else if (mmGame.secondCard === null || mmGame.secondCard === undefined){
+            mmGame.secondCard = this;
+            mmGame.secondCard.style.display = "none";
         } else {
-            this.secondCard == this;
-            console.log(this.secondCard);
+            return;
         }
     }
 }

@@ -3,7 +3,6 @@ class MemoryMatch {
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
         this.firstCard = null;
-
         this.secondCard = null;
     }
 
@@ -37,13 +36,13 @@ class MemoryMatch {
     //     let possibleMatches = 4;
     //     let firstCard = null;
     //     let secondCard = null;
-    //     // debugger;
-    //     if (firstCard === null){
+    //     debugger;
+    //     if (firstCard == null){
     //         firstCard = this;
     //         firstCard.style.display = "none";
     //         console.log(firstCard);
     //         return;
-    //     } else if (secondCard === null){
+    //     } else if (secondCard == null){
     //         secondCard = this;
     //         secondCard.style.display = "none";
     //     } else {
@@ -55,7 +54,7 @@ class MemoryMatch {
         let matchCounter = 0;
         let possibleMatches = 4;
         // let firstCardClicked = this.firstCard;
-        // debugger;
+        debugger;
         // console.log(event.target);
         if (this.firstCard == null ){
             this.firstCard = this;

@@ -5,6 +5,7 @@ class MemoryMatch {
         this.firstCard = null;
         this.secondCard = null;
     }
+
     layoutCards(){
         let introTitle = document.createElement("h2");
         introTitle.classList.add("intro");
@@ -29,19 +30,48 @@ class MemoryMatch {
             this.game.append(cardContainer);
         };
     }
-    handleCardClicked(event){
+
+    // handleCardClicked(event){
+    //     let matchCounter = 0;
+    //     let possibleMatches = 4;
+    //     let firstCard = null;
+    //     let secondCard = null;
+    //     debugger;
+    //     if (firstCard == null){
+    //         firstCard = this;
+    //         firstCard.style.display = "none";
+    //         console.log(firstCard);
+    //         return;
+    //     } else if (secondCard == null){
+    //         secondCard = this;
+    //         secondCard.style.display = "none";
+    //     } else {
+    //         return;
+    //     }
+    // }
+
+    handleCardClicked(){
         let matchCounter = 0;
         let possibleMatches = 4;
-        if (mmGame.firstCard === null || mmGame.firstCard === undefined){
-            mmGame.firstCard= this;
-            mmGame.firstCard.style.display = "none";
-            return;
-        } else if (mmGame.secondCard === null || mmGame.secondCard === undefined){
-            mmGame.secondCard = this;
-            mmGame.secondCard.style.display = "none";
+        // let firstCardClicked = this.firstCard;
+        debugger;
+        // console.log(event.target);
+        if (this.firstCard == null ){
+            this.firstCard = this;
+            this.firstCard.style.display = "none";
+            console.log(this.firstCard);
+            return this.firstCard;
+        } else if (this.secondCard == null){
+            this.secondCard = this;
+            this.secondCard.style.display = "none";
         } else {
             return;
         }
     }
+
 }
-let firstCard = null;
+// let firstCard = null;
+
+//take this out
+let mmGame = new MemoryMatch();
+mmGame.layoutCards();

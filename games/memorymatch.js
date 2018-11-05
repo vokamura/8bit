@@ -4,6 +4,8 @@ class MemoryMatch {
         this.game = document.createElement("div");
         this.firstCard = null;
         this.secondCard = null;
+        this.matchCounter = 0;
+        this.possibleMatches = 4;
     }
 
     layoutCards(){
@@ -18,6 +20,9 @@ class MemoryMatch {
         for(let number =0; number < 8; number++){
             let cardFront = document.createElement("div");
             cardFront.classList.add("cardFront");
+            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/05.png", "style/images/memory_match/06.png", "style/images/memory_match/07.png", "style/images/memory_match/08.png"];
+            let image = document.createElement("img");
+            cardFront.append(image);
 
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
@@ -31,28 +36,7 @@ class MemoryMatch {
         };
     }
 
-    // handleCardClicked(event){
-    //     let matchCounter = 0;
-    //     let possibleMatches = 4;
-    //     let firstCard = null;
-    //     let secondCard = null;
-    //     debugger;
-    //     if (firstCard == null){
-    //         firstCard = this;
-    //         firstCard.style.display = "none";
-    //         console.log(firstCard);
-    //         return;
-    //     } else if (secondCard == null){
-    //         secondCard = this;
-    //         secondCard.style.display = "none";
-    //     } else {
-    //         return;
-    //     }
-    // }
-
     handleCardClicked(){
-        let matchCounter = 0;
-        let possibleMatches = 4;
         if (this.firstCard == null ){
             this.firstCard = event.target;
             this.firstCard.style.display = "none";
@@ -66,7 +50,6 @@ class MemoryMatch {
     }
 
 }
-// let firstCard = null;
 
 //take this out
 let mmGame = new MemoryMatch();

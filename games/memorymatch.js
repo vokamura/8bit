@@ -21,7 +21,7 @@ class MemoryMatch {
 
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
-            cardBack.addEventListener("click", this.handleCardClicked);
+            cardBack.addEventListener("click", this.handleCardClicked.bind(this));
             cardBack.setAttribute("id", "card" + [number]);
 
             let cardContainer = document.createElement("div");
@@ -53,16 +53,12 @@ class MemoryMatch {
     handleCardClicked(){
         let matchCounter = 0;
         let possibleMatches = 4;
-        // let firstCardClicked = this.firstCard;
-        debugger;
-        // console.log(event.target);
         if (this.firstCard == null ){
-            this.firstCard = this;
+            this.firstCard = event.target;
             this.firstCard.style.display = "none";
-            console.log(this.firstCard);
             return this.firstCard;
         } else if (this.secondCard == null){
-            this.secondCard = this;
+            this.secondCard = event.target;
             this.secondCard.style.display = "none";
         } else {
             return;

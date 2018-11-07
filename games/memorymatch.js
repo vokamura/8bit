@@ -22,8 +22,23 @@ class MemoryMatch {
             cardFront.classList.add("cardFront");
             let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/05.png", "style/images/memory_match/06.png", "style/images/memory_match/07.png", "style/images/memory_match/08.png"];
             let image = document.createElement("img");
-            cardFront.append(image);
+            image.setAttribute("id", [i]);
 
+            let randomPicArray = [];
+            while (imageList.length) {
+                var randomIndex = Math.floor(Math.random() * imageList.length);
+                randomPicArray.push(imageList[randomIndex]);
+                imageList.splice(randomIndex, 1);
+            }
+            console.log(randomPicArray);
+            console.log(document.getElementsByTagName("img"));
+            for (var i=0; i<randomPicArray.length-1; i++) {
+                console.log(document.getElementById(`${[i]}`));
+                // document.getElementById([i]).src = `${randomPicArray[i]}`
+            }
+
+            cardFront.append(image);
+// 
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
             cardBack.addEventListener("click", this.handleCardClicked.bind(this));

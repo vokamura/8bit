@@ -17,6 +17,6 @@
 .cardFront{
     height: 175px;
     width: 160px;
-    background-color: red;
+    /* background-color: red; */
     position: absolute;
 }

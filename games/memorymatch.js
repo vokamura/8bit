@@ -18,27 +18,24 @@ class MemoryMatch {
         this.game.classList.add("gameBody");
 
         for(let number =0; number < 8; number++){
-            let cardFront = document.createElement("div");
-            cardFront.classList.add("cardFront");
-            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/05.png", "style/images/memory_match/06.png", "style/images/memory_match/07.png", "style/images/memory_match/08.png"];
-            let image = document.createElement("img");
-            image.setAttribute("id", [i]);
-
             let randomPicArray = [];
+            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/05.png", "style/images/memory_match/06.png", "style/images/memory_match/07.png", "style/images/memory_match/08.png"];
+
             while (imageList.length) {
                 var randomIndex = Math.floor(Math.random() * imageList.length);
                 randomPicArray.push(imageList[randomIndex]);
                 imageList.splice(randomIndex, 1);
             }
-            console.log(randomPicArray);
-            console.log(document.getElementsByTagName("img"));
-            for (var i=0; i<randomPicArray.length-1; i++) {
-                console.log(document.getElementById(`${[i]}`));
-                // document.getElementById([i]).src = `${randomPicArray[i]}`
-            }
 
+            let cardFront = document.createElement("div");
+            cardFront.classList.add("cardFront");
+            let image = document.createElement("img");
+            // image.setAttribute("id", [number]);
+            image.src = `${randomPicArray[number]}`
+            image.style.height = "175px";
+            image.style.width = "160px";
             cardFront.append(image);
-// 
+
             let cardBack = document.createElement("div");
             cardBack.classList.add("cardBack");
             cardBack.addEventListener("click", this.handleCardClicked.bind(this));
@@ -52,6 +49,7 @@ class MemoryMatch {
     }
 
     handleCardClicked(){
+        console.log(event.target.previousSibling.childNodes[0]);
         if (this.firstCard == null ){
             this.firstCard = event.target;
             this.firstCard.style.display = "none";
@@ -59,6 +57,7 @@ class MemoryMatch {
         } else if (this.secondCard == null){
             this.secondCard = event.target;
             this.secondCard.style.display = "none";
+            console.log(this.firstCard.childNodes);
         } else {
             return;
         }

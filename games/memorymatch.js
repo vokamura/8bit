@@ -26,11 +26,11 @@ class MemoryMatch {
                 randomPicArray.push(imageList[randomIndex]);
                 imageList.splice(randomIndex, 1);
             }
-            
+
             let cardFront = document.createElement("div");
             cardFront.classList.add("cardFront");
             let image = document.createElement("img");
-            image.setAttribute("id", [number]);
+            // image.setAttribute("id", [number]);
             image.src = `${randomPicArray[number]}`
             image.style.height = "175px";
             image.style.width = "160px";
@@ -49,6 +49,7 @@ class MemoryMatch {
     }
 
     handleCardClicked(){
+        console.log(event.target.previousSibling.childNodes[0]);
         if (this.firstCard == null ){
             this.firstCard = event.target;
             this.firstCard.style.display = "none";
@@ -56,6 +57,7 @@ class MemoryMatch {
         } else if (this.secondCard == null){
             this.secondCard = event.target;
             this.secondCard.style.display = "none";
+            console.log(this.firstCard.childNodes);
         } else {
             return;
         }

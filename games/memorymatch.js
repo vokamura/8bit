@@ -49,7 +49,7 @@ class MemoryMatch {
     }
 
     handleCardClicked(){
-        console.log(event.target.previousSibling.childNodes[0]);
+        console.log(event.target.previousSibling.childNodes[0].src);
         if (this.firstCard == null ){
             this.firstCard = event.target;
             this.firstCard.style.display = "none";
@@ -57,7 +57,11 @@ class MemoryMatch {
         } else if (this.secondCard == null){
             this.secondCard = event.target;
             this.secondCard.style.display = "none";
-            console.log(this.firstCard.childNodes);
+            console.log(this.firstCard.previousSibling.childNodes[0].src);
+            console.log(this.secondCard.previousSibling.childNodes[0].src);
+            if(this.firstCard.previousSibling.childNodes[0].src == this.secondCard.previousSibling.childNodes[0].src){
+                console.log("A match!");
+            }
         } else {
             return;
         }

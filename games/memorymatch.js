@@ -19,7 +19,7 @@ class MemoryMatch {
 
         for(let number =0; number < 8; number++){
             let randomPicArray = [];
-            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/05.png", "style/images/memory_match/06.png", "style/images/memory_match/07.png", "style/images/memory_match/08.png"];
+            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png"];
 
             while (imageList.length) {
                 var randomIndex = Math.floor(Math.random() * imageList.length);
@@ -49,22 +49,31 @@ class MemoryMatch {
     }
 
     handleCardClicked(){
-        console.log(event.target.previousSibling.childNodes[0].src);
         if (this.firstCard == null ){
             this.firstCard = event.target;
-            this.firstCard.style.display = "none";
+            this.firstCard.style.visibility = "hidden";
             return this.firstCard;
-        } else if (this.secondCard == null){
-            this.secondCard = event.target;
-            this.secondCard.style.display = "none";
-            console.log(this.firstCard.previousSibling.childNodes[0].src);
-            console.log(this.secondCard.previousSibling.childNodes[0].src);
-            if(this.firstCard.previousSibling.childNodes[0].src == this.secondCard.previousSibling.childNodes[0].src){
-                console.log("A match!");
-            }
         } else {
-            return;
-        }
+            this.secondCard = event.target;
+            this.secondCard.style.visibility = "hidden";
+            if(this.firstCard.previousSibling.childNodes[0].src == this.secondCard.previousSibling.childNodes[0].src){
+                this.firstCard = null;
+                this.secondCard = null;
+                this.matchCounter++;
+                console.log(this.matchCounter);
+            } else {
+                console.log(this.firstCard.style[0]);
+                setTimeout( () => {
+                    this.firstCard.style.visibility = "visible";
+                    this.secondCard.style.visibility= "visible";
+                    this.firstCard = null;
+                    this.secondCard = null;
+                }), 3000;
+            }
+            if (this.matchCounter === 4){
+                console.log("you win!");
+            }
+        } 
     }
 
 }

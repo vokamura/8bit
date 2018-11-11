@@ -78,6 +78,6 @@ class MemoryMatch {
     }
 }
 
-//take this out
-let mmGame = new MemoryMatch();
-mmGame.layoutCards();
+// put this in for testing.
+// let mmGame = new MemoryMatch();
+// mmGame.layoutCards();

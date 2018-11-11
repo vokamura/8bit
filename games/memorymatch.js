@@ -17,20 +17,19 @@ class MemoryMatch {
         this.body.append(this.game);
         this.game.classList.add("gameBody");
 
-        for(let number =0; number < 8; number++){
-            let randomPicArray = [];
-            let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png"];
+        let randomPicArray = [];
+        let imageList = ["style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png", "style/images/memory_match/01.png", "style/images/memory_match/02.png", "style/images/memory_match/03.png", "style/images/memory_match/04.png"];
+        while (imageList.length) {
+            let randomIndex = Math.floor(Math.random() * imageList.length);
+            randomPicArray.push(imageList[randomIndex]);
+            imageList.splice(randomIndex, 1);
+        }
 
-            while (imageList.length) {
-                var randomIndex = Math.floor(Math.random() * imageList.length);
-                randomPicArray.push(imageList[randomIndex]);
-                imageList.splice(randomIndex, 1);
-            }
+        for (let number = 0; number < 8; number++){
 
             let cardFront = document.createElement("div");
             cardFront.classList.add("cardFront");
             let image = document.createElement("img");
-            // image.setAttribute("id", [number]);
             image.src = `${randomPicArray[number]}`
             image.style.height = "175px";
             image.style.width = "160px";
@@ -49,6 +48,9 @@ class MemoryMatch {
     }
 
     handleCardClicked(){
+        if (this.firstCard !== null && this.secondCard !== null) {
+            return;
+        }
         if (this.firstCard == null ){
             this.firstCard = event.target;
             this.firstCard.style.visibility = "hidden";
@@ -62,20 +64,18 @@ class MemoryMatch {
                 this.matchCounter++;
                 console.log(this.matchCounter);
             } else {
-                console.log(this.firstCard.style[0]);
-                setTimeout( () => {
+                setTimeout( ()=> {
                     this.firstCard.style.visibility = "visible";
                     this.secondCard.style.visibility= "visible";
                     this.firstCard = null;
                     this.secondCard = null;
-                }), 3000;
+                }, 1500);
             }
             if (this.matchCounter === 4){
                 console.log("you win!");
             }
         } 
     }
-
 }
 
 //take this out

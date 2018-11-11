@@ -63,17 +63,23 @@ class MemoryMatch {
                 console.log(this.matchCounter);
             } else {
                 console.log(this.firstCard.style[0]);
-                setTimeout( () => {
+                setTimeout( ()=> {
                     this.firstCard.style.visibility = "visible";
                     this.secondCard.style.visibility= "visible";
                     this.firstCard = null;
                     this.secondCard = null;
-                }), 3000;
+                }, 2000);
             }
             if (this.matchCounter === 4){
                 console.log("you win!");
             }
         } 
+    }
+    cardReset(){
+        this.firstCard.style.visibility = "visible";
+        this.secondCard.style.visibility= "visible";
+        this.firstCard = null;
+        this.secondCard = null;
     }
 
 }

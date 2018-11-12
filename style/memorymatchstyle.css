@@ -4,6 +4,7 @@
     grid-template-columns: 160px 160px 160px 160px;
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    margin-left: 32px;
 }
 
 .cardBack{

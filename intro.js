@@ -112,7 +112,7 @@ function getUserData(){
         askSOName.setAttribute("id", "SOName");
         nameSOLabel.for = askSOName;
         askSOName.type = "text";
-        nameSOLabel.textContent = "What is your name?";
+        nameSOLabel.textContent = "What is their name?";
         askSOQuestion.append(nameSOLabel);
         askSOQuestion.append(askSOName);
 
@@ -121,7 +121,7 @@ function getUserData(){
         let askSOGender = document.createElement("select");
         askSOGender.setAttribute("id", "SOGender");
         genderSOLabel.for = askSOGender;
-        genderSOLabel.textContent = "What is your gender?";
+        genderSOLabel.textContent = "What is their gender?";
         askSOQuestion.append(genderSOLabel);
 
         let SOmale = document.createElement("option");

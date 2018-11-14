@@ -83,3 +83,15 @@ input[type=text]{
     text-align: center;
     padding: 15px 0;
 }
+
+.centerButton {
+    float: center;
+    cursor: pointer;
+    font-family: "8bitwonder";
+    font-size: 16px;
+    padding: 5px;
+    text-align: center;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-left: 50px;
+}

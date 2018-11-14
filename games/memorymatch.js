@@ -87,7 +87,7 @@ class MemoryMatch {
                 let scooterBtn = document.createElement("button");
                 scooterBtn.type = "button";
                 scooterBtn.textContent = "Ride Scooter";
-                scooterBtn.classList.add("submitData");
+                scooterBtn.classList.add("centerButton");
                 scooterBtn.style.float = "left";
                 scooterBtn.addEventListener("click", this.onScooter);
                 askBody.append(scooterBtn);
@@ -96,6 +96,8 @@ class MemoryMatch {
     }
     onScooter(){
         console.log("Ride");
+        clearWindow();
+        closeWindow();
     }
 }
 

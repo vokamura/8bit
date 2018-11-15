@@ -85,11 +85,17 @@ function scooterCheck(){
     walkBtn.textContent = "Walk";
     walkBtn.classList.add("submitData");
     walkBtn.style.float = "right";
-    walkBtn.addEventListener("click", chosenHero.walk);
+    walkBtn.addEventListener("click", continueWalk);
     askBody.append(walkBtn);
 
     // let mmGame = new MemoryMatch();
     // mmGame.layoutCards();
+}
+
+function continueWalk(){
+    console.log("Keep walking");
+    clearWindow();
+    closeWindow();
 }
 
 function runGame() {

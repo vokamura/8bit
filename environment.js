@@ -96,6 +96,10 @@ function continueWalk(){
     console.log("Keep walking");
     clearWindow();
     closeWindow();
+    ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
+    ctx.fillStyle = "green";
+    ctx.fill();
+    chosenHero.drawHero();
 }
 
 function runGame() {

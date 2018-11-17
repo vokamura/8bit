@@ -100,6 +100,10 @@ function continueWalk(){
     ctx.fillStyle = "green";
     ctx.fill();
     chosenHero.drawHero();
+    firstDoor.xPosition = null;
+    firstDoor.yPosition = null;
+    console.log(firstDoor.xPosition);
+
 }
 
 function runGame() {
@@ -107,7 +111,6 @@ function runGame() {
     loadBackground();
     loadScooter();
     loadHero();
-    console.log(firstDoor.xPosition);
 }
 
 let gameCanvas = document.createElement("canvas");

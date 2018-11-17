@@ -6,7 +6,7 @@ function runIntro(){
     }
     else {
         chosenHero.pickFood();
-        chosenHero.pickFood();
+        chosenHero.pickShow();
         introPage();
     }
 }

@@ -36,15 +36,6 @@ class Door {
     }
 }
 
-// function loadHero(){
-//     chosenHero.heroReady = true;
-//     if(chosenHero.heroReady){
-//         chosenHero.heroImage.onload = function(){
-//             ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
-//         }
-//     }
-// }
-
 function reachScooter(){
     let shadow = document.getElementsByClassName("textShadow")[0];
     shadow.style.visibility = "visible";
@@ -89,7 +80,6 @@ function reachScooter(){
 }
 
 function continueWalk(){
-    console.log("Keep walking");
     clearWindow();
     closeWindow();
     ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
@@ -98,8 +88,6 @@ function continueWalk(){
     chosenHero.drawHero();
     firstDoor.xPosition = null;
     firstDoor.yPosition = null;
-    console.log(firstDoor.xPosition);
-
 }
 
 function runGame() {

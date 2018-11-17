@@ -93,9 +93,14 @@ class MemoryMatch {
         } 
     }
     onScooter(){
-        console.log("Ride");
         clearWindow();
         closeWindow();
+        ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
+        ctx.fillStyle = "green";
+        ctx.fill();
+        chosenHero.drawHero();
+        firstDoor.xPosition = null;
+        firstDoor.yPosition = null;
     }
 }
 

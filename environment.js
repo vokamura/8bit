@@ -22,7 +22,7 @@ class Door {
         this.doorImage.src = "style/images/environment/scooter.png";
     }
     drawDoor(){
-        ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
+        ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
     }
 }
 
@@ -36,6 +36,7 @@ function loadHero(){
 }
 
 function loadScooter(){
+    console.log("load scooter is run");
     firstDoor.doorReady = true;
     firstDoor.xPosition = Math.random() * (gameCanvas.width - 250);
     firstDoor.yPosition = Math.random() * (gameCanvas.height - 250);

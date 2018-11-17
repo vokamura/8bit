@@ -21,16 +21,20 @@ class Hero {
     pickFood(){
         let food = ["Umami Bacon Kale Salad", "Artisnal Kimchi Vegan Tacos", "Cheese Fried Egg and Duck on a Stick"];
         this.favoriteFood = food[Math.floor(Math.random()*food.length)];
+        console.log(this.favoriteFood);
     }
     pickShow(){
         let show = ["Stranger Things", "Black Mirror", "The Good Place"];
         this.favoriteShow = show[Math.floor(Math.random()*show.length)];
+        console.log(show, this.favoriteShow);
     }
     moveForward(){
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
             loadBackground();
-            firstDoor.drawDoor();
+            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+                firstDoor.drawDoor();
+            }
             this.xPosition = this.xPosition + 10;
             if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
                 this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
@@ -45,7 +49,9 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
             loadBackground();
-            firstDoor.drawDoor();
+            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+                firstDoor.drawDoor();
+            }
             if (this.xPosition > 0){
                 this.xPosition = this.xPosition - 10;
             }
@@ -62,7 +68,9 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
             loadBackground();
-            firstDoor.drawDoor();
+            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+                firstDoor.drawDoor();
+            }
             if (this.yPosition > 0){
                 this.yPosition = this.yPosition - 10;
             }
@@ -79,7 +87,9 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
             loadBackground();
-            firstDoor.drawDoor();
+            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+                firstDoor.drawDoor();
+            }
             this.yPosition = this.yPosition + 10;
             if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
                 this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";

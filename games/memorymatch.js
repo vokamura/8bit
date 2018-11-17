@@ -62,7 +62,6 @@ class MemoryMatch {
                 this.firstCard = null;
                 this.secondCard = null;
                 this.matchCounter++;
-                console.log(this.matchCounter);
             } else {
                 setTimeout( ()=> {
                     this.firstCard.style.visibility = "visible";
@@ -72,7 +71,6 @@ class MemoryMatch {
                 }, 1500);
             }
             if (this.matchCounter === 4){
-                // console.log("you win!");
                 clearWindow();
                 let shadow = document.getElementsByClassName("textShadow")[0];
                 shadow.style.visibility = "visible";

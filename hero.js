@@ -12,6 +12,14 @@ class Hero {
         this.heroImage = new Image();
         this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
     }
+    loadHero(){
+        this.heroReady = true;
+        if(this.heroReady){
+            this.heroImage.onload = function(){
+                ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+            }
+        }
+    }
     sayName(){
         console.log(name);
     }
@@ -107,10 +115,9 @@ class Hero {
             && firstDoor.xPosition <= (chosenHero.xPosition + 32)
             && chosenHero.yPosition <= (firstDoor.yPosition + 32)
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
-            // && firstDoor.doorReady == false
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
-            scooterCheck();
+            reachScooter();
         }   
     }
     rideScooter(){
@@ -118,9 +125,9 @@ class Hero {
         let mmGame = new MemoryMatch();
         mmGame.layoutCards();
     }
-    walk(){
-        console.log("user is walking");
-    }
+    // walk(){
+    //     console.log("user is walking");
+    // }
     interact(){
         console.log("interaction");
     }

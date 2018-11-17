@@ -165,12 +165,11 @@ function introPage(){
 
         let introBody = document.createElement("div");
         introBody.classList.add("intro");
-        introBody.textContent = `It's morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
+        introBody.textContent = `It's your significant other, ${chosenHero.SOname}'s birthday!`;
         askBody.append(introBody);
 
         let instructions = document.createElement("div");
         instructions.classList.add("intro");
-        console.log(chosenHero.favoriteShow);
         instructions.textContent = `${chosenHero.SOname} really wants their favorite food, ${chosenHero.favoriteFood}, but doesn't want to go outside.  They just want to sit and watch ${chosenHero.favoriteShow} all day.`;
         askBody.append(instructions);
 

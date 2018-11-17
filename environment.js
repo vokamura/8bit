@@ -107,6 +107,7 @@ function runGame() {
     loadBackground();
     loadScooter();
     loadHero();
+    console.log(firstDoor.xPosition);
 }
 
 let gameCanvas = document.createElement("canvas");

@@ -99,6 +99,7 @@ class Hero {
             && firstDoor.xPosition <= (chosenHero.xPosition + 32)
             && chosenHero.yPosition <= (firstDoor.yPosition + 32)
             && firstDoor.yPosition <= (chosenHero.yPosition + 32)
+            // && firstDoor.doorReady == false
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
             scooterCheck();

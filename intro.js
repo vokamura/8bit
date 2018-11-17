@@ -6,10 +6,9 @@ function runIntro(){
     }
     else {
         chosenHero.pickFood();
-        chosenHero.pickFood();
+        chosenHero.pickShow();
         introPage();
     }
-
 }
 
 function getData(){
@@ -166,7 +165,7 @@ function introPage(){
 
         let introBody = document.createElement("div");
         introBody.classList.add("intro");
-        introBody.textContent = `It's morning and it's your significant other, ${chosenHero.SOname}'s birthday!`;
+        introBody.textContent = `It's your significant other, ${chosenHero.SOname}'s birthday!`;
         askBody.append(introBody);
 
         let instructions = document.createElement("div");

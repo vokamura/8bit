@@ -22,31 +22,21 @@ class Door {
         this.doorImage.src = "style/images/environment/scooter.png";
     }
     drawDoor(){
-        ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
+        ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
     }
-}
-
-function loadHero(){
-    chosenHero.heroReady = true;
-    if(chosenHero.heroReady){
-        chosenHero.heroImage.onload = function(){
-            ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+    loadScooter(){
+        this.doorReady = true;
+        this.xPosition = Math.random() * (gameCanvas.width - 250);
+        this.yPosition = Math.random() * (gameCanvas.height - 250);
+        if(this.doorReady){
+            this.doorImage.onload = function(){
+                ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
+            }
         }
     }
 }
 
-function loadScooter(){
-    firstDoor.doorReady = true;
-    firstDoor.xPosition = Math.random() * (gameCanvas.width - 250);
-    firstDoor.yPosition = Math.random() * (gameCanvas.height - 250);
-    if(firstDoor.doorReady){
-        firstDoor.doorImage.onload = function(){
-            ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
-        }
-    }
-}
-
-function scooterCheck(){
+function reachScooter(){
     let shadow = document.getElementsByClassName("textShadow")[0];
     shadow.style.visibility = "visible";
     let askBody = document.getElementsByClassName("textBody")[0];
@@ -87,27 +77,24 @@ function scooterCheck(){
     walkBtn.style.float = "right";
     walkBtn.addEventListener("click", continueWalk);
     askBody.append(walkBtn);
-
-    // let mmGame = new MemoryMatch();
-    // mmGame.layoutCards();
 }
 
 function continueWalk(){
-    console.log("Keep walking");
     clearWindow();
     closeWindow();
     ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
     ctx.fillStyle = "green";
     ctx.fill();
     chosenHero.drawHero();
+    firstDoor.xPosition = null;
+    firstDoor.yPosition = null;
 }
 
 function runGame() {
     loadCanvas();
     loadBackground();
-    loadScooter();
-    loadHero();
-    console.log(firstDoor.xPosition);
+    firstDoor.loadScooter();
+    chosenHero.loadHero();
 }
 
 let gameCanvas = document.createElement("canvas");

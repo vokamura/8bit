@@ -10,14 +10,14 @@ class Hero {
         this.yPosition = 400;
         this.heroReady = false;
         this.heroImage = new Image();
-        console.log(this.gender);
         this.heroImage.src = `style/images/${this.gender}_sprite/sprite_front_forward.png`;
     }
     loadHero(){
         this.heroReady = true;
         if(this.heroReady){
             this.heroImage.onload = function(){
-                ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+                // ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+                ctx.drawImage(this.heroImage, this.xPosition, this.yPosition);
             }
         }
     }

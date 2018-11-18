@@ -14,12 +14,12 @@ function loadBackground(){
 }
 
 class Door {
-    constructor(){
+    constructor(firstDoorSource){
         this.xPosition = 0;
         this.yPosition = 0;
         this.doorReady = false;
         this.doorImage = new Image();
-        this.doorImage.src = "style/images/environment/scooter.png";
+        this.doorImage.src = firstDoorSource;
     }
     drawDoor(){
         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
@@ -30,9 +30,14 @@ class Door {
         this.yPosition = Math.random() * (gameCanvas.height - 250);
         if(this.doorReady){
             this.doorImage.onload = function(){
+                // ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
                 ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
             }
         }
+    }
+    loadDoor(){
+        console.log("change door");
+        this.doorImage.src = "style/images/environment/silver_door.png";
     }
 }
 
@@ -88,6 +93,8 @@ function continueWalk(){
     chosenHero.drawHero();
     firstDoor.xPosition = null;
     firstDoor.yPosition = null;
+    let secondDoor = new Door();
+    secondDoor.loadDoor();
 }
 
 function runGame() {
@@ -100,6 +107,10 @@ function runGame() {
 let gameCanvas = document.createElement("canvas");
 let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
-let firstDoor = new Door();
+let firstDoor = new Door("style/images/environment/scooter.png");
 
-runGame();
+// runGame();
+
+window.onload = function (){
+    runGame();
+}

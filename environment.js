@@ -30,6 +30,7 @@ class Door {
         this.yPosition = Math.random() * (gameCanvas.height - 250);
         if(this.doorReady){
             this.doorImage.onload = function(){
+                // ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
                 ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
             }
         }
@@ -108,4 +109,8 @@ let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
 let firstDoor = new Door("style/images/environment/scooter.png");
 
-runGame();
+// runGame();
+
+window.onload = function (){
+    runGame();
+}

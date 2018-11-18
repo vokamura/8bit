@@ -10,7 +10,8 @@ class Hero {
         this.yPosition = 400;
         this.heroReady = false;
         this.heroImage = new Image();
-        this.heroImage.src = "style/images/boy_sprite/sprite_front_forward.png";
+        console.log(this.gender);
+        this.heroImage.src = `style/images/${this.gender}_sprite/sprite_front_forward.png`;
     }
     loadHero(){
         this.heroReady = true;
@@ -42,10 +43,10 @@ class Hero {
                 firstDoor.drawDoor();
             }
             this.xPosition = this.xPosition + 10;
-            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_right_stand.png"){
-                this.heroImage.src = "style/images/boy_sprite/sprite_right_walk.png";
+            if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_right_walk.png`){
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_right_stand.png`;
             } else {
-                this.heroImage.src = "style/images/boy_sprite/sprite_right_stand.png";
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_right_walk.png`;
             }
             this.drawHero();
             this.checkForDoor();
@@ -61,10 +62,10 @@ class Hero {
             if (this.xPosition > 0){
                 this.xPosition = this.xPosition - 10;
             }
-            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_left_stand.png"){
-                this.heroImage.src = "style/images/boy_sprite/sprite_left_walk.png";
+            if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_left_stand.png`){
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_left_walk.png`;
             } else {
-                this.heroImage.src = "style/images/boy_sprite/sprite_left_stand.png";
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_left_stand.png`;
             }
             this.drawHero();
             this.checkForDoor();
@@ -80,10 +81,10 @@ class Hero {
             if (this.yPosition > 0){
                 this.yPosition = this.yPosition - 10;
             }
-            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_back_rightfoot.png"){
-                this.heroImage.src = "style/images/boy_sprite/sprite_back_leftfoot.png";
+            if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_back_rightfoot.png`){
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_back_leftfoot.png`;
             } else {
-                this.heroImage.src = "style/images/boy_sprite/sprite_back_rightfoot.png";
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_back_rightfoot.png`;
             }
             this.drawHero();
             this.checkForDoor();
@@ -97,10 +98,10 @@ class Hero {
                 firstDoor.drawDoor();
             }
             this.yPosition = this.yPosition + 10;
-            if(this.heroImage.getAttribute("src") == "style/images/boy_sprite/sprite_front_rightfoot.png"){
-                this.heroImage.src = "style/images/boy_sprite/sprite_front_leftfoot.png";
+            if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_front_rightfoot.png`){
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_front_leftfoot.png`;
             } else {
-                this.heroImage.src = "style/images/boy_sprite/sprite_front_rightfoot.png";
+                this.heroImage.src = `style/images/${this.gender}_sprite/sprite_front_rightfoot.png`;
             }
             this.drawHero();
             this.checkForDoor();

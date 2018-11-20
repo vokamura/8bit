@@ -15,10 +15,10 @@ class Hero {
     loadHero(){
         this.heroReady = true;
         if(this.heroReady){
-            this.heroImage.onload = function(){
-                // ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+            this.heroImage.addEventListener("load", ()=>{
                 ctx.drawImage(this.heroImage, this.xPosition, this.yPosition);
-            }
+            })
+
         }
     }
     sayName(){

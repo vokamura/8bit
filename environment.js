@@ -29,10 +29,10 @@ class Door {
         this.xPosition = Math.random() * (gameCanvas.width - 250);
         this.yPosition = Math.random() * (gameCanvas.height - 250);
         if(this.doorReady){
-            this.doorImage.onload = function(){
-                // ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
-                ctx.drawImage(firstDoor.doorImage, firstDoor.xPosition, firstDoor.yPosition);
-            }
+            this.doorImage.addEventListener("load", () =>{
+                ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
+            })
+    
         }
     }
     loadDoor(){
@@ -111,6 +111,6 @@ let firstDoor = new Door("style/images/environment/scooter.png");
 
 // runGame();
 
-window.onload = function (){
+// window.onload = function (){
     runGame();
-}
+// }

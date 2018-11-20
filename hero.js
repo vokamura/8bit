@@ -37,7 +37,7 @@ class Hero {
     }
     moveForward(){
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
-            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
             if(firstDoor.xPosition !== null && firstDoor.yPosition){
                 firstDoor.drawDoor();
@@ -54,7 +54,7 @@ class Hero {
     }
     moveBack(){
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
-            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
             if(firstDoor.xPosition !== null && firstDoor.yPosition){
                 firstDoor.drawDoor();
@@ -73,7 +73,7 @@ class Hero {
     }
     moveUp(){
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
-            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
             if(firstDoor.xPosition !== null && firstDoor.yPosition){
                 firstDoor.drawDoor();
@@ -92,7 +92,7 @@ class Hero {
     }
     moveDown(){
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
-            ctx.clearRect(chosenHero.xPosition, chosenHero.yPosition, 160, 160);
+            ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
             if(firstDoor.xPosition !== null && firstDoor.yPosition){
                 firstDoor.drawDoor();
@@ -108,14 +108,14 @@ class Hero {
         }
     }
     drawHero(){
-        ctx.drawImage(chosenHero.heroImage, chosenHero.xPosition, chosenHero.yPosition);
+        ctx.drawImage(this.heroImage, this.xPosition, this.yPosition);
     }
     checkForDoor(){
         if(
-            chosenHero.xPosition <= (firstDoor.xPosition + 32)
-            && firstDoor.xPosition <= (chosenHero.xPosition + 32)
-            && chosenHero.yPosition <= (firstDoor.yPosition + 32)
-            && firstDoor.yPosition <= (chosenHero.yPosition + 32)
+            this.xPosition <= (firstDoor.xPosition + 32)
+            && firstDoor.xPosition <= (this.xPosition + 32)
+            && this.yPosition <= (firstDoor.yPosition + 32)
+            && firstDoor.yPosition <= (this.yPosition + 32)
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
             reachScooter();

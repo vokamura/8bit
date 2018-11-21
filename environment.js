@@ -109,8 +109,4 @@ let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
 let firstDoor = new Door("style/images/environment/scooter.png");
 
-// runGame();
-
-// window.onload = function (){
-    runGame();
-// }
+runGame();

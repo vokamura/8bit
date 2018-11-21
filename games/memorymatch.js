@@ -71,24 +71,29 @@ class MemoryMatch {
                 }, 1500);
             }
             if (this.matchCounter === 4){
-                clearWindow();
-                let shadow = document.getElementsByClassName("textShadow")[0];
-                shadow.style.visibility = "visible";
-                let askBody = document.getElementsByClassName("textBody")[0];
-                askBody.style.textAlign = "center";
-
-                let introTitle = document.createElement("h2");
-                introTitle.classList.add("intro");
-                introTitle.textContent = `You win!`;
-                askBody.append(introTitle);
-            
-                let scooterBtn = document.createElement("button");
-                scooterBtn.type = "button";
-                scooterBtn.textContent = "Ride Scooter";
-                scooterBtn.classList.add("centerButton");
-                scooterBtn.style.float = "left";
-                scooterBtn.addEventListener("click", this.onScooter);
-                askBody.append(scooterBtn);
+                // clearWindow();
+                setTimeout(()=>{
+                    clearWindow();
+                }, 1500);
+                setTimeout(()=>{
+                    let shadow = document.getElementsByClassName("textShadow")[0];
+                    shadow.style.visibility = "visible";
+                    let askBody = document.getElementsByClassName("textBody")[0];
+                    askBody.style.textAlign = "center";
+    
+                    let introTitle = document.createElement("h2");
+                    introTitle.classList.add("intro");
+                    introTitle.textContent = `You win!`;
+                    askBody.append(introTitle);
+                
+                    let scooterBtn = document.createElement("button");
+                    scooterBtn.type = "button";
+                    scooterBtn.textContent = "Ride Scooter";
+                    scooterBtn.classList.add("centerButton");
+                    scooterBtn.style.float = "left";
+                    scooterBtn.addEventListener("click", this.onScooter);
+                    askBody.append(scooterBtn);
+                }, 2000);
             }
         } 
     }

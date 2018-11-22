@@ -56,7 +56,7 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+            if(firstDoor.xPosition !== null && firstDoor.yPosition || secondDoor.xPosition !== null && secondDoor.yPosition){
                 firstDoor.drawDoor();
             }
             if (this.xPosition > 0){

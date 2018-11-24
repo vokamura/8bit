@@ -56,12 +56,12 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition){
+            if(firstDoor.xPosition !== null && firstDoor.yPosition !== null){
                 firstDoor.drawDoor();
             }
-            debugger;
+            // debugger;
             console.log(secondDoor);
-            if(secondDoor.xPosition !== null && secondDoor.yPosition){
+            if(secondDoor.xPosition !== null && secondDoor.yPosition !== null){
                 secondDoor.drawDoor();
             }
             if (this.xPosition > 0){

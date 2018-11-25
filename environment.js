@@ -97,7 +97,7 @@ function continueWalk(){
     chosenHero.drawHero();
     firstDoor.xPosition = null;
     firstDoor.yPosition = null;
-    let secondDoor = new Door("style/images/environment/silver_door.png");
+    window[secondDoor] = new Door("style/images/environment/silver_door.png");
     secondDoor.loadDoor();
     console.log(secondDoor);
 

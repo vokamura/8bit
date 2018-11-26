@@ -160,12 +160,13 @@ function introPage(){
 
         let introTitle = document.createElement("h2");
         introTitle.classList.add("intro");
-        introTitle.textContent = `Good morning, ${chosenHero.name}!`;
+        // introTitle.textContent = `Good morning, ${chosenHero.name}!`;
+        introTitle.textContent = `Good morning, ${localStorage.getItem("name")}!`;
         askBody.append(introTitle);
 
         let introBody = document.createElement("div");
         introBody.classList.add("intro");
-        introBody.textContent = `It's your significant other, ${chosenHero.SOname}'s birthday!`;
+        introBody.textContent = `It's your significant other, ${localStorage.getItem("SOname")}'s birthday!`;
         askBody.append(introBody);
 
         let instructions = document.createElement("div");

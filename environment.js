@@ -124,4 +124,8 @@ let chosenHero = new Hero();
 let firstDoor = new Door("style/images/environment/scooter.png");
 let secondDoor = "";
 
+if(firstDoor !== undefined){
+    
+}
+
 runGame();

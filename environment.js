@@ -101,14 +101,6 @@ function continueWalk(){
     secondDoor.loadDoor();
     console.log(secondDoor);
 
-    // this.doorReady = true;
-    // this.xPosition = Math.random() * (gameCanvas.width - 250);
-    // this.yPosition = Math.random() * (gameCanvas.height - 250);
-    // if(this.doorReady){
-    //     this.doorImage.addEventListener("load", () =>{
-    //         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
-    //     })
-    // }
 }
 
 function runGame() {

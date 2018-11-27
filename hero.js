@@ -61,9 +61,9 @@ class Hero {
             }
             // debugger;
             console.log(secondDoor);
-            if(secondDoor.xPosition !== null && secondDoor.yPosition !== null){
-                secondDoor.drawDoor();
-            }
+            // if(secondDoor.xPosition !== null && secondDoor.yPosition !== null){
+            //     secondDoor.drawDoor();
+            // }
             if (this.xPosition > 0){
                 this.xPosition = this.xPosition - 10;
             }

@@ -35,7 +35,6 @@ class Door {
         }
     }
     loadDoor(){
-        console.log("change door");
         this.doorImage.src = "style/images/environment/silver_door.png";
         this.xPosition = Math.random() * (gameCanvas.width - 250);
         this.yPosition = Math.random() * (gameCanvas.height - 250);

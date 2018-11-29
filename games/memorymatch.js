@@ -85,6 +85,11 @@ class MemoryMatch {
                     introTitle.classList.add("intro");
                     introTitle.textContent = `You win!`;
                     askBody.append(introTitle);
+
+                    let introBody = document.createElement("p");
+                    introBody.classList.add("intro");
+                    introBody.textContent = `Hop on the scooter, and go to your next destination!`;
+                    askBody.append(introBody);
                 
                     let scooterBtn = document.createElement("button");
                     scooterBtn.type = "button";

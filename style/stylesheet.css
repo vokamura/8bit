@@ -85,13 +85,13 @@ input[type=text]{
 }
 
 .centerButton {
-    float: center;
     cursor: pointer;
     font-family: "8bitwonder";
     font-size: 16px;
     padding: 5px;
     text-align: center;
-    margin-right: 50px;
     margin-top: 50px;
-    margin-left: 50px;
+    width: 188px;
+    margin: 0 auto;
+    float: none !important;
 }

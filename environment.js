@@ -91,7 +91,6 @@ function reachScooter(){
 }
 
 function reachSilverDoor(){
-    console.log("Silver door reached");
     let shadow = document.getElementsByClassName("textShadow")[0];
     shadow.style.visibility = "visible";
     let askBody = document.getElementsByClassName("textBody")[0];
@@ -111,7 +110,6 @@ function reachSilverDoor(){
     walkBtn.type = "button";
     walkBtn.textContent = "Keep walking";
     walkBtn.classList.add("centerButton");
-    // walkBtn.style.float = "right";
     walkBtn.addEventListener("click", continueWalk);
     askBody.append(walkBtn);
 }
@@ -120,9 +118,6 @@ function continueWalk(){
     clearWindow();
     closeWindow();
     loadBackground();
-    // ctx.clearRect(chosenDoor.xPosition, chosenDoor.yPosition, 160, 160);
-    // ctx.fillStyle = "green";
-    // ctx.fill();
     chosenHero.drawHero();
     chosenDoor.xPosition = null;
     chosenDoor.yPosition = null;

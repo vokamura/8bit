@@ -90,6 +90,10 @@ function reachScooter(){
     askBody.append(walkBtn);
 }
 
+function reachSilverDoor(){
+    console.log("Silver door reached");
+}
+
 function continueWalk(){
     clearWindow();
     closeWindow();

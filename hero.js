@@ -122,7 +122,7 @@ class Hero {
                 reachScooter();
             }
             if (chosenDoor.currentDoor === "silverDoor"){
-                this.reachSilverDoor();
+                reachSilverDoor();
             }
         }   
     }
@@ -131,9 +131,7 @@ class Hero {
         let mmGame = new MemoryMatch();
         mmGame.layoutCards();
     }
-    reachSilverDoor(){
-        console.log("Silver door reached");
-    }
+
     interact(){
         console.log("interaction");
     }

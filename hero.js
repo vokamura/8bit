@@ -59,11 +59,6 @@ class Hero {
             if(firstDoor.xPosition !== null && firstDoor.yPosition !== null){
                 firstDoor.drawDoor();
             }
-            // debugger;
-            console.log(secondDoor);
-            // if(secondDoor.xPosition !== null && secondDoor.yPosition !== null){
-            //     secondDoor.drawDoor();
-            // }
             if (this.xPosition > 0){
                 this.xPosition = this.xPosition - 10;
             }
@@ -131,9 +126,6 @@ class Hero {
         let mmGame = new MemoryMatch();
         mmGame.layoutCards();
     }
-    // walk(){
-    //     console.log("user is walking");
-    // }
     interact(){
         console.log("interaction");
     }

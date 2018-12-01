@@ -96,10 +96,8 @@ function continueWalk(){
     chosenHero.drawHero();
     firstDoor.xPosition = null;
     firstDoor.yPosition = null;
-    window[secondDoor] = new Door("style/images/environment/silver_door.png");
-    secondDoor.loadDoor();
-    console.log(secondDoor);
-
+    firstDoor = new Door("style/images/environment/silver_door.png");
+    firstDoor.loadDoor();
 }
 
 function runGame() {
@@ -113,10 +111,5 @@ let gameCanvas = document.createElement("canvas");
 let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
 let firstDoor = new Door("style/images/environment/scooter.png");
-let secondDoor = "";
-
-if(firstDoor !== undefined){
-    
-}
 
 runGame();

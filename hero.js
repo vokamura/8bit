@@ -39,8 +39,8 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition){
-                firstDoor.drawDoor();
+            if(chosenDoor.xPosition !== null && chosenDoor.yPosition){
+                chosenDoor.drawDoor();
             }
             this.xPosition = this.xPosition + 10;
             if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_right_walk.png`){
@@ -56,8 +56,8 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition !== null){
-                firstDoor.drawDoor();
+            if(chosenDoor.xPosition !== null && chosenDoor.yPosition !== null){
+                chosenDoor.drawDoor();
             }
             if (this.xPosition > 0){
                 this.xPosition = this.xPosition - 10;
@@ -75,8 +75,8 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition){
-                firstDoor.drawDoor();
+            if(chosenDoor.xPosition !== null && chosenDoor.yPosition){
+                chosenDoor.drawDoor();
             }
             if (this.yPosition > 0){
                 this.yPosition = this.yPosition - 10;
@@ -94,8 +94,8 @@ class Hero {
         if(document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"){
             ctx.clearRect(this.xPosition, this.yPosition, 160, 160);
             loadBackground();
-            if(firstDoor.xPosition !== null && firstDoor.yPosition){
-                firstDoor.drawDoor();
+            if(chosenDoor.xPosition !== null && chosenDoor.yPosition){
+                chosenDoor.drawDoor();
             }
             this.yPosition = this.yPosition + 10;
             if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_front_rightfoot.png`){
@@ -112,13 +112,20 @@ class Hero {
     }
     checkForDoor(){
         if(
-            this.xPosition <= (firstDoor.xPosition + 32)
-            && firstDoor.xPosition <= (this.xPosition + 32)
-            && this.yPosition <= (firstDoor.yPosition + 32)
-            && firstDoor.yPosition <= (this.yPosition + 32)
+            this.xPosition <= (chosenDoor.xPosition + 32)
+            && chosenDoor.xPosition <= (this.xPosition + 32)
+            && this.yPosition <= (chosenDoor.yPosition + 32)
+            && chosenDoor.yPosition <= (this.yPosition + 32)
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
-            reachScooter();
+            switch (chosenDoor.currentDoor){
+                case "scooter":
+                    reachScooter();
+                    break;
+                case "silverDoor":
+                    reachSilverDoor();
+                    break;
+            }
         }   
     }
     rideScooter(){
@@ -126,6 +133,7 @@ class Hero {
         let mmGame = new MemoryMatch();
         mmGame.layoutCards();
     }
+
     interact(){
         console.log("interaction");
     }

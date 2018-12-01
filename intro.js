@@ -16,25 +16,18 @@ function getData(){
     let saveGender = document.getElementById("heroGender").value;
     let saveSOName = document.getElementById("SOName").value;
     let saveSOGender = document.getElementById("SOGender").value;
-    // getName(saveName);
-    // getGender(saveGender);
-    // getSOName(saveSOName);
-    // getSOGender(saveSOGender);
     localStorage.setItem("name", saveName);
     localStorage.setItem("gender", saveGender);
     localStorage.setItem("SOname", saveSOName);
     localStorage.setItem("SOgender", saveSOGender);
 
     //show items in local storage
-    for (var i = 0; i < localStorage.length; i++){
-        console.log(localStorage.getItem(localStorage.key(i)));
-    }
+    // for (var i = 0; i < localStorage.length; i++){
+    //     console.log(localStorage.getItem(localStorage.key(i)));
+    // }
 
     clearWindow();
-
     introPage();
-    // document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
-
 }
 
 function getUserData(){
@@ -152,7 +145,6 @@ function getUserData(){
 }
 
 function introPage(){
-    // if(localStorage.getItem("name") !== null || localStorage.getItem("name") !== undefined){
         let shadow = document.getElementsByClassName("textShadow")[0];
         shadow.style.visibility = "visible";
         let askBody = document.getElementsByClassName("textBody")[0];
@@ -160,7 +152,6 @@ function introPage(){
 
         let introTitle = document.createElement("h2");
         introTitle.classList.add("intro");
-        // introTitle.textContent = `Good morning, ${chosenHero.name}!`;
         introTitle.textContent = `Good morning, ${localStorage.getItem("name")}!`;
         askBody.append(introTitle);
 
@@ -191,7 +182,6 @@ function introPage(){
         submitBtn.style.float = "right";
         submitBtn.addEventListener("click", closeWindow);
         askBody.append(submitBtn);
-    // }
 }
 
 function clearWindow(){
@@ -209,31 +199,4 @@ function closeWindow(){
     };
     document.getElementsByClassName("textShadow")[0].style.visibility = "hidden";
 }
-
-// //set name in local storage
-// function getName(saveName){
-//     localStorage.setItem("name", saveName);
-//     let name = localStorage.getItem("name");
-//     return name;
-// }
-
-// //set gender in local storage
-// function getGender(saveGender){
-//     localStorage.setItem("gender", saveGender);
-//     let gender = localStorage.getItem("gender");
-//     return gender;
-// }
-
-// function getSOName(saveSOName){
-//     localStorage.setItem("SOname", saveSOName);
-//     let SOname = localStorage.getItem("SOname");
-//     return SOname;
-// }
-
-// //set gender in local storage
-// function getSOGender(saveSOGender){
-//     localStorage.setItem("SOgender", saveSOGender);
-//     let SOgender = localStorage.getItem("SOgender");
-//     return SOgender;
-// }
 

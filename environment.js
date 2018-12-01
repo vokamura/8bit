@@ -14,12 +14,13 @@ function loadBackground(){
 }
 
 class Door {
-    constructor(firstDoorSource){
+    constructor(doorSource, currentDoor){
         this.xPosition = 0;
         this.yPosition = 0;
         this.doorReady = false;
         this.doorImage = new Image();
-        this.doorImage.src = firstDoorSource;
+        this.doorImage.src = doorSource;
+        this.currentDoor = currentDoor;
     }
     drawDoor(){
         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
@@ -33,15 +34,17 @@ class Door {
                 ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
             })
         }
+        console.log(this.currentDoor);
     }
-    loadDoor(){
-        this.doorImage.src = "style/images/environment/silver_door.png";
-        this.xPosition = Math.random() * (gameCanvas.width - 250);
-        this.yPosition = Math.random() * (gameCanvas.height - 250);
-        this.doorImage.addEventListener("load", () =>{
-            ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
-        })
-    }
+    // loadSilverDoor(){
+        // this.doorImage.src = "style/images/environment/silver_door.png";
+    //     this.xPosition = Math.random() * (gameCanvas.width - 250);
+    //     this.yPosition = Math.random() * (gameCanvas.height - 250);
+    //     this.doorImage.addEventListener("load", () =>{
+    //         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
+    //     })
+    //     console.log(this.currentDoor);
+    // }
 }
 
 function reachScooter(){
@@ -90,26 +93,27 @@ function reachScooter(){
 function continueWalk(){
     clearWindow();
     closeWindow();
-    ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
-    ctx.fillStyle = "green";
-    ctx.fill();
+    loadBackground();
+    // ctx.clearRect(chosenDoor.xPosition, chosenDoor.yPosition, 160, 160);
+    // ctx.fillStyle = "green";
+    // ctx.fill();
     chosenHero.drawHero();
-    firstDoor.xPosition = null;
-    firstDoor.yPosition = null;
-    firstDoor = new Door("style/images/environment/silver_door.png");
-    firstDoor.loadDoor();
+    chosenDoor.xPosition = null;
+    chosenDoor.yPosition = null;
+    chosenDoor = new Door("style/images/environment/silver_door.png", "silverDoor");
+    chosenDoor.loadScooter();
 }
 
 function runGame() {
     loadCanvas();
     loadBackground();
-    firstDoor.loadScooter();
+    chosenDoor.loadScooter();
     chosenHero.loadHero();
 }
 
 let gameCanvas = document.createElement("canvas");
 let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
-let firstDoor = new Door("style/images/environment/scooter.png");
+let chosenDoor = new Door("style/images/environment/scooter.png", "scooter");
 
 runGame();

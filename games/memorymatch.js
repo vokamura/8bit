@@ -105,12 +105,12 @@ class MemoryMatch {
     onScooter(){
         clearWindow();
         closeWindow();
-        ctx.clearRect(firstDoor.xPosition, firstDoor.yPosition, 160, 160);
+        ctx.clearRect(chosenDoor.xPosition, chosenDoor.yPosition, 160, 160);
         ctx.fillStyle = "green";
         ctx.fill();
         chosenHero.drawHero();
-        firstDoor.xPosition = null;
-        firstDoor.yPosition = null;
+        chosenDoor.xPosition = null;
+        chosenDoor.yPosition = null;
     }
 }
 

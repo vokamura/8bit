@@ -25,7 +25,7 @@ class Door {
     drawDoor(){
         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
     }
-    loadScooter(){
+    loadCurrentDoor(){
         this.doorReady = true;
         this.xPosition = Math.random() * (gameCanvas.width - 250);
         this.yPosition = Math.random() * (gameCanvas.height - 250);
@@ -107,16 +107,11 @@ function reachSilverDoor(){
     choiceTitle.textContent = `Go inside and see what's behind it`;
     askBody.append(choiceTitle);
 
-    let walkChoice = document.createElement("div");
-    walkChoice.classList.add("intro");
-    walkChoice.textContent = `Choose walk and get there a lot slower`;
-    askBody.append(walkChoice);
-
     let walkBtn = document.createElement("button");
     walkBtn.type = "button";
-    walkBtn.textContent = "Walk";
-    walkBtn.classList.add("submitData");
-    walkBtn.style.float = "right";
+    walkBtn.textContent = "Keep walking";
+    walkBtn.classList.add("centerButton");
+    // walkBtn.style.float = "right";
     walkBtn.addEventListener("click", continueWalk);
     askBody.append(walkBtn);
 }
@@ -132,13 +127,13 @@ function continueWalk(){
     chosenDoor.xPosition = null;
     chosenDoor.yPosition = null;
     chosenDoor = new Door("style/images/environment/silver_door.png", "silverDoor");
-    chosenDoor.loadScooter();
+    chosenDoor.loadCurrentDoor();
 }
 
 function runGame() {
     loadCanvas();
     loadBackground();
-    chosenDoor.loadScooter();
+    chosenDoor.loadCurrentDoor();
     chosenHero.loadHero();
 }
 

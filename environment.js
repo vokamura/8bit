@@ -92,6 +92,33 @@ function reachScooter(){
 
 function reachSilverDoor(){
     console.log("Silver door reached");
+    let shadow = document.getElementsByClassName("textShadow")[0];
+    shadow.style.visibility = "visible";
+    let askBody = document.getElementsByClassName("textBody")[0];
+    askBody.style.textAlign = "center";
+
+    let introTitle = document.createElement("h2");
+    introTitle.classList.add("intro");
+    introTitle.textContent = `You've reached a door!`;
+    askBody.append(introTitle);
+
+    let choiceTitle = document.createElement("div");
+    choiceTitle.classList.add("intro");
+    choiceTitle.textContent = `Go inside and see what's behind it`;
+    askBody.append(choiceTitle);
+
+    let walkChoice = document.createElement("div");
+    walkChoice.classList.add("intro");
+    walkChoice.textContent = `Choose walk and get there a lot slower`;
+    askBody.append(walkChoice);
+
+    let walkBtn = document.createElement("button");
+    walkBtn.type = "button";
+    walkBtn.textContent = "Walk";
+    walkBtn.classList.add("submitData");
+    walkBtn.style.float = "right";
+    walkBtn.addEventListener("click", continueWalk);
+    askBody.append(walkBtn);
 }
 
 function continueWalk(){

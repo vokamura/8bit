@@ -118,12 +118,6 @@ class Hero {
             && chosenDoor.yPosition <= (this.yPosition + 32)
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
-            // if (chosenDoor.currentDoor === "scooter"){
-            //     reachScooter();
-            // }
-            // if (chosenDoor.currentDoor === "silverDoor"){
-            //     reachSilverDoor();
-            // }
             switch (chosenDoor.currentDoor){
                 case "scooter":
                     reachScooter();

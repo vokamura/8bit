@@ -36,15 +36,6 @@ class Door {
         }
         console.log(this.currentDoor);
     }
-    // loadSilverDoor(){
-        // this.doorImage.src = "style/images/environment/silver_door.png";
-    //     this.xPosition = Math.random() * (gameCanvas.width - 250);
-    //     this.yPosition = Math.random() * (gameCanvas.height - 250);
-    //     this.doorImage.addEventListener("load", () =>{
-    //         ctx.drawImage(this.doorImage, this.xPosition, this.yPosition);
-    //     })
-    //     console.log(this.currentDoor);
-    // }
 }
 
 function reachScooter(){

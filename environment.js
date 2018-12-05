@@ -112,9 +112,15 @@ function continueWalk(){
     chosenHero.drawHero();
     chosenDoor.xPosition = null;
     chosenDoor.yPosition = null;
-    if(chosenDoor.currentDoor === "scooter"){
-        chosenDoor = new Door("style/images/environment/silver_door.png", "silverDoor");
-        chosenDoor.loadCurrentDoor();
+    switch (chosenDoor.currentDoor){
+        case "scooter":
+            chosenDoor = new Door("style/images/environment/silver_door.png", "silverDoor");
+            chosenDoor.loadCurrentDoor();
+            break;
+        case "silverDoor":
+            chosenDoor = new Door("style/images/environment/door.png", "silverDoor");
+            chosenDoor.loadCurrentDoor();
+            break;
     }
 }
 

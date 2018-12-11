@@ -1,4 +1,4 @@
-class MemoryMatch {
+class Mancala {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
@@ -11,4 +11,4 @@ class MemoryMatch {
 
 // put this in for testing.
 let mancalaGame = new Mancala();
-mancalagame.layoutBoard();
+mancalaGame.layoutBoard();

@@ -71,7 +71,6 @@ class MemoryMatch {
                 }, 1500);
             }
             if (this.matchCounter === 4){
-                // clearWindow();
                 setTimeout(()=>{
                     clearWindow();
                 }, 1500);

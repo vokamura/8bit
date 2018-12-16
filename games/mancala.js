@@ -10,5 +10,5 @@ class Mancala {
 }
 
 // put this in for testing.
-let mancalaGame = new Mancala();
-mancalaGame.layoutBoard();
+// let mancalaGame = new Mancala();
+// mancalaGame.layoutBoard();

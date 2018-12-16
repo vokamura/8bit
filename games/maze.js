@@ -6,6 +6,11 @@ class Maze {
     }
     layoutBoard(){
         console.log('Maze game started');
+        var img = new Image();
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+        }
+        img.src = "style/images/maze.svg";
     }
 }
 

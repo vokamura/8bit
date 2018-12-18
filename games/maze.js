@@ -17,3 +17,4 @@ class Maze {
 // put this in for testing.
 let mazeGame = new Maze();
 mazeGame.layoutBoard();
+loadCanvas();

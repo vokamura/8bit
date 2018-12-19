@@ -2,7 +2,8 @@ class Maze {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-
+        this.xPosition = 10;
+        this.yPosition = 10;
     }
     layoutBoard(){
         console.log('Maze game started');

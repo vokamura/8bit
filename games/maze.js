@@ -4,14 +4,19 @@ class Maze {
         this.game = document.createElement("div");
         this.xPosition = 10;
         this.yPosition = 10;
+        this.boardImage = new Image();
+        this.boardImage.src = "style/images/maze.svg";
     }
     layoutBoard(){
         console.log('Maze game started');
-        var img = new Image();
-        img.onload = function() {
-            ctx.drawImage(img, 0, 0);
+        // var img = new Image();
+        this.boardImage.onload = function() {
+            ctx.drawImage(this.boardImage, this.xPosition, this.yPosition);
         }
-        img.src = "style/images/maze.svg";
+        // img.src = "style/images/maze.svg";
+    }
+    loadMazeHero(){
+        
     }
 }
 

@@ -6,14 +6,13 @@ class Maze {
         this.yPosition = 10;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
+        this.mazeHero = new Image();
     }
     layoutBoard(){
         console.log('Maze game started');
-        // var img = new Image();
-        this.boardImage.onload = function() {
-            ctx.drawImage(this.boardImage, this.xPosition, this.yPosition);
-        }
-        // img.src = "style/images/maze.svg";
+        this.boardImage.addEventListener("load", () => {
+            ctx.drawImage(this.boardImage, -2, -2);
+        })
     }
     loadMazeHero(){
         

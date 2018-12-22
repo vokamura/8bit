@@ -15,7 +15,7 @@ class Maze {
         })
     }
     loadMazeHero(){
-        
+        console.log("Hero loaded");
     }
 }
 
@@ -23,3 +23,4 @@ class Maze {
 let mazeGame = new Maze();
 mazeGame.layoutBoard();
 loadCanvas();
+mazeGame.loadMazeHero();

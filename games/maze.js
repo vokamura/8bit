@@ -16,6 +16,10 @@ class Maze {
     }
     loadMazeHero(){
         console.log("Hero loaded");
+        ctx.beginPath();
+        ctx.rect(385, 0, 13, 13);
+        ctx.fillStyle = "red";
+        ctx.fill();
     }
 }
 

@@ -27,7 +27,9 @@ class Maze {
 
     }
     moveUp(){
-        this.yPosition = this.yPosition + 10
+        if(this.yPosition > 0){
+            this.yPosition = this.yPosition + 10
+        }
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){

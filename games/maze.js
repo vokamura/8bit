@@ -22,16 +22,20 @@ class Maze {
         ctx.fill();
     }
     moveLeft(){
+        this.xPosition = this.xPosition - 10;
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition);
 
     }
     moveUp(){
+        this.yPosition = this.yPosition + 10
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
+        this.xPosition = this.xPosition + 10;
         console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveDown(){
+        this.yPosition = this.yPosition - 10
         console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
 }

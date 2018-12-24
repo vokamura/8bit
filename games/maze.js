@@ -21,24 +21,40 @@ class Maze {
         ctx.fillStyle = "red";
         ctx.fill();
     }
+    moveLeft(){
+        this.xPosition = this.xPosition - 10;
+        console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition);
+
+    }
+    moveUp(){
+        if(this.yPosition > 0){
+            this.yPosition = this.yPosition + 10
+        }
+        console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
+    }
+    moveRight(){
+        this.xPosition = this.xPosition + 10;
+        console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
+    }
+    moveDown(){
+        this.yPosition = this.yPosition - 10
+        console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
+    }
 }
 
 document.onkeydown = function(event) {
     switch (event.keyCode) {
-        case 32:
-            chosenHero.interact();
-            break;
         case 37:
-            chosenHero.moveBack();
+            mazeGame.moveLeft();
           break;
        case 38:
-            chosenHero.moveUp();
+            mazeGame.moveUp();
           break;
        case 39:
-            chosenHero.moveForward();
+            mazeGame.moveRight();
             break;
        case 40:
-            chosenHero.moveDown();
+            mazeGame.moveDown();
           break;
     }
 };

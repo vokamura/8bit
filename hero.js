@@ -42,7 +42,9 @@ class Hero {
             if(chosenDoor.xPosition !== null && chosenDoor.yPosition){
                 chosenDoor.drawDoor();
             }
+            //moves character 10 pixels
             this.xPosition = this.xPosition + 10;
+            //alternates between images for movement
             if(this.heroImage.getAttribute("src") == `style/images/${this.gender}_sprite/sprite_right_walk.png`){
                 this.heroImage.src = `style/images/${this.gender}_sprite/sprite_right_stand.png`;
             } else {

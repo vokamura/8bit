@@ -23,6 +23,25 @@ class Maze {
     }
 }
 
+document.onkeydown = function(event) {
+    switch (event.keyCode) {
+        case 32:
+            chosenHero.interact();
+            break;
+        case 37:
+            chosenHero.moveBack();
+          break;
+       case 38:
+            chosenHero.moveUp();
+          break;
+       case 39:
+            chosenHero.moveForward();
+            break;
+       case 40:
+            chosenHero.moveDown();
+          break;
+    }
+};
 // put this in for testing.
 let mazeGame = new Maze();
 mazeGame.layoutBoard();

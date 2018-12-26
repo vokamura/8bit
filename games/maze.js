@@ -22,8 +22,10 @@ class Maze {
         ctx.fill();
     }
     moveLeft(){
-        this.xPosition = this.xPosition - 10;
-        console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition);
+        if(this.xPosition > 0){
+            this.xPosition = this.xPosition - 10;
+        }
+        console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
 
     }
     moveUp(){
@@ -33,13 +35,18 @@ class Maze {
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
-        this.xPosition = this.xPosition + 10;
-        console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
+        if(this.xPosition > 0){
+            this.xPosition = this.xPosition + 10;
+            console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
+        }
     }
     moveDown(){
-        this.yPosition = this.yPosition - 10
-        console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
+        if(this.yPosition > 0){
+            this.yPosition = this.yPosition - 10
+            console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
+        }
     }
+
 }
 
 document.onkeydown = function(event) {

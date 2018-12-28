@@ -50,19 +50,28 @@ class Maze {
 }
 
 document.onkeydown = function(event) {
-    switch (event.keyCode) {
-        case 37:
-            mazeGame.moveLeft();
-          break;
-       case 38:
-            mazeGame.moveUp();
-          break;
-       case 39:
-            mazeGame.moveRight();
-            break;
-       case 40:
-            mazeGame.moveDown();
-          break;
+    // switch (event.keyCode) {
+    //     case 37:
+    //         mazeGame.moveLeft();
+    //       break;
+    //    case 38:
+    //         mazeGame.moveUp();
+    //       break;
+    //    case 39:
+    //         mazeGame.moveRight();
+    //         break;
+    //    case 40:
+    //         mazeGame.moveDown();
+    //       break;
+    // }
+    if(event.which == 37){
+        mazeGame.moveLeft();
+    } else if(event.which == 38) {
+        mazeGame.moveUp();
+    } else if(event.which == 39){
+        mazeGame.moveRight();
+    } else if(event.which == 40){
+        mazeGame.moveDown();
     }
 };
 // put this in for testing.

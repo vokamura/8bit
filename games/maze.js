@@ -25,6 +25,11 @@ class Maze {
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        ctx.beginPath();
+        ctx.fillStyle = "red";
+        ctx.fill();
+        ctx.rect(this.xPosition, this.yPosition, 13, 13);
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
 
     }

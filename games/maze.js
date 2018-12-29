@@ -2,8 +2,8 @@ class Maze {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-        this.xPosition = 10;
-        this.yPosition = 10;
+        this.xPosition = 385;
+        this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
@@ -41,7 +41,7 @@ class Maze {
         }
     }
     moveDown(){
-        if(this.yPosition > 0){
+        if(this.yPosition <= 0){
             this.yPosition = this.yPosition - 10
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }

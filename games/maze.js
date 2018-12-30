@@ -14,13 +14,13 @@ class Maze {
             ctx.drawImage(this.boardImage, -2, -2);
         })
     }
-    loadMazeHero(){
-        console.log("Hero loaded");
-        ctx.beginPath();
-        ctx.rect(385, 0, 13, 13);
-        ctx.fillStyle = "red";
-        ctx.fill();
-    }
+    // loadMazeHero(){
+    //     console.log("Hero loaded");
+    //     ctx.beginPath();
+    //     ctx.rect(385, 0, 13, 13);
+    //     ctx.fillStyle = "red";
+    //     ctx.fill();
+    // }
     moveLeft(){
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
@@ -83,4 +83,4 @@ document.onkeydown = function(event) {
 let mazeGame = new Maze();
 mazeGame.layoutBoard();
 loadCanvas();
-mazeGame.loadMazeHero();
+// mazeGame.loadMazeHero();

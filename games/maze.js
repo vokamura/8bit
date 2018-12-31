@@ -79,6 +79,7 @@ document.onkeydown = function(event) {
         mazeGame.moveDown();
     }
 };
+
 // put this in for testing.
 let mazeGame = new Maze();
 mazeGame.layoutBoard();

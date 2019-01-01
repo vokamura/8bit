@@ -14,22 +14,25 @@ class Maze {
             ctx.drawImage(this.boardImage, -2, -2);
         })
     }
-    // loadMazeHero(){
-    //     console.log("Hero loaded");
-    //     ctx.beginPath();
-    //     ctx.rect(385, 0, 13, 13);
-    //     ctx.fillStyle = "red";
-    //     ctx.fill();
-    // }
+    loadMazeHero(){
+        console.log("Hero loaded");
+       
+        document.addEventListener("load", ()=>{
+            ctx.beginPath();
+            ctx.rect(385, 0, 13, 13);
+            ctx.fillStyle = "red";
+            ctx.fill();
+        })
+    }
     moveLeft(){
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         ctx.beginPath();
-        ctx.fillStyle = "red";
-        ctx.fill();
         ctx.rect(this.xPosition, this.yPosition, 13, 13);
+        ctx.fillStyle = "red";
+        ctx.fill(); 
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
 
     }

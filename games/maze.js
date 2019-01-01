@@ -24,6 +24,9 @@ class Maze {
             ctx.fill();
         })
     }
+    drawMazeHero(){
+        
+    }
     moveLeft(){
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;

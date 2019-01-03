@@ -25,17 +25,17 @@ class Maze {
         })
     }
     drawMazeHero(){
-        
+        ctx.beginPath();
+        ctx.rect(this.xPosition, this.yPosition, 13, 13);
+        ctx.fillStyle = "red";
+        ctx.fill(); 
     }
     moveLeft(){
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
-        ctx.beginPath();
-        ctx.rect(this.xPosition, this.yPosition, 13, 13);
-        ctx.fillStyle = "red";
-        ctx.fill(); 
+        this.drawMazeHero();
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
 
     }
@@ -43,6 +43,8 @@ class Maze {
         if(this.yPosition < 0){
             this.yPosition = this.yPosition + 10
         }
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        this.drawMazeHero();
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
@@ -50,12 +52,16 @@ class Maze {
             this.xPosition = this.xPosition + 10;
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        this.drawMazeHero();
     }
     moveDown(){
         if(this.yPosition <= 0){
             this.yPosition = this.yPosition - 10
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        this.drawMazeHero();
     }
 
 }
@@ -90,4 +96,4 @@ document.onkeydown = function(event) {
 let mazeGame = new Maze();
 mazeGame.layoutBoard();
 loadCanvas();
-// mazeGame.loadMazeHero();
+mazeGame.loadMazeHero();

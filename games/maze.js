@@ -31,36 +31,36 @@ class Maze {
         ctx.fill(); 
     }
     moveLeft(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         this.drawMazeHero();
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
 
     }
     moveUp(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         if(this.yPosition < 0){
             this.yPosition = this.yPosition + 10
         }
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         this.drawMazeHero();
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition + 10;
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         this.drawMazeHero();
     }
     moveDown(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         if(this.yPosition <= 0){
-            this.yPosition = this.yPosition - 10
+            this.yPosition = this.yPosition + 10
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         this.drawMazeHero();
     }
 

@@ -16,7 +16,6 @@ class Maze {
     }
     loadMazeHero(){
         console.log("Hero loaded");
-       
         document.addEventListener("load", ()=>{
             ctx.beginPath();
             ctx.rect(385, 0, 13, 13);

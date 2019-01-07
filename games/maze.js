@@ -16,7 +16,6 @@ class Maze {
     }
     loadMazeHero(){
         console.log("Hero loaded");
-       
         document.addEventListener("load", ()=>{
             ctx.beginPath();
             ctx.rect(385, 0, 13, 13);
@@ -41,7 +40,7 @@ class Maze {
     }
     moveUp(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
-        if(this.yPosition <= 0){
+        if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
         this.drawMazeHero();
@@ -57,7 +56,7 @@ class Maze {
     }
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
-        if(this.yPosition <= 0){
+        if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }

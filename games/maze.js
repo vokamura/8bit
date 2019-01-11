@@ -67,7 +67,17 @@ class Maze {
         }
         this.drawMazeHero();
     }
+    checkForWalls(){
+        if(
+            this.xPosition <= (chosenDoor.xPosition + 32)
+            && chosenDoor.xPosition <= (this.xPosition + 32)
+            && this.yPosition <= (chosenDoor.yPosition + 32)
+            && chosenDoor.yPosition <= (this.yPosition + 32)
+            && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
+        ){
 
+        }
+    }
 }
 
 document.onkeydown = function(event) {

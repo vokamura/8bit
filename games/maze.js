@@ -75,7 +75,7 @@ class Maze {
             && chosenDoor.yPosition <= (this.yPosition + 32)
             && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
         ){
-
+            console.log("wall");
         }
     }
 }

@@ -66,17 +66,19 @@ class Maze {
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
         this.drawMazeHero();
+        this.checkForWalls();
     }
     checkForWalls(){
-        if(
-            this.xPosition <= (chosenDoor.xPosition + 32)
-            && chosenDoor.xPosition <= (this.xPosition + 32)
-            && this.yPosition <= (chosenDoor.yPosition + 32)
-            && chosenDoor.yPosition <= (this.yPosition + 32)
-            && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
-        ){
-            console.log("wall");
-        }
+        // if(
+        //     this.xPosition <= (chosenDoor.xPosition + 32)
+        //     && chosenDoor.xPosition <= (this.xPosition + 32)
+        //     && this.yPosition <= (chosenDoor.yPosition + 32)
+        //     && chosenDoor.yPosition <= (this.yPosition + 32)
+        //     && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
+        // ){
+        //     console.log("wall");
+        // }
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10));
     }
 }
 

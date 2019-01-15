@@ -82,8 +82,6 @@ class Maze {
     }
 }
 
-
-
 document.onkeydown = function(event) {
     // switch (event.keyCode) {
     //     case 37:

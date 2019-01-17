@@ -78,9 +78,11 @@ class Maze {
         // ){
         //     console.log("wall");
         // }
-        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data[0]);
-        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data[1]);
-        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data[2]);
+        let c = document.getElementById("container");
+        let context = c.getContext("2d");
+        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[0]);
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
     }
 }
 

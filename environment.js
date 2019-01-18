@@ -132,6 +132,7 @@ function runGame() {
 }
 
 let gameCanvas = document.createElement("canvas");
+gameCanvas.setAttribute("id", "gameID");
 let ctx = gameCanvas.getContext("2d");
 let chosenHero = new Hero();
 let chosenDoor = new Door("style/images/environment/scooter.png", "scooter");

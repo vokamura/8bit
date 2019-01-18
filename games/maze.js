@@ -78,7 +78,7 @@ class Maze {
         // ){
         //     console.log("wall");
         // }
-        let c = document.getElementById("container");
+        let c = document.getElementById("gameID");
         let context = c.getContext("2d");
         console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[0]);
         console.log(ctx.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);

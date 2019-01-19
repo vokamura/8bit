@@ -101,6 +101,7 @@ document.onkeydown = function(event) {
     //         mazeGame.moveDown();
     //       break;
     // }
+    
     if(event.which == 37){
         mazeGame.moveLeft();
     } else if(event.which == 38) {

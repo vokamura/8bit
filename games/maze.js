@@ -21,7 +21,6 @@ class Maze {
             ctx.fillStyle = "red";
             ctx.fill();
             console.log("Hero loaded");
-
         })
     }
     drawMazeHero(){
@@ -87,21 +86,6 @@ class Maze {
 }
 
 document.onkeydown = function(event) {
-    // switch (event.keyCode) {
-    //     case 37:
-    //         mazeGame.moveLeft();
-    //       break;
-    //    case 38:
-    //         mazeGame.moveUp();
-    //       break;
-    //    case 39:
-    //         mazeGame.moveRight();
-    //         break;
-    //    case 40:
-    //         mazeGame.moveDown();
-    //       break;
-    // }
-    
     if(event.which == 37){
         mazeGame.moveLeft();
     } else if(event.which == 38) {

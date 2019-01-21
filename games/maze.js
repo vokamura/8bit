@@ -12,7 +12,7 @@ class Maze {
         console.log('Maze game started');
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, -2, -2);
-        })
+        });
     }
     loadMazeHero(){
         this.boardImage.addEventListener("load", ()=>{
@@ -21,7 +21,7 @@ class Maze {
             ctx.fillStyle = "red";
             ctx.fill();
             console.log("Hero loaded");
-        })
+        });
     }
     drawMazeHero(){
         ctx.beginPath();

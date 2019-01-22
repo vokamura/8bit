@@ -7,6 +7,7 @@ class Maze {
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
+        this.background = [];
     }
     layoutBoard(){
         console.log('Maze game started');
@@ -21,6 +22,7 @@ class Maze {
             ctx.fillStyle = "red";
             ctx.fill();
             console.log("Hero loaded");
+            ctx.getImageData.data[0];
         });
     }
     drawMazeHero(){

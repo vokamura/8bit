@@ -22,7 +22,7 @@ class Maze {
             ctx.fillStyle = "red";
             ctx.fill();
             console.log("Hero loaded");
-            ctx.getImageData.data[0];
+            // ctx.getImageData.data[0];
         });
     }
     drawMazeHero(){

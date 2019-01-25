@@ -81,11 +81,11 @@ class Maze {
         // }
         let c = document.getElementById("gameID");
         let context = c.getContext("2d");
-        let n = this.yPosition * c.width + this.xPosition;
-        console.log(n);
-        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[n]);
-        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[n+1]);
-        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[n+2]);
+        // let n = this.yPosition * c.width + this.xPosition;
+        // console.log(n);
+        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[0]);
+        // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
+        // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
     }
 }
 

@@ -39,7 +39,6 @@ class Maze {
         }
         this.drawMazeHero();
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
-
     }
     moveUp(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);

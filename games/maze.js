@@ -69,6 +69,7 @@ class Maze {
         this.checkForWalls();
     }
     checkForWalls(){
+        //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
         // if(
         //     this.xPosition <= (chosenDoor.xPosition + 32)
         //     && chosenDoor.xPosition <= (this.xPosition + 32)
@@ -82,7 +83,8 @@ class Maze {
         let context = c.getContext("2d");
         // let n = this.yPosition * c.width + this.xPosition;
         // console.log(n);
-        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[0]);
+        console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data);
+        console.log(gameCanvas.toDataURL());
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
     }

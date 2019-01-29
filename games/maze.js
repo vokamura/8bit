@@ -84,9 +84,22 @@ class Maze {
         // let n = this.yPosition * c.width + this.xPosition;
         // console.log(n);
         console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data);
-        console.log(gameCanvas.toDataURL());
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
+        debugger;
+        var pixelMap = [];
+        for( var y = 0; y < this.boardImage.width; y++ ) {
+            for( var x = 0; x < this.boardImage.height; x++ ) {
+                // Fetch pixel at current position
+                var pixel = ctx.getImageData( x, y, 1, 1 );
+                // Check that opacity is above zero
+                if( pixel.data[3] != 0 ) {
+                    pixelMap.push( { x:x, y:y } );
+                }
+            }
+        }
+        console.log(pixelMap);
+        // return pixelMap;
     }
 }
 

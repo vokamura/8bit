@@ -99,9 +99,7 @@ class Maze {
             }
         }
         console.log(pixelMap);
-        // return pixelMap;
-
-        
+        // return pixelMap;        
     }
 }
 

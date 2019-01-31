@@ -101,10 +101,8 @@ class Maze {
         console.log(pixelMap);
         // return pixelMap;        
     }
-}
 
-    /* Box model detection, return true on collision */
-    function hitBox( source, target ) {
+    hitBox( source, target ) {
         /* Source and target objects contain x, y and width, height */
         return !(
             ( ( source.y + source.height ) < ( target.y ) ) ||
@@ -113,6 +111,18 @@ class Maze {
             ( source.x > ( target.x + target.width ) )
         );
     }
+}
+
+    /* Box model detection, return true on collision */
+    // function hitBox( source, target ) {
+    //     /* Source and target objects contain x, y and width, height */
+    //     return !(
+    //         ( ( source.y + source.height ) < ( target.y ) ) ||
+    //         ( source.y > ( target.y + target.height ) ) ||
+    //         ( ( source.x + source.width ) < target.x ) ||
+    //         ( source.x > ( target.x + target.width ) )
+    //     );
+    // }
 
 document.onkeydown = function(event) {
     if(event.which == 37){

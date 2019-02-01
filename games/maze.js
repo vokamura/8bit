@@ -86,41 +86,102 @@ class Maze {
         console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
-        debugger;
-        var pixelMap = [];
-        for( var y = 0; y < this.boardImage.width; y++ ) {
-            for( var x = 0; x < this.boardImage.height; x++ ) {
-                // Fetch pixel at current position
-                var pixel = ctx.getImageData( x, y, 1, 1 );
-                // Check that opacity is above zero
-                if( pixel.data[3] != 0 ) {
-                    pixelMap.push( { x:x, y:y } );
-                }
-            }
-        }
-        console.log(pixelMap);
     }
-    hitBox( source, target ) {
-        /* Source and target objects contain x, y and width, height */
-        return !(
-            ( ( source.y + source.height ) < ( target.y ) ) ||
-            ( source.y > ( target.y + target.height ) ) ||
-            ( ( source.x + source.width ) < target.x ) ||
-            ( source.x > ( target.x + target.width ) )
-        );
-    }
+
 }
 
-    /* Box model detection, return true on collision */
-    // function hitBox( source, target ) {
-    //     /* Source and target objects contain x, y and width, height */
-    //     return !(
-    //         ( ( source.y + source.height ) < ( target.y ) ) ||
-    //         ( source.y > ( target.y + target.height ) ) ||
-    //         ( ( source.x + source.width ) < target.x ) ||
-    //         ( source.x > ( target.x + target.width ) )
-    //     );
-    // }
+function loop(){
+
+	draw_platforms();
+	player.draw();
+
+	if(keys[38] || keys[32]){
+		if(!player.jumping){
+			player.velY = -player.jumpStrength*2;
+			player.jumping = true;
+		}
+	}
+
+	if(keys[39]){
+		if(player.velX < player.speed){
+			player.velX++;
+		}
+	}
+
+	if(keys[37]){
+		if(player.velX > -player.speed){
+			player.velX--;
+		}
+	}
+
+	player.x += player.velX;
+	player.y += player.velY;
+
+	player.velX *= friction;
+	player.velY += gravity;
+
+	player.grounded = false;
+	for(var i = 0; i < platforms.length; i++){
+		var direction = collisionCheck(player, platforms[i]);
+
+		if(direction == "left" || direction == "right"){
+			player.velX = 0;
+		} else if(direction == "bottom"){
+			player.jumping = false;
+			player.grounded = true;
+		} else if(direction == "top"){
+			player.velY *= -1;
+		}
+
+	}
+
+	if(player.grounded){
+		player.velY = 0;
+	}
+
+}
+
+function collisionCheck(character, platform){
+
+	var vectorX = (character.x + (character.width/2)) - (platform.x + (platform.width/2));
+	var vectorY = (character.y + (character.height/2)) - (platform.y + (platform.height/2));
+
+	var halfWidths = (character.width/2) + (platform.width/2);
+	var halfHeights = (character.height/2) + (platform.height/2);
+
+	var collisionDirection = null;
+
+	if(Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights){
+
+		var offsetX = halfWidths - Math.abs(vectorX);
+		var offsetY = halfHeights - Math.abs(vectorY);
+		if(offsetX < offsetY){
+
+			if (vectorX > 0){
+				collisionDirection = "left";
+				character.x += offsetX;
+			} else {
+				collisionDirection = "right";
+				character.x -= offsetX;
+			}
+
+		} else {
+
+			if (vectorY > 0){
+				collisionDirection = "top";
+				character.y += offsetY;
+			} else {
+				collisionDirection = "bottom";
+				character.y -= offsetY;
+			}
+
+		}
+
+	}
+
+	return collisionDirection;
+
+}
 
 document.onkeydown = function(event) {
     if(event.which == 37){

@@ -99,9 +99,7 @@ class Maze {
             }
         }
         console.log(pixelMap);
-        // return pixelMap;        
     }
-
     hitBox( source, target ) {
         /* Source and target objects contain x, y and width, height */
         return !(

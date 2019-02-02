@@ -90,57 +90,6 @@ class Maze {
 
 }
 
-function loop(){
-
-	draw_platforms();
-	player.draw();
-
-	if(keys[38] || keys[32]){
-		if(!player.jumping){
-			player.velY = -player.jumpStrength*2;
-			player.jumping = true;
-		}
-	}
-
-	if(keys[39]){
-		if(player.velX < player.speed){
-			player.velX++;
-		}
-	}
-
-	if(keys[37]){
-		if(player.velX > -player.speed){
-			player.velX--;
-		}
-	}
-
-	player.x += player.velX;
-	player.y += player.velY;
-
-	player.velX *= friction;
-	player.velY += gravity;
-
-	player.grounded = false;
-	for(var i = 0; i < platforms.length; i++){
-		var direction = collisionCheck(player, platforms[i]);
-
-		if(direction == "left" || direction == "right"){
-			player.velX = 0;
-		} else if(direction == "bottom"){
-			player.jumping = false;
-			player.grounded = true;
-		} else if(direction == "top"){
-			player.velY *= -1;
-		}
-
-	}
-
-	if(player.grounded){
-		player.velY = 0;
-	}
-
-}
-
 function collisionCheck(character, platform){
 
 	var vectorX = (character.x + (character.width/2)) - (platform.x + (platform.width/2));
@@ -152,11 +101,9 @@ function collisionCheck(character, platform){
 	var collisionDirection = null;
 
 	if(Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights){
-
 		var offsetX = halfWidths - Math.abs(vectorX);
 		var offsetY = halfHeights - Math.abs(vectorY);
 		if(offsetX < offsetY){
-
 			if (vectorX > 0){
 				collisionDirection = "left";
 				character.x += offsetX;
@@ -164,7 +111,6 @@ function collisionCheck(character, platform){
 				collisionDirection = "right";
 				character.x -= offsetX;
 			}
-
 		} else {
 
 			if (vectorY > 0){
@@ -174,13 +120,9 @@ function collisionCheck(character, platform){
 				collisionDirection = "bottom";
 				character.y -= offsetY;
 			}
-
 		}
-
 	}
-
 	return collisionDirection;
-
 }
 
 document.onkeydown = function(event) {

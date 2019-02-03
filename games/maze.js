@@ -6,6 +6,7 @@ class Maze {
         this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
+        this.boardImage.classList.add("mazeBackground");
         this.mazeHero = new Image();
         this.background = [];
     }
@@ -86,44 +87,12 @@ class Maze {
         console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
         // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
+        var svg=document.querySelector(".mazeBackground");
+        console.log(svg);
     }
 
 }
 
-function collisionCheck(character, platform){
-
-	var vectorX = (character.x + (character.width/2)) - (platform.x + (platform.width/2));
-	var vectorY = (character.y + (character.height/2)) - (platform.y + (platform.height/2));
-
-	var halfWidths = (character.width/2) + (platform.width/2);
-	var halfHeights = (character.height/2) + (platform.height/2);
-
-	var collisionDirection = null;
-
-	if(Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights){
-		var offsetX = halfWidths - Math.abs(vectorX);
-		var offsetY = halfHeights - Math.abs(vectorY);
-		if(offsetX < offsetY){
-			if (vectorX > 0){
-				collisionDirection = "left";
-				character.x += offsetX;
-			} else {
-				collisionDirection = "right";
-				character.x -= offsetX;
-			}
-		} else {
-
-			if (vectorY > 0){
-				collisionDirection = "top";
-				character.y += offsetY;
-			} else {
-				collisionDirection = "bottom";
-				character.y -= offsetY;
-			}
-		}
-	}
-	return collisionDirection;
-}
 
 document.onkeydown = function(event) {
     if(event.which == 37){

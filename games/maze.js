@@ -90,7 +90,6 @@ class Maze {
         var svg=document.querySelector(".mazeBackground");
         console.log(svg);
     }
-
 }
 
 

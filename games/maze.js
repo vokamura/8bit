@@ -6,7 +6,7 @@ class Maze {
         this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
-        this.boardImage.classList.add("mazeBackground");
+        // this.boardImage.classList.add("mazeBackground");
         this.mazeHero = new Image();
         this.background = [];
     }
@@ -82,16 +82,11 @@ class Maze {
         // }
         let c = document.getElementById("gameID");
         let context = c.getContext("2d");
-        // let n = this.yPosition * c.width + this.xPosition;
-        // console.log(n);
+
         console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data);
-        // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[1]);
-        // console.log(context.getImageData(this.xPosition, this.yPosition, 1, 1).data[2]);
-        var svg=document.querySelector(".mazeBackground");
-        console.log(svg);
+        console.log(c);
     }
 }
-
 
 document.onkeydown = function(event) {
     if(event.which == 37){

@@ -81,6 +81,7 @@ class Maze {
         //     console.log("wall");
         // }
         console.log(this);
+
     }
 }
 

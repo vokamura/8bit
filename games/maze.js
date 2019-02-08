@@ -6,7 +6,6 @@ class Maze {
         this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
-        // this.boardImage.classList.add("mazeBackground");
         this.mazeHero = new Image();
         this.background = [];
     }

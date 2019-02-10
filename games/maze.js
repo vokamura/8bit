@@ -81,7 +81,6 @@ class Maze {
         // }
         console.log(this);
         console.log(ctx.getImageData[0]);
-
     }
 }
 

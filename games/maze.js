@@ -80,7 +80,7 @@ class Maze {
         //     console.log("wall");
         // }
         console.log(this);
-        console.log(ctx.getImageData[0]);
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data[0]);
     }
 }
 

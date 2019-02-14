@@ -83,7 +83,7 @@ class Maze {
         console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data[0]);
         // var mazeX = 0;
         // var mazeZ = 0;
-        for (var i=0; i < 100; i++){
+        for (var i=0; i < 100; i+=10){
             console.log(ctx.getImageData(385,i,10,10).data[0]);
         }
        

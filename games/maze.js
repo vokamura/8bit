@@ -80,23 +80,19 @@ class Maze {
         //     console.log("wall");
         // }
         console.log(this);
+        console.log(ctx.getImageData().data);
 
-        function getPixel(url, x, y) {
-            var img = new Image();
-            img.src = url;
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            context.drawImage(img, 0, 0);
-            return context.getImageData(x, y, 1, 1).data;
-          }
-          
-          
-          getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
+    // getPixel(url, x, y) {
+    //     var img = new Image();
+    //     img.src = url;
+    //     var canvas = document.createElement('canvas');
+    //     var context = canvas.getContext('2d');
+    //     context.drawImage(img, 0, 0);
+    //     return context.getImageData(x, y, 1, 1).data;
+    
+    //       getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 
-
-
-
-
+    
        
     }
 }

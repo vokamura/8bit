@@ -81,7 +81,9 @@ class Maze {
         // }
         console.log(this);
         console.log(ctx.getImageData().data);
+        // this.boardImage.src;
 
+        //make own function getPixel, and pass background image to detect user
     // getPixel(url, x, y) {
     //     var img = new Image();
     //     img.src = url;

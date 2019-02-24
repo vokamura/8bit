@@ -80,10 +80,8 @@ class Maze {
         //     console.log("wall");
         // }
         console.log(this);
-        console.log(ctx.getImageData().data);
-        // this.boardImage.src;
+        // console.log(ctx.getImageData().data);
 
-        //make own function getPixel, and pass background image to detect user
     // getPixel(url, x, y) {
     //     var img = new Image();
     //     img.src = url;
@@ -91,12 +89,12 @@ class Maze {
     //     var context = canvas.getContext('2d');
     //     context.drawImage(img, 0, 0);
     //     return context.getImageData(x, y, 1, 1).data;
+    //       
 
-
-    
     }
-        //       getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
+    // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }
+
 
 document.onkeydown = function(event) {
     if(event.which == 37){

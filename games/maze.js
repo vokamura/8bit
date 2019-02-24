@@ -95,6 +95,7 @@ class Maze {
     // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }
 
+
 document.onkeydown = function(event) {
     if(event.which == 37){
         mazeGame.moveLeft();

@@ -91,6 +91,7 @@ class Maze {
         //     return context.getImageData(x, y, 1, 1).data;
         //       
     }
+    
     // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }
 

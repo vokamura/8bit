@@ -79,6 +79,7 @@ class Maze {
         // ){
         //     console.log("wall");
         // }
+
         console.log(this);
         // console.log(ctx.getImageData().data);
 
@@ -91,6 +92,7 @@ class Maze {
         //     return context.getImageData(x, y, 1, 1).data;
         //       
     }
+    //try passing in random images
     
     // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }

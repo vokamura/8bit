@@ -82,6 +82,7 @@ class Maze {
         // }
 
         console.log(this);
+        
         // console.log(ctx.getImageData().data);
 
         // getPixel(url, x, y) {

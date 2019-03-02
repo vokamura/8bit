@@ -68,7 +68,7 @@ class Maze {
         this.drawMazeHero();
         this.checkForWalls();
     }
-    checkForWalls(){
+    checkForWalls(pic, x, y){
         
         //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
         // if(
@@ -82,6 +82,8 @@ class Maze {
         // }
 
         console.log(this);
+
+        let frontImg = 
         
         // console.log(ctx.getImageData().data);
 

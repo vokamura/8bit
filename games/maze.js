@@ -83,7 +83,8 @@ class Maze {
 
         console.log(this);
 
-        let frontImg = 
+        let frontImg = this.boardImage.src;
+        console.log(frontImg);
         
         // console.log(ctx.getImageData().data);
 

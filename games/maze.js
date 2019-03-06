@@ -19,12 +19,13 @@ class Maze {
     }
     loadMazeHero(){
         this.boardImage.addEventListener("load", ()=>{
-            ctx.beginPath();
-            ctx.rect(385, 0, 13, 13);
-            ctx.fillStyle = "red";
-            ctx.fill();
+            // ctx.beginPath();
+            // ctx.rect(385, 0, 13, 13);
+            // ctx.fillStyle = "red";
+            // ctx.fill();
             console.log("Hero loaded");
             // ctx.getImageData.data[0];
+            ctx.drawImage(this.mazeHero, 385, 0);
         });
     }
     drawMazeHero(){

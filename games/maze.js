@@ -6,8 +6,10 @@ class Maze {
         this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
+        // this.mazeHero = new Image();
+        // this.background = [];
         this.mazeHero = new Image();
-        this.background = [];
+        this.mazeHero.src = "style/images/mini_sprite.png";
     }
     layoutBoard(){
         console.log('Maze game started');

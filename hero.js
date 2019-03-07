@@ -18,7 +18,6 @@ class Hero {
             this.heroImage.addEventListener("load", ()=>{
                 ctx.drawImage(this.heroImage, this.xPosition, this.yPosition);
             })
-
         }
     }
     sayName(){

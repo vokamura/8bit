@@ -25,7 +25,7 @@ class Maze {
             // ctx.fill();
             console.log("Hero loaded");
             // ctx.getImageData.data[0];
-            ctx.drawImage(this.mazeHero, 385, 0);
+            ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
         });
     }
     drawMazeHero(){

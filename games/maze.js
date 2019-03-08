@@ -29,10 +29,12 @@ class Maze {
         });
     }
     drawMazeHero(){
-        ctx.beginPath();
-        ctx.rect(this.xPosition, this.yPosition, 13, 13);
-        ctx.fillStyle = "red";
-        ctx.fill(); 
+        // ctx.beginPath();
+        // ctx.rect(this.xPosition, this.yPosition, 13, 13);
+        // ctx.fillStyle = "red";
+        // ctx.fill(); 
+        ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
+
     }
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);

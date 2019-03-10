@@ -94,12 +94,10 @@ class Maze {
 
         let backImg = this.boardImage.src;
         console.log(backImg);
-
-        let frontImg = this.drawMazeHero();
-        console.log(frontImg);
         
         // console.log(ctx.getImageData().data);
 
+        console.log(document.getElementsByTagName("line"));
         // getPixel(url, x, y) {
         //     var img = new Image();
         //     img.src = url;
@@ -108,7 +106,6 @@ class Maze {
         //     context.drawImage(img, 0, 0);
         //     return context.getImageData(x, y, 1, 1).data;
         //       
-        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10,10));
     }
     //try passing in random images
     

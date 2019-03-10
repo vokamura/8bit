@@ -37,9 +37,10 @@ class Maze {
 
     }
     moveLeft(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+
         this.drawMazeHero();
 
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         ctx.drawImage(this.boardImage, -2, -2);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
@@ -107,6 +108,7 @@ class Maze {
         //     context.drawImage(img, 0, 0);
         //     return context.getImageData(x, y, 1, 1).data;
         //       
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10,10));
     }
     //try passing in random images
     

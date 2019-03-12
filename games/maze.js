@@ -97,7 +97,7 @@ class Maze {
         
         // console.log(ctx.getImageData().data);
 
-        console.log(document.getElementsByTagName("line"));
+        console.log(document.getElementsByTagName("svg")[0]);
         // getPixel(url, x, y) {
         //     var img = new Image();
         //     img.src = url;

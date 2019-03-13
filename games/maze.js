@@ -91,10 +91,8 @@ class Maze {
         // }
 
         console.log(this.xPosition + this.yPosition);
-
         let backImg = this.boardImage.src;
         console.log(backImg);
-        
         // console.log(ctx.getImageData().data);
 
         console.log(document.getElementsByTagName("svg")[0]);

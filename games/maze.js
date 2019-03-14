@@ -89,7 +89,7 @@ class Maze {
         // ){
         //     console.log("wall");
         // }
-
+        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data);
         console.log(this.xPosition + this.yPosition);
         let backImg = this.boardImage.src;
         console.log(backImg);

@@ -92,6 +92,7 @@ class Maze {
         console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data);
         console.log(this.xPosition + this.yPosition);
         let backImg = this.boardImage.src;
+        let mazeImg = this.mazeHero.src;
         console.log(backImg);
         // console.log(ctx.getImageData().data);
 
@@ -105,7 +106,6 @@ class Maze {
         //     return context.getImageData(x, y, 1, 1).data;
         //       
     }
-    //try passing in random images
     
     // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }

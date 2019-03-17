@@ -94,7 +94,7 @@ class Maze {
         let backImg = this.boardImage.src;
         let mazeImg = this.mazeHero.src;
         console.log(backImg);
-        console.log(mazeImg);
+        console.log(this);
         ctx.drawImage(mazeImg, 0, 0);
         console.log(ctx.getImageData(this.xPosition, this.yPosition).data);
         // console.log(ctx.getImageData().data);

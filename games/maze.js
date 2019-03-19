@@ -6,8 +6,6 @@ class Maze {
         this.yPosition = 0;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
-        // this.mazeHero = new Image();
-        // this.background = [];
         this.mazeHero = new Image();
         this.mazeHero.src = "style/images/mini_sprite.png";
     }
@@ -19,22 +17,13 @@ class Maze {
     }
     loadMazeHero(){
         this.boardImage.addEventListener("load", ()=>{
-            // ctx.beginPath();
-            // ctx.rect(385, 0, 13, 13);
-            // ctx.fillStyle = "red";
-            // ctx.fill();
             console.log("Hero loaded");
             // ctx.getImageData.data[0];
             ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
         });
     }
     drawMazeHero(){
-        // ctx.beginPath();
-        // ctx.rect(this.xPosition, this.yPosition, 13, 13);
-        // ctx.fillStyle = "red";
-        // ctx.fill(); 
         ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
-
     }
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);

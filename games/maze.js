@@ -78,28 +78,12 @@ class Maze {
         // ){
         //     console.log("wall");
         // }
-        console.log(ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data);
-        console.log(this.xPosition + this.yPosition);
-        let backImg = this.boardImage.src;
-        let mazeImg = this.mazeHero.src;
-        console.log(backImg);
+        let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
+        console.log(getData);
+        console.log(getData[55]);
+        console.log(this.xPosition + "," + this.yPosition);
         console.log(this);
-        ctx.drawImage(mazeImg, 0, 0);
-        console.log(ctx.getImageData(this.xPosition, this.yPosition).data);
-        // console.log(ctx.getImageData().data);
-
-        console.log(document.getElementsByTagName("svg")[0]);
-        // getPixel(url, x, y) {
-        //     var img = new Image();
-        //     img.src = url;
-        //     var canvas = document.createElement('canvas');
-        //     var context = canvas.getContext('2d');
-        //     context.drawImage(img, 0, 0);
-        //     return context.getImageData(x, y, 1, 1).data;
-        //       
     }
-    
-    // getPixel('./bg.png', 10, 10); // [255, 255, 255, 0];
 }
 
 

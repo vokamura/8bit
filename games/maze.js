@@ -27,18 +27,19 @@ class Maze {
     }
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        ctx.drawImage(this.boardImage, -2, -2);
 
         this.drawMazeHero();
 
-        ctx.drawImage(this.boardImage, -2, -2);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
         console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
-        this.drawMazeHero();
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+
+        this.drawMazeHero();
         ctx.drawImage(this.boardImage, -2, -2);
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
@@ -46,9 +47,10 @@ class Maze {
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+
         this.drawMazeHero();
 
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         ctx.drawImage(this.boardImage, -2, -2);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition + 10;
@@ -56,9 +58,10 @@ class Maze {
         }
     }
     moveDown(){
+        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+
         this.drawMazeHero();
 
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
         ctx.drawImage(this.boardImage, -2, -2);
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;

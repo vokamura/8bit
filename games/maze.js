@@ -27,14 +27,15 @@ class Maze {
     }
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition)
         ctx.drawImage(this.boardImage, -2, -2);
-
-        this.drawMazeHero();
-
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
-        console.log("left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
+
+        this.drawMazeHero();
+
+        console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
         ctx.clearRect(this.xPosition, this.yPosition, 13, 13);

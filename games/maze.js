@@ -2,8 +2,8 @@ class Maze {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-        this.xPosition = 385;
-        this.yPosition = 0;
+        this.xPosition = 510;
+        this.yPosition = 387;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
@@ -12,7 +12,7 @@ class Maze {
     layoutBoard(){
         console.log('Maze game started');
         this.boardImage.addEventListener("load", () => {
-            ctx.drawImage(this.boardImage, -2, -2);
+            ctx.drawImage(this.boardImage, 50, 50);
         });
     }
     loadMazeHero(){
@@ -26,49 +26,44 @@ class Maze {
         ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
     }
     moveLeft(){
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition)
-        ctx.drawImage(this.boardImage, -2, -2);
+        ctx.drawImage(this.boardImage, 50, 50);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
-
         this.drawMazeHero();
-
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
 
-        this.drawMazeHero();
-        ctx.drawImage(this.boardImage, -2, -2);
+        ctx.drawImage(this.boardImage, 50, 50);
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
+        this.drawMazeHero();
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
-
-        this.drawMazeHero();
-
-        ctx.drawImage(this.boardImage, -2, -2);
+        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
+        ctx.drawImage(this.boardImage, 50, 50);
         if(this.xPosition > 0){
             this.xPosition = this.xPosition + 10;
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
+        this.drawMazeHero();
     }
     moveDown(){
-        ctx.clearRect(this.xPosition, this.yPosition, 13, 13);
+        ctx.clearRect(this.xPosition, this.yPosition, 55, 55);
+        ctx.drawImage(this.boardImage, 50, 50);
+        this.checkForWalls();
 
-        this.drawMazeHero();
-
-        ctx.drawImage(this.boardImage, -2, -2);
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
-        this.checkForWalls();
+        this.drawMazeHero();
     }
     checkForWalls(pic, x, y){
         
@@ -84,9 +79,11 @@ class Maze {
         // }
         let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
         console.log(getData);
-        console.log(getData[55]);
-        console.log(this.xPosition + "," + this.yPosition);
-        console.log(this);
+        if (getData[0] == 0){
+            console.log("match");
+        }
+        // console.log(this.xPosition + "," + this.yPosition);
+        // console.log(this);
     }
 }
 

@@ -64,6 +64,8 @@ class Maze {
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
         this.drawMazeHero();
+        let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
+        console.log(getData);
     }
     checkForWalls(pic, x, y){
         

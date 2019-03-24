@@ -2,8 +2,8 @@ class Maze {
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
-        this.xPosition = 385;
-        this.yPosition = 0;
+        this.xPosition = 510;
+        this.yPosition = 387;
         this.boardImage = new Image();
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
@@ -12,7 +12,7 @@ class Maze {
     layoutBoard(){
         console.log('Maze game started');
         this.boardImage.addEventListener("load", () => {
-            ctx.drawImage(this.boardImage, -2, -2);
+            ctx.drawImage(this.boardImage, 50, 50);
         });
     }
     loadMazeHero(){

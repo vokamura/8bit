@@ -55,11 +55,11 @@ class Maze {
         this.drawMazeHero();
     }
     moveDown(){
-        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
+        ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
         let getBoardData = ctx.getImageData(this.xPosition, this.yPosition, 43, 43).data;
         // console.log("Context is", ctx)
-        console.log(this.mazeHero.width);
+        console.log(this.mazeHero.width, this.mazeHero.height);
         console.log("Board data ", getBoardData);
         // this.checkForWalls();
 

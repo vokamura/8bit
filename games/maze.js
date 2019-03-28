@@ -55,17 +55,24 @@ class Maze {
         this.drawMazeHero();
     }
     moveDown(){
-        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
+        ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
-        let getBoardData = ctx.getImageData(this.xPosition-5, this.yPosition+5, 55, 55).data;
+        let getBoardData = ctx.getImageData(this.xPosition, this.yPosition, 43, 43).data;
         // console.log("Context is", ctx)
+        console.log(this.mazeHero.width, this.mazeHero.height);
         console.log("Board data ", getBoardData);
         // this.checkForWalls();
+
+        for(var i=0; i<getBoardData.length; i++){
+            if(getBoardData[i] !== 255){
+                console.log("wall!");
+            }
+        }
 
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
-            let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 10, 10).data;
+            let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 20, 20).data;
             // console.log("Hero data", getHeroData);
             if(getBoardData == getHeroData){
                 console.log("A match!");

@@ -36,8 +36,7 @@ class Maze {
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
-        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
-
+        ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;

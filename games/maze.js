@@ -62,20 +62,12 @@ class Maze {
         console.log("Board data ", getBoardData);
         // this.checkForWalls();
 
-        for(var i=0; i<getBoardData.length; i++){
-            if(getBoardData[i] !== 255){
-                console.log("wall!");
-            }
-        }
-
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
             let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 20, 20).data;
-            // console.log("Hero data", getHeroData);
             if(getBoardData == getHeroData){
                 console.log("A match!");
-
             }
             this.drawMazeHero();
         }
@@ -84,22 +76,12 @@ class Maze {
     checkForWalls(pic, x, y){
         
         //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
-        // if(
-        //     this.xPosition <= (chosenDoor.xPosition + 32)
-        //     && chosenDoor.xPosition <= (this.xPosition + 32)
-        //     && this.yPosition <= (chosenDoor.yPosition + 32)
-        //     && chosenDoor.yPosition <= (this.yPosition + 32)
-        //     && document.getElementsByClassName("textShadow")[0].style.visibility !== "visible"
-        // ){
-        //     console.log("wall");
-        // }
+
         let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
         console.log(getData);
         if (getData[0] == 0){
             console.log("match");
         }
-        // console.log(this.xPosition + "," + this.yPosition);
-        // console.log(this);
     }
 }
 

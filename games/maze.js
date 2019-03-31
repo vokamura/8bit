@@ -56,8 +56,8 @@ class Maze {
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
-        let getBoardData = ctx.getImageData(this.xPosition, this.yPosition, 43, 43).data;
-        console.log("Context is", ctx)
+        let getBoardData = ctx.getImageData(this.xPosition, this.yPosition, 20, 20).data;
+        // console.log("Context is", ctx)
         console.log(this.mazeHero.width, this.mazeHero.height);
         console.log("Board data ", getBoardData);
         // this.checkForWalls();
@@ -66,9 +66,10 @@ class Maze {
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
             let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 20, 20).data;
-            if(getBoardData == getHeroData){
-                console.log("A match!");
-            }
+            console.log("Hero data", getHeroData);
+            // if(getBoardData == getHeroData){
+            //     console.log("A match!");
+            // }
             this.drawMazeHero();
         }
 

@@ -65,9 +65,6 @@ class Maze {
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
 
-            // if(getBoardData == getHeroData){
-            //     console.log("A match!");
-            // }
             this.drawMazeHero();
         }
 

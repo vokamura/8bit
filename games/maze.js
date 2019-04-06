@@ -69,16 +69,14 @@ class Maze {
         }
 
     }
-    checkForWalls(pic, x, y){
-        
-        //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
-
-        let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
-        console.log(getData);
-        if (getData[0] == 0){
-            console.log("match");
-        }
-    }
+    // checkForWalls(pic, x, y){
+    //     //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
+    //     let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;
+    //     console.log(getData);
+    //     if (getData[0] == 0){
+    //         console.log("match");
+    //     }
+    // }
 }
 
 

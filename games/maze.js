@@ -18,7 +18,6 @@ class Maze {
     loadMazeHero(){
         this.boardImage.addEventListener("load", ()=>{
             console.log("Hero loaded");
-            // ctx.getImageData.data[0];
             ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
         });
     }
@@ -59,7 +58,7 @@ class Maze {
         console.log(this.mazeHero.width, this.mazeHero.height);
         // this.checkForWalls();
         // let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 5, 5).data;
-        let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 43, 43).data;
+        let getHeroData = ctx.getImageData(this.xPosition + 43, this.yPosition + 43, 43, 43).data;
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
 

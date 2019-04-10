@@ -56,8 +56,10 @@ class Maze {
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);
         ctx.drawImage(this.boardImage, 50, 50);
         console.log(this.mazeHero.width, this.mazeHero.height);
+
         // this.checkForWalls();
         // let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 5, 5).data;
+        
         let getHeroData = ctx.getImageData(this.xPosition + 43, this.yPosition + 43, 43, 43).data;
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);

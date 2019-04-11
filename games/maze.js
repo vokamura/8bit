@@ -28,6 +28,11 @@ class Maze {
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition)
         ctx.drawImage(this.boardImage, 50, 50);
+
+        let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+        console.log(this.xPosition, this.yPosition);
+        console.log("Hero data", getHeroData);
+        
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
@@ -37,6 +42,11 @@ class Maze {
     moveUp(){
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
+
+        let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+        console.log(this.xPosition, this.yPosition);
+        console.log("Hero data", getHeroData);
+
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
@@ -46,6 +56,11 @@ class Maze {
     moveRight(){
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
+
+        let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+        console.log(this.xPosition, this.yPosition);
+        console.log("Hero data", getHeroData);
+
         if(this.xPosition > 0){
             this.xPosition = this.xPosition + 10;
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
@@ -60,14 +75,14 @@ class Maze {
         // this.checkForWalls();
         // let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 5, 5).data;
         
-        let getHeroData = ctx.getImageData(this.xPosition + 43, this.yPosition + 43, 43, 43).data;
+        let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
 
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
-            console.log(getHeroData);
+            // console.log(getHeroData);
 
             this.drawMazeHero();
         }

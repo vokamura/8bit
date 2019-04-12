@@ -11,6 +11,7 @@ class Maze {
     }
     layoutBoard(){
         console.log('Maze game started');
+        
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, 50, 50);
         });

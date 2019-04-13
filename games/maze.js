@@ -31,6 +31,7 @@ class Maze {
         ctx.drawImage(this.boardImage, 50, 50);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+        
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
         
@@ -45,6 +46,7 @@ class Maze {
         ctx.drawImage(this.boardImage, 50, 50);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
 
@@ -59,6 +61,7 @@ class Maze {
         ctx.drawImage(this.boardImage, 50, 50);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
 
@@ -77,6 +80,7 @@ class Maze {
         // let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 5, 5).data;
         
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data", getHeroData);
 

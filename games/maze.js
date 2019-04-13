@@ -27,7 +27,9 @@ class Maze {
     }
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
+
         console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition)
+        
         ctx.drawImage(this.boardImage, 50, 50);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;

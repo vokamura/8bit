@@ -10,6 +10,7 @@ class Maze {
         this.mazeHero.src = "style/images/mini_sprite.png";
     }
     layoutBoard(){
+
         console.log('Maze game started');
         
         this.boardImage.addEventListener("load", () => {
@@ -18,8 +19,10 @@ class Maze {
     }
     loadMazeHero(){
         this.boardImage.addEventListener("load", ()=>{
+
             console.log("Hero loaded");
             ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
+
         });
     }
     drawMazeHero(){
@@ -55,7 +58,9 @@ class Maze {
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
+
         this.drawMazeHero();
+
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
     moveRight(){
@@ -71,11 +76,13 @@ class Maze {
             this.xPosition = this.xPosition + 10;
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
+
         this.drawMazeHero();
     }
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);
         ctx.drawImage(this.boardImage, 50, 50);
+        
         console.log(this.mazeHero.width, this.mazeHero.height);
 
         // this.checkForWalls();

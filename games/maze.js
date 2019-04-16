@@ -18,6 +18,7 @@ class Maze {
         });
     }
     loadMazeHero(){
+        
         this.boardImage.addEventListener("load", ()=>{
 
             console.log("Hero loaded");
@@ -43,10 +44,13 @@ class Maze {
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
+
         this.drawMazeHero();
+
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
+
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
 

@@ -10,7 +10,9 @@ class Maze {
         this.mazeHero.src = "style/images/mini_sprite.png";
     }
     layoutBoard(){
+
         console.log('Maze game started');
+        
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, 50, 50);
         });

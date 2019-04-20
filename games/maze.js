@@ -10,22 +10,19 @@ class Maze {
         this.mazeHero.src = "style/images/mini_sprite.png";
     }
     layoutBoard(){
-
         console.log('Maze game started');
-        
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, 50, 50);
         });
     }
-    loadMazeHero(){
-        
-        this.boardImage.addEventListener("load", ()=>{
 
+    loadMazeHero(){
+        this.boardImage.addEventListener("load", ()=>{
             console.log("Hero loaded");
             ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
-
         });
     }
+    
     drawMazeHero(){
         ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
     }
@@ -120,7 +117,6 @@ class Maze {
     //     }
     // }
 }
-
 
 document.onkeydown = function(event) {
     if(event.which == 37){

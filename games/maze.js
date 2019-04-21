@@ -92,7 +92,7 @@ class Maze {
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
 
         console.log(this.xPosition, this.yPosition);
-        console.log("Hero data", getHeroData);
+        console.log("Hero data before", getHeroData);
 
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
@@ -104,7 +104,7 @@ class Maze {
             let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
 
         console.log(this.xPosition, this.yPosition);
-        console.log("Hero data", getHeroData);
+        console.log("Hero data after", getHeroData);
         }
 
     }

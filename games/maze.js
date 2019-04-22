@@ -27,11 +27,10 @@ class Maze {
         ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
     }
     moveLeft(){
-        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
-
-        console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition)
-        
+        ctx.clearRect(this.xPosition, this.yPosition, 50, 50);        
         ctx.drawImage(this.boardImage, 50, 50);
+
+        console.log("Before left: " + "x is " + this.xPosition + " y is " + this.yPosition);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
         
@@ -47,7 +46,6 @@ class Maze {
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
     moveUp(){
-
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
 

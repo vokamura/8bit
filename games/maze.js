@@ -9,6 +9,7 @@ class Maze {
         this.mazeHero = new Image();
         this.mazeHero.src = "style/images/mini_sprite.png";
     }
+    
     layoutBoard(){
         console.log('Maze game started');
         this.boardImage.addEventListener("load", () => {
@@ -45,6 +46,7 @@ class Maze {
 
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
+
     moveUp(){
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
@@ -62,6 +64,7 @@ class Maze {
 
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
+
     moveRight(){
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
@@ -78,6 +81,7 @@ class Maze {
 
         this.drawMazeHero();
     }
+
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);
         ctx.drawImage(this.boardImage, 50, 50);
@@ -103,6 +107,7 @@ class Maze {
 
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data after", getHeroData);
+
         }
 
     }

@@ -12,9 +12,11 @@ class Maze {
     
     layoutBoard(){
         console.log('Maze game started');
+
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, 50, 50);
         });
+
     }
 
     loadMazeHero(){
@@ -66,6 +68,7 @@ class Maze {
     }
 
     moveRight(){
+
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
 
@@ -81,6 +84,7 @@ class Maze {
 
         this.drawMazeHero();
     }
+    
 
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);

@@ -16,7 +16,6 @@ class Maze {
         this.boardImage.addEventListener("load", () => {
             ctx.drawImage(this.boardImage, 50, 50);
         });
-
     }
 
     loadMazeHero(){
@@ -29,6 +28,7 @@ class Maze {
     drawMazeHero(){
         ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
     }
+    
     moveLeft(){
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);        
         ctx.drawImage(this.boardImage, 50, 50);
@@ -68,10 +68,8 @@ class Maze {
     }
 
     moveRight(){
-
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
-
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
 
         console.log(this.xPosition, this.yPosition);

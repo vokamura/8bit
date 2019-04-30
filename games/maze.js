@@ -10,7 +10,7 @@ class Maze {
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
         this.mazeHero.src = "style/images/mini_sprite.png";
-        
+
     }
     
     layoutBoard(){
@@ -22,10 +22,12 @@ class Maze {
     }
 
     loadMazeHero(){
+
         this.boardImage.addEventListener("load", ()=>{
             console.log("Hero loaded");
             ctx.drawImage(this.mazeHero, this.xPosition, this.yPosition);
         });
+        
     }
     
     drawMazeHero(){

@@ -30,6 +30,7 @@ class Maze {
     }
     
     moveLeft(){
+        
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);        
         ctx.drawImage(this.boardImage, 50, 50);
 
@@ -50,6 +51,7 @@ class Maze {
     }
 
     moveUp(){
+
         ctx.clearRect(this.xPosition, this.yPosition, 43, 43);
         ctx.drawImage(this.boardImage, 50, 50);
 
@@ -68,6 +70,7 @@ class Maze {
     }
 
     moveRight(){
+
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
@@ -85,6 +88,7 @@ class Maze {
     
 
     moveDown(){
+
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);
         ctx.drawImage(this.boardImage, 50, 50);
         

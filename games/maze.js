@@ -1,5 +1,7 @@
 class Maze {
+
     constructor(){
+
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
         this.xPosition = 510;
@@ -8,6 +10,7 @@ class Maze {
         this.boardImage.src = "style/images/maze.svg";
         this.mazeHero = new Image();
         this.mazeHero.src = "style/images/mini_sprite.png";
+        
     }
     
     layoutBoard(){

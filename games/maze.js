@@ -62,7 +62,6 @@ class Maze {
         }
 
         this.drawMazeHero();
-
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
 
@@ -112,6 +111,7 @@ class Maze {
         }
 
     }
+
     // checkForWalls(pic, x, y){
     //     //https://benjaminhorn.io/code/pixel-accurate-collision-detection-with-javascript-and-canvas/
     //     let getData = ctx.getImageData(this.xPosition, this.yPosition, 13, 13).data;

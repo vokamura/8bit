@@ -44,7 +44,6 @@ class Maze {
         }
 
         this.drawMazeHero();
-
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
 

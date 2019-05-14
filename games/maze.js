@@ -77,8 +77,7 @@ class Maze {
         }
 
         this.drawMazeHero();
-    }
-    
+    }    
 
     moveDown(){
         ctx.clearRect(this.xPosition, this.yPosition, 1, 1);

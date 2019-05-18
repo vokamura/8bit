@@ -1,5 +1,4 @@
 class Maze {
-    
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");
@@ -106,7 +105,6 @@ class Maze {
         console.log("Hero data after", getHeroData);
 
         }
-
     }
 
     // checkForWalls(pic, x, y){

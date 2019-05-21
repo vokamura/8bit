@@ -42,7 +42,9 @@ class Maze {
         if(this.xPosition > 0){
             this.xPosition = this.xPosition - 10;
         }
+
         this.drawMazeHero();
+        
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
 

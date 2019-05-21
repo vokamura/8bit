@@ -104,7 +104,6 @@ class Maze {
 
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data after", getHeroData);
-
         }
     }
 

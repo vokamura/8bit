@@ -43,8 +43,7 @@ class Maze {
             this.xPosition = this.xPosition - 10;
         }
 
-        this.drawMazeHero();
-        
+        this.drawMazeHero();  
         console.log("After left: " + "x is " + this.xPosition + " y is " + this.yPosition); 
     }
 
@@ -103,8 +102,8 @@ class Maze {
 
             let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
 
-        console.log(this.xPosition, this.yPosition);
-        console.log("Hero data after", getHeroData);
+            console.log(this.xPosition, this.yPosition);
+            console.log("Hero data after", getHeroData);
         }
     }
 

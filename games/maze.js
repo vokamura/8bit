@@ -99,9 +99,7 @@ class Maze {
             // console.log(getHeroData);
 
             this.drawMazeHero();
-
             let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
-
             console.log(this.xPosition, this.yPosition);
             console.log("Hero data after", getHeroData);
         }
@@ -116,6 +114,7 @@ class Maze {
     //     }
     // }
 }
+
 
 document.onkeydown = function(event) {
     if(event.which == 37){

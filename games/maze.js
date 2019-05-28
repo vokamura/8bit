@@ -59,6 +59,7 @@ class Maze {
         if(this.yPosition > 0){
             this.yPosition = this.yPosition - 10;
         }
+        
         this.drawMazeHero();
         console.log("up: " + "x is " + this.xPosition + " y is " + this.yPosition);
     }
@@ -85,9 +86,6 @@ class Maze {
         
         console.log(this.mazeHero.width, this.mazeHero.height);
 
-        // this.checkForWalls();
-        // let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 5, 5).data;
-        
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data before", getHeroData);
@@ -95,7 +93,6 @@ class Maze {
         if(this.yPosition >= 0 && this.yPosition < 530){
             this.yPosition = this.yPosition + 10;
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
-            // console.log(getHeroData);
 
             this.drawMazeHero();
 

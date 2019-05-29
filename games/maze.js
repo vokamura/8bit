@@ -112,7 +112,6 @@ class Maze {
     // }
 }
 
-
 document.onkeydown = function(event) {
     if(event.which == 37){
         mazeGame.moveLeft();

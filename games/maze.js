@@ -65,6 +65,7 @@ class Maze {
     moveRight(){
         ctx.clearRect(this.xPosition, this.yPosition, 50, 50);
         ctx.drawImage(this.boardImage, 50, 50);
+
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
 
         console.log(this.xPosition, this.yPosition);
@@ -89,7 +90,9 @@ class Maze {
         console.log("Hero data before", getHeroData);
 
         if(this.yPosition >= 0 && this.yPosition < 530){
+
             this.yPosition = this.yPosition + 10;
+            
             console.log("down: " + "x is " + this.xPosition + " y is " + this.yPosition);
 
             this.drawMazeHero();

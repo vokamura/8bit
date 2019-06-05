@@ -86,6 +86,7 @@ class Maze {
         console.log(this.mazeHero.width, this.mazeHero.height);
 
         let getHeroData = ctx.getImageData(this.xPosition, this.yPosition, 50, 50).data;
+        
         console.log(this.xPosition, this.yPosition);
         console.log("Hero data before", getHeroData);
 

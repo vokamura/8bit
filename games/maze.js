@@ -72,7 +72,9 @@ class Maze {
         console.log("Hero data", getHeroData);
 
         if(this.xPosition > 0){
+
             this.xPosition = this.xPosition + 10;
+            
             console.log("right: " + "x is " + this.xPosition + " y is " + this.yPosition);
         }
 

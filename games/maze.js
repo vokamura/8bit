@@ -1,4 +1,5 @@
 class Maze {
+    
     constructor(){
         this.body = document.getElementsByClassName("textBody")[0];
         this.game = document.createElement("div");

@@ -126,7 +126,7 @@ document.onkeydown = function(event) {
 };
 
 // put this in for testing.
-// let mazeGame = new Maze();
-// mazeGame.layoutBoard();
-// loadCanvas();
-// mazeGame.loadMazeHero();
+let mazeGame = new Maze();
+mazeGame.layoutBoard();
+loadCanvas();
+mazeGame.loadMazeHero();
